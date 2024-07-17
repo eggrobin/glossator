@@ -13,6 +13,7 @@ verbs = (
   Verb("ḥpš", "a", "u"),
   Verb("ḥbb", "i", "i"),
   Verb("kwn", "a", "u"),
+  Verb("kšd", "a", "u"),
   Verb("kšš", "a", "u"),
   Verb("lqḥ", "a", "a"),
   Verb("mdd", "a", "u"),

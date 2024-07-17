@@ -121,6 +121,7 @@ class KamilDecomposition:
     self.lengthen_before_suffixes()
     self.assimilate_n()
     self.assimilate_t()
+    self.assimilate_ventive_m()
     self.functions = set(f for m in self.morphemes for f in m.functions)
     self.merge_root_morphemes()
 
@@ -237,7 +238,9 @@ class KamilDecomposition:
       for m in self.morphemes:
         if ((m.text == 'ā' and m.functions in ([3, Gender.F, Number.PL],
                                                [2, Number.PL])) or
-            (m.text == 'ma' and m.functions == ['CONJ'])):
+            m.functions == ['CONJ'] or
+            any('ACC' in f for f in m.functions if isinstance(f, str)) or
+            m.functions == ['VENT']):
           continue
         m.text = nfc(nfd(m.text).replace('a', 'e'))
 
@@ -253,12 +256,23 @@ class KamilDecomposition:
   def assimilate_t(self):
     i = 0
     while i < len(self.morphemes):
-      j, previous_text = self.previous_overt_morpheme(i)
+      _, previous_text = self.previous_overt_morpheme(i)
       # H p. 155.
       if ('t' in self.morphemes[i].functions and
           self.morphemes[i].text.startswith('t') and
           previous_text.endswith(('d', 'ṭ', 's', 'ṣ'))):
         self.morphemes[i].text = previous_text[-1] + self.morphemes[i].text[1:]
+      i += 1
+
+  def assimilate_ventive_m(self):
+    i = 0
+    while i < len(self.morphemes):
+      _, next_text = self.next_overt_morpheme(i)
+      # H p. 170.
+      if ('VENT' in self.morphemes[i].functions and
+          self.morphemes[i].text.endswith('m') and
+          next_text.startswith(CONSONANTS)):
+        self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
       i += 1
 
   def contract_vowels(self):
