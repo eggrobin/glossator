@@ -70,6 +70,12 @@ def personal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number):
                        [p, g, n] if p == 2 and n == Number.SG else
                        [p, n]))
 
+def ventive(p: Literal[1, 2, 3], g: Gender, n: Number):
+  return Morpheme('nim' if n == Number.PL and p != 1 else
+                  'm' if p == 2 and g == Gender.F else
+                  'am',
+                  ['VENT'])
+
 def acc_pronominal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number):
   f = ['ACC', p]
   return ((Morpheme('ni', [f + [n]]) if p == 1 else
@@ -313,47 +319,61 @@ class Verb:
                t: bool=False,
                subj: bool = False,
                conj: bool = False,
+               vent: bool = False,
                stem: Stem = Stem.G,
                acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
-    return KamilDecomposition(self.root,
-                              (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
-                               Morpheme('n', ['PASS']) if stem == Stem.N else None,
-                               Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-                               Morpheme(self.root[0], ['R₁']),
-                               (Morpheme('ta', ['t']) if t and stem != Stem.N else
-                                Morpheme('a', ['IMPFV'])),
-                               Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
-                               Morpheme('a' if stem == Stem.D or
-                                               (stem == Stem.N and self.durative_vowel != 'i') else
-                                        self.durative_vowel,
-                                        ['IMPFV']),
-                               Morpheme(self.root[-1], ['R₃']),
-                               personal_suffix(*p),
-                               Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
-                               acc_pronominal_suffix(*acc) if acc else None,
-                               Morpheme('ma', ['CONJ']) if conj else None))
+    if acc and acc[0] == 1 and acc[-1] == Number.SG:
+      vent = True
+    if vent:
+      subj = False
+    return KamilDecomposition(
+      self.root,
+      (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
+        Morpheme('n', ['PASS']) if stem == Stem.N else None,
+        Morpheme('ta', ['t']) if t and stem == Stem.N else None,
+        Morpheme(self.root[0], ['R₁']),
+        (Morpheme('ta', ['t']) if t and stem != Stem.N else
+        Morpheme('a', ['IMPFV'])),
+        Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
+        Morpheme('a' if stem == Stem.D or
+                        (stem == Stem.N and self.durative_vowel != 'i') else
+                self.durative_vowel,
+                ['IMPFV']),
+        Morpheme(self.root[-1], ['R₃']),
+        personal_suffix(*p),
+        Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
+        ventive(*p) if vent else None,
+        acc_pronominal_suffix(*acc) if acc else None,
+        Morpheme('ma', ['CONJ']) if conj else None))
   def perfective(self,
                  p: Person,
                  t: bool=False,
                  subj: bool = False,
                  conj: bool = False,
+                 vent: bool = False,
                  stem: Stem = Stem.G,
                  acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
-    return KamilDecomposition(self.root,
-                              (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
-                               Morpheme('n', ['PASS']) if stem == Stem.N else None,
-                               Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-                               Morpheme(self.root[0], ['R₁']),
-                               (Morpheme('ta', ['t']) if t and stem != Stem.N else
-                                Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None),
-                               Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
-                                        ['R₂', 'D'] if stem == Stem.D else ['R₂']),
-                               Morpheme('i' if stem in (Stem.D, Stem.N) else
-                                        self.durative_vowel if t else
-                                        self.perfective_vowel,
-                                       ['PFTV']),
-                               Morpheme(self.root[-1], ['R₃']),
-                               personal_suffix(*p),
-                               Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
-                               acc_pronominal_suffix(*acc) if acc else None,
-                               Morpheme('ma', ['CONJ']) if conj else None))
+    if acc and acc[0] == 1 and acc[-1] == Number.SG:
+      vent = True
+    if vent:
+      subj = False
+    return KamilDecomposition(
+      self.root,
+      (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
+        Morpheme('n', ['PASS']) if stem == Stem.N else None,
+        Morpheme('ta', ['t']) if t and stem == Stem.N else None,
+        Morpheme(self.root[0], ['R₁']),
+        (Morpheme('ta', ['t']) if t and stem != Stem.N else
+        Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None),
+        Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
+                ['R₂', 'D'] if stem == Stem.D else ['R₂']),
+        Morpheme('i' if stem == Stem.D or (stem == Stem.N and not t) else
+                self.durative_vowel if t else
+                self.perfective_vowel,
+                ['PFTV']),
+        Morpheme(self.root[-1], ['R₃']),
+        personal_suffix(*p),
+        Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
+        ventive(*p) if vent else None,
+        acc_pronominal_suffix(*acc) if acc else None,
+        Morpheme('ma', ['CONJ']) if conj else None))

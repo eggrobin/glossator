@@ -25,6 +25,7 @@ verbs = (
   Verb("qyš", "a", "i"),
   Verb("ṣbt", "a", "a"),
   Verb("šlʾ", "i", "i"),
+  Verb("šlm", "i", "i"),
   Verb("šql", "a", "u"),
   Verb("wbl", "a", "u"),
 )
@@ -41,22 +42,23 @@ def add_forms(acc):
     print("loading acc.%s" % '.'.join(str(f) for f in acc))
   for stem in Stem:
     for conj in (False, True):
-      for subj in (False, True):
-        for verb in verbs:
-          for n in Number:
-            for p in (1, 2, 3):
-              for g in Gender:
-                gloss = verb.durative((p, g, n), t=False, subj=subj, conj=conj, stem=stem, acc=acc)
-                forms_to_glosses[gloss.text()][str(gloss)] = gloss
-          for n in Number:
-            for p in (1, 2, 3):
-              for g in Gender:
-                gloss = verb.perfective((p, g, n), t=False, subj=subj, conj=conj, stem=stem, acc=acc)
-                forms_to_glosses[gloss.text()][str(gloss)] = gloss
-          for n in Number:
-            for p in (1, 2, 3):
-              for g in Gender:
-                gloss = verb.perfective((p, g, n), t=True, subj=subj, conj=conj, stem=stem, acc=acc)
-                forms_to_glosses[gloss.text()][str(gloss)] = gloss
+      for vent in (False, True):
+        for subj in (False,) if vent else (False, True):
+          for verb in verbs:
+            for n in Number:
+              for p in (1, 2, 3):
+                for g in Gender:
+                  gloss = verb.durative((p, g, n), t=False, subj=subj, conj=conj, vent=vent, stem=stem, acc=acc)
+                  forms_to_glosses[gloss.text()][str(gloss)] = gloss
+            for n in Number:
+              for p in (1, 2, 3):
+                for g in Gender:
+                  gloss = verb.perfective((p, g, n), t=False, subj=subj, conj=conj, vent=vent, stem=stem, acc=acc)
+                  forms_to_glosses[gloss.text()][str(gloss)] = gloss
+            for n in Number:
+              for p in (1, 2, 3):
+                for g in Gender:
+                  gloss = verb.perfective((p, g, n), t=True, subj=subj, conj=conj, vent=vent, stem=stem, acc=acc)
+                  forms_to_glosses[gloss.text()][str(gloss)] = gloss
 
 add_forms(acc=None)
