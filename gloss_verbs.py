@@ -50,6 +50,7 @@ for atf_line in atf_lines:
   for word in words:
     if word:
       normalized_word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
+      lexicon.load_candidates(normalized_word)
       word_counts[word] += 1
       possible_glosses = []
       if normalized_word in lexicon.forms_to_glosses:
