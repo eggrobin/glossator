@@ -41,11 +41,10 @@ for atf_line in atf_lines:
       if word in lexicon.forms_to_glosses:
         verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[word].values())))
       elif grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
-        loose_match = re.compile(
-          grammar.nfc(re.sub(r'([aeui])', r'[\1\1' + grammar.MACRON + r']', word)))
+        possible_glosses = []
         for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(word)]:
-          if loose_match.fullmatch(form):
-            verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[form].values())))
+          possible_glosses += list(lexicon.forms_to_glosses[form].values())
+        verbs_by_law[law].append((line_number, possible_glosses))
 
 glossed_verbs = 0
 ambiguous_verbs = 0
