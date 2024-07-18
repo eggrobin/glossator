@@ -94,6 +94,9 @@ l. 386
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 7
+l. 398
+i-štâm-∅  (ištâm < *ištaʾam)
+3-√šʾm.t.PFTV-3.SG
 l. 400
 i-mḫur-∅  (imḫur)
 3-√mḫr.PFTV-3.SG
@@ -114,6 +117,11 @@ i-ṣṣabat-∅  (iṣṣabat < *iṣtabat)
 l. 425
 i-ddin-∅-am  (iddinam < *indinam)
 3-√ndn.PFTV-3.SG-VENT
+l. 427
+a-šam-∅  (ašam < *ašʾam)
+1.SG-√šʾm.PFTV-1
+a-šâm-∅  (ašâm < *ašaʾʾam)
+1.SG-√šʾm.IMPFV-1
 l. 428
 i-qtabi-∅  (iqtabi < *iqtabiʾ)
 3-√qbʾ.t.PFTV-3.SG
@@ -150,6 +158,9 @@ l. 477
 i-leqqe-∅  (ileqqe < *ilaqqaḥ)
 3-√lqḥ.IMPFV-3.SG
 Law 11
+l. 483
+tu-šām-∅-ma  (tušāmma < *tušaʾʾamma)
+2-√šʾm.IMPFV.D-2.M.SG-CONJ
 l. 483
 i-ddi-∅  (iddi < *indiʾ)
 3-√ndʾ.PFTV-3.SG
@@ -209,6 +220,9 @@ l. 603
 i-šaqqal-ū  (išaqqalū)
 3-√šql.IMPFV-3.M.PL
 Law 25
+l. 612
+i-š-šîm-ā  (iššîmā < *inšaʾimā)
+3-PASS-√šʾm.PFTV-3.F.PL
 l. 615
 i-lteqe-∅  (ilteqe < *iltaqaḥ)
 3-√lqḥ.t.PFTV-3.SG
@@ -329,16 +343,27 @@ Law 35
 l. 760
 i-ddin-∅-u  (iddinu < *indinu)
 3-√ndn.PFTV-3.SG-SUBJ
+l. 762
+i-štâm-∅  (ištâm < *ištaʾam)
+3-√šʾm.t.PFTV-3.SG
 Law 36
 l. 769
 i-n-naddin-∅  (innaddin)
 3-PASS-√ndn.IMPFV-3.SG
 Law 37
+l. 774
+i-štâm-∅  (ištâm < *ištaʾam)
+3-√šʾm.t.PFTV-3.SG
 Law 38
 l. 790
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 39
+l. 792
+i-šamm-ū-ma  (išammūma < *išaʾʾamūma)
+3-√šʾm.IMPFV-3.M.PL-CONJ
+i-šamm-∅-ū-ma  (išammūma < *išaʾʾamuma)
+3-√šʾm.IMPFV-3.SG-SUBJ-CONJ
 l. 798
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -349,6 +374,9 @@ i-naddin-∅  (inaddin)
 l. 805
 ī-lik-∅  (īlik < *iʾlik)
 3-√ʾlk.PFTV-3.SG
+l. 807
+i-šamm-∅-u  (išammu < *išaʾʾamu)
+3-√šʾm.IMPFV-3.SG-SUBJ
 l. 808
 i-llak-∅  (illak < *iʾallak)
 3-√ʾlk.IMPFV-3.SG
@@ -1218,6 +1246,9 @@ i-parras-∅-ū-ma  (iparrasūma < *iparrasuma)
 l. 2231'
 i-naddin-ū  (inaddinū)
 3-√ndn.IMPFV-3.M.PL
+l. 2235'
+i-šamm-∅-u  (išammu < *išaʾʾamu)
+3-√šʾm.IMPFV-3.SG-SUBJ
 Law 178
 l. 2260'
 i-leqqû-ma  (ileqqûma < *ilaqqaḥūma)
@@ -1236,6 +1267,9 @@ i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 180
 Law 181
+l. 2334'
+i-š-šîm-ā  (iššîmā < *inšaʾimā)
+3-PASS-√šʾm.PFTV-3.F.PL
 Law 182
 l. 2363'
 i-llak-∅  (illak < *iʾallak)
@@ -1726,6 +1760,13 @@ l. 3098'
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 278
+l. 3100'
+i-šam-∅-ma  (išamma < *išʾamma)
+3-√šʾm.PFTV-3.SG-CONJ
+i-šamm-ā  (išammā < *išaʾʾamā)
+3-√šʾm.IMPFV-3.F.PL
+i-šâm-∅-ma  (išâmma < *išaʾʾamma)
+3-√šʾm.IMPFV-3.SG-CONJ
 l. 3106'
 i-šqul-∅-u  (išqulu)
 3-√šql.PFTV-3.SG-SUBJ
@@ -1733,7 +1774,17 @@ l. 3107'
 i-leqqe-∅  (ileqqe < *ilaqqaḥ)
 3-√lqḥ.IMPFV-3.SG
 Law 279
+l. 3109'
+i-šam-∅-ma  (išamma < *išʾamma)
+3-√šʾm.PFTV-3.SG-CONJ
+i-šamm-ā  (išammā < *išaʾʾamā)
+3-√šʾm.IMPFV-3.F.PL
+i-šâm-∅-ma  (išâmma < *išaʾʾamma)
+3-√šʾm.IMPFV-3.SG-CONJ
 Law 280
+l. 3117'
+i-štâm-∅  (ištâm < *ištaʾam)
+3-√šʾm.t.PFTV-3.SG
 Law 281
 l. 3132'
 i-šqul-∅-u  (išqulu)

@@ -26,6 +26,7 @@ verbs = (
   Verb("qbʾ", "i", "i"),
   Verb("qyš", "a", "i"),
   Verb("ṣbt", "a", "a"),
+  Verb("šʾm", "a", "a"),
   Verb("šlʾ", "i", "i"),
   Verb("šlm", "i", "i"),
   Verb("šql", "a", "u"),
