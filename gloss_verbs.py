@@ -63,11 +63,16 @@ for atf_line in atf_lines:
 glossed_verbs = 0
 ambiguous_verbs = 0
 
-for law, verbs in verbs_by_law.items():
-  for line_number, glosses in verbs:
-    glossed_verbs += 1
-    if len(glosses) > 1:
-      ambiguous_verbs += 1
+with open('glosses.txt', 'w', encoding='utf-8') as f:
+  for law, verbs in verbs_by_law.items():
+    print("Law", law, file=f)
+    for line_number, glosses in verbs:
+      print("l.", line_number, file=f)
+      glossed_verbs += 1
+      for gloss in glosses:
+        print(gloss, file=f)
+      if len(glosses) > 1:
+        ambiguous_verbs += 1
 
 def akkadian_collation_key(s):
   return unicodedata.normalize(
