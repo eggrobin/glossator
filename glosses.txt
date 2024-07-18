@@ -4,9 +4,7 @@ i-ddī-∅-ma  (iddīma < *indiʾma)
 3-√ndʾ.PFTV-3.SG-CONJ
 l. 308 ~uktīnšu
 u-ktīš-∅-šu  (uktīššu < *uktawwinšu)
-1.SG-√kwn.t.D.PFTV-1-ACC.3.M.SG
-u-ktīš-∅-šu  (uktīššu < *uktawwinšu)
-3-√kwn.t.D.PFTV-3.SG-ACC.3.M.SG
+1|3.SG-√kwn.t.D.PFTV-1|3.SG-ACC.3.M.SG
 l. 310 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
@@ -16,9 +14,7 @@ i-ddī-∅-ma  (iddīma < *indiʾma)
 3-√ndʾ.PFTV-3.SG-CONJ
 l. 314 ~uktīnšu
 u-ktīš-∅-šu  (uktīššu < *uktawwinšu)
-1.SG-√kwn.t.D.PFTV-1-ACC.3.M.SG
-u-ktīš-∅-šu  (uktīššu < *uktawwinšu)
-3-√kwn.t.D.PFTV-3.SG-ACC.3.M.SG
+1|3.SG-√kwn.t.D.PFTV-1|3.SG-ACC.3.M.SG
 l. 318 illak
 i-llak-∅  (illak < *iʾallak)
 3-√ʾlk.IMPFV-3.SG
@@ -32,9 +28,7 @@ i-ktašas-∅-su  (iktašassu < *iktašaššu)
 3-√kšš.t.PFTV-3.SG-ACC.3.M.SG
 l. 326 ~utebbibaššuma
 ū-tebbib-∅-aš-šū-ma  (ūtebbibaššūma < *uḥtabbibamšuma)
-1.SG-√ḥbb.t.D.PFTV-1-VENT-ACC.3.M.SG-CONJ
-ū-tebbib-∅-aš-šū-ma  (ūtebbibaššūma < *uḥtabbibamšuma)
-3-√ḥbb.t.D.PFTV-3.SG-VENT-ACC.3.M.SG-CONJ
+1|3.SG-√ḥbb.t.D.PFTV-1|3.SG-VENT-ACC.3.M.SG-CONJ
 l. 327 ~ištālmam
 i-štalm-∅-am  (ištalmam < *ištalimam)
 3-√šlm.t.PFTV-3.SG-VENT
@@ -57,9 +51,7 @@ i-qbû  (iqbû < *iqbiʾu)
 3-√qbʾ.PFTV.3.SG.SUBJ
 l. 341 uktīn
 u-ktīn-∅  (uktīn < *uktawwin)
-1.SG-√kwn.t.D.PFTV-1
-u-ktīn-∅  (uktīn < *uktawwin)
-3-√kwn.t.D.PFTV-3.SG
+1|3.SG-√kwn.t.D.PFTV-1|3.SG
 l. 345 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
@@ -70,11 +62,9 @@ i-prus-∅  (iprus)
 3-√prs.PFTV-3.SG
 l. 363 ~ukannūšuma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 l. 366 ibbaššû
 i-b-baššû  (ibbaššû < *inbaššiʾū)
 3-PASS-√bšʾ.IMPFV.3.M.PL
@@ -118,10 +108,10 @@ l. 425 iddinam
 i-ddin-∅-am  (iddinam < *indinam)
 3-√ndn.PFTV-3.SG-VENT
 l. 427 ~ašām
-a-šâm-∅  (ašâm < *ašaʾʾam)
-1.SG-√šʾm.IMPFV-1
 a-šam-∅  (ašam < *ašʾam)
 1.SG-√šʾm.PFTV-1
+a-šâm-∅  (ašâm < *ašaʾʾam)
+1.SG-√šʾm.IMPFV-1
 l. 428 iqtabi
 i-qtabi-∅  (iqtabi < *iqtabiʾ)
 3-√qbʾ.t.PFTV-3.SG
@@ -387,11 +377,9 @@ i-ddin-∅  (iddin < *indin)
 Law 42
 l. 829 ukannūšūma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 l. 832 inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -633,9 +621,7 @@ i-lqē-∅-ma  (ilqēma < *ilqaḥma)
 3-√lqḥ.PFTV-3.SG-CONJ
 l. 1185' ~ukânma
 u-kām-∅-ma  (ukāmma < *ukawwanma)
-1.SG-√kwn.IMPFV.D-1-CONJ
-u-kām-∅-ma  (ukāmma < *ukawwanma)
-3-√kwn.IMPFV.D-3.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-CONJ
 l. 1187' ilqû
 i-lqû  (ilqû < *ilqaḥū)
 3-√lqḥ.PFTV.3.M.PL
@@ -647,9 +633,7 @@ i-naddin-∅  (inaddin)
 Law 107
 l. 1202' ~ukânma
 u-kām-∅-ma  (ukāmma < *ukawwanma)
-1.SG-√kwn.IMPFV.D-1-CONJ
-u-kām-∅-ma  (ukāmma < *ukawwanma)
-3-√kwn.IMPFV.D-3.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-CONJ
 l. 1205' ilqû
 i-lqû  (ilqû < *ilqaḥū)
 3-√lqḥ.PFTV.3.M.PL
@@ -667,11 +651,9 @@ i-mtaḫar-∅  (imtaḫar)
 3-√mḫr.t.PFTV-3.SG
 l. 1217' ~ukannūšima
 u-kann-ū-šī-ma  (ukannūšīma < *ukawwanūšima)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.F.SG-CONJ
-u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.F.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
 l. 1219' inaddûši
 i-naddû-ši  (inaddûši < *inaddiʾūši)
 3-√ndʾ.IMPFV.3.M.PL-ACC.3.F.SG
@@ -706,9 +688,7 @@ i-ddin-∅-u  (iddinu < *indinu)
 3-√ndn.PFTV-3.SG-SUBJ
 l. 1263' ~ukânšuma
 u-kāš-∅-šū-ma  (ukāššūma < *ukawwanšuma)
-1.SG-√kwn.IMPFV.D-1-ACC.3.M.SG-CONJ
-u-kāš-∅-šū-ma  (ukāššūma < *ukawwanšuma)
-3-√kwn.IMPFV.D-3.SG-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-ACC.3.M.SG-CONJ
 l. 1268' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -718,11 +698,9 @@ i-lteqe-∅  (ilteqe < *iltaqaḥ)
 3-√lqḥ.t.PFTV-3.SG
 l. 1281' ~ukannūšuma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 l. 1282' ilqû
 i-lqû  (ilqû < *ilqaḥū)
 3-√lqḥ.PFTV.3.M.PL
@@ -745,9 +723,7 @@ nī-pus-∅-su  (nīpussu < *niḥpuššu)
 Law 116
 l. 1315' ~ukânma
 u-kām-∅-ma  (ukāmma < *ukawwanma)
-1.SG-√kwn.IMPFV.D-1-CONJ
-u-kām-∅-ma  (ukāmma < *ukawwanma)
-3-√kwn.IMPFV.D-3.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-CONJ
 l. 1320' išaqqal
 i-šaqqal-∅  (išaqqal)
 3-√šql.IMPFV-3.SG
@@ -823,11 +799,9 @@ i-ddim-∅-ma  (iddimma < *indinma)
 3-√ndn.PFTV-3.SG-CONJ
 l. 1410' ~ukannūšuma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 l. 1413' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -840,9 +814,7 @@ i-ddin-∅-u  (iddinu < *indinu)
 3-√ndn.PFTV-3.SG-SUBJ
 l. 1426' ušallamma
 u-šallam-∅-ma  (ušallamma)
-1.SG-√šlm.IMPFV.D-1-CONJ
-u-šallam-∅-ma  (ušallamma)
-3-√šlm.IMPFV.D-3.SG-CONJ
+1|3.SG-√šlm.IMPFV.D-1|3.SG-CONJ
 l. 1433' ileqqe
 i-leqqe-∅  (ileqqe < *ilaqqaḥ)
 3-√lqḥ.IMPFV-3.SG
@@ -856,9 +828,7 @@ i-naddin-∅  (inaddin)
 Law 127
 l. 1455' uktīn
 u-ktīn-∅  (uktīn < *uktawwin)
-1.SG-√kwn.t.D.PFTV-1
-u-ktīn-∅  (uktīn < *uktawwin)
-3-√kwn.t.D.PFTV-3.SG
+1|3.SG-√kwn.t.D.PFTV-1|3.SG
 Law 128
 l. 1463' īḫuzma
 ī-ḫuz-∅-ma  (īḫuzma < *iʾḫuzma)
@@ -902,11 +872,9 @@ i-bašši-∅  (ibašši < *ibaššiʾ)
 3-√bšʾ.IMPFV-3.SG
 l. 1533' ~ukannūšima
 u-kann-ū-šī-ma  (ukannūšīma < *ukawwanūšima)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.F.SG-CONJ
-u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.F.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
 l. 1535' inaddûši
 i-naddû-ši  (inaddûši < *inaddiʾūši)
 3-√ndʾ.IMPFV.3.M.PL-ACC.3.F.SG
@@ -949,11 +917,9 @@ Law 140
 Law 141
 l. 1637' ~ukannūšima
 u-kann-ū-šī-ma  (ukannūšīma < *ukawwanūšima)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.F.SG-CONJ
-u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.F.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
 l. 1640' iqtabi
 i-qtabi-∅  (iqtabi < *iqtabiʾ)
 3-√qbʾ.t.PFTV-3.SG
@@ -1338,11 +1304,9 @@ i-ddim-∅-ma  (iddimma < *indinma)
 3-√ndn.PFTV-3.SG-CONJ
 l. 2496' ~ukannūšima
 u-kann-ū-šī-ma  (ukannūšīma < *ukawwanūšima)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.F.SG-CONJ
-u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.F.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
 Law 195
 l. 2504' imtaḫaṣ
 i-mtaḫaṣ-∅  (imtaḫaṣ)
@@ -1470,9 +1434,7 @@ i-šaqqal-∅  (išaqqal)
 Law 221
 l. 2653' uštallim
 u-štallim-∅  (uštallim)
-1.SG-√šlm.t.D.PFTV-1
-u-štallim-∅  (uštallim)
-3-√šlm.t.D.PFTV-3.SG
+1|3.SG-√šlm.t.D.PFTV-1|3.SG
 l. 2660' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -1633,11 +1595,9 @@ i-ttadin-∅  (ittadin < *intadin)
 3-√ndn.t.PFTV-3.SG
 l. 2933' ~ukannūšuma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 l. 2935' imaddad
 i-maddad-∅  (imaddad)
 3-√mdd.IMPFV-3.SG
@@ -1674,11 +1634,9 @@ i-ttadin-∅  (ittadin < *intadin)
 3-√ndn.t.PFTV-3.SG
 l. 3010' ~ukannušuma
 u-kann-ū-šū-ma  (ukannūšūma < *ukawwanūšuma)
-3-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
+3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.M.SG-CONJ
 u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-1.SG-√kwn.IMPFV.D-1-SUBJ-ACC.3.M.SG-CONJ
-u-kann-∅-ū-šū-ma  (ukannūšūma < *ukawwanušuma)
-3-√kwn.IMPFV.D-3.SG-SUBJ-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.M.SG-CONJ
 Law 266
 l. 3017' ittabši
 i-t-ta-bši-∅  (ittabši < *intabašiʾ)
@@ -1692,9 +1650,7 @@ i-maḫḫar-∅-šu  (imaḫḫaršu)
 Law 267
 l. 3027' ušallamma
 u-šallam-∅-ma  (ušallamma)
-1.SG-√šlm.IMPFV.D-1-CONJ
-u-šallam-∅-ma  (ušallamma)
-3-√šlm.IMPFV.D-3.SG-CONJ
+1|3.SG-√šlm.IMPFV.D-1|3.SG-CONJ
 l. 3029' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -1804,6 +1760,4 @@ i-qtabi-∅  (iqtabi < *iqtabiʾ)
 3-√qbʾ.t.PFTV-3.SG
 l. 3142' ~ukânšuma
 u-kāš-∅-šū-ma  (ukāššūma < *ukawwanšuma)
-1.SG-√kwn.IMPFV.D-1-ACC.3.M.SG-CONJ
-u-kāš-∅-šū-ma  (ukāššūma < *ukawwanšuma)
-3-√kwn.IMPFV.D-3.SG-ACC.3.M.SG-CONJ
+1|3.SG-√kwn.IMPFV.D-1|3.SG-ACC.3.M.SG-CONJ

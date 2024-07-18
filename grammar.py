@@ -56,16 +56,18 @@ def personal_prefix(p: Literal[1, 2, 3], g: Gender, n: Number):
           Morpheme('i', [p]))
 
 def personal_prefix_d(p: Literal[1, 2, 3], g: Gender, n: Number):
-  return (Morpheme('u' if n == Number.SG else 'nu', [p, n]) if p == 1 else
+  return (Morpheme('nu', [p, n]) if p == 1 and n == Number.PL else
           Morpheme('tu', [p]) if p == 2 else
-          Morpheme('u', [p]))
+          Morpheme('u', [p, n]) if n == Number.PL else
+          Morpheme('u', ['1|3', n]))
 
-def personal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number):
+def personal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number, gloss_for_d=False):
   return (Morpheme('ī', [p, g, n]) if p == 2 and g == Gender.F and n == Number.SG else
           Morpheme('ā', [p, n])    if p == 2 and                   n == Number.PL else
           Morpheme('ā', [p, g, n]) if p == 3 and g == Gender.F and n == Number.PL else
           Morpheme('ū', [p, g, n]) if p == 3 and g == Gender.M and n == Number.PL else
-          Morpheme('', [p] if p == 1 else
+          Morpheme('', ['1|3', n] if gloss_for_d and n == Number.SG and p in (1, 3) else
+                       [p] if p == 1 else
                        [p, g, n] if p == 2 and n == Number.SG else
                        [p, n]))
 
@@ -382,7 +384,7 @@ class Verb:
                 self.durative_vowel,
                 ['IMPFV']),
         Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p),
+        personal_suffix(*p, gloss_for_d=stem == Stem.D),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
         acc_pronominal_suffix(*acc) if acc else None,
@@ -414,7 +416,7 @@ class Verb:
                 self.perfective_vowel,
                 ['PFTV']),
         Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p),
+        personal_suffix(*p, gloss_for_d=stem == Stem.D),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
         acc_pronominal_suffix(*acc) if acc else None,
