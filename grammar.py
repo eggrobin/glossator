@@ -1,8 +1,6 @@
-from collections import defaultdict
 from enum import Enum
 from typing import Literal
 import unicodedata
-import sys
 
 CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
@@ -121,9 +119,10 @@ class KamilDecomposition:
     self.lengthen_before_suffixes()
     self.assimilate_n()
     self.assimilate_t()
+    self.assimilate_object_š()
     self.assimilate_ventive_m()
-    self.functions = set(f for m in self.morphemes for f in m.functions)
     self.merge_root_morphemes()
+    self.functions = set(f for m in self.morphemes for f in m.functions)
 
   def __str__(self):
     reconstruction = ''.join(m.text for m in self.reconstructed)
@@ -262,6 +261,18 @@ class KamilDecomposition:
           self.morphemes[i].text.startswith('t') and
           previous_text.endswith(('d', 'ṭ', 's', 'ṣ'))):
         self.morphemes[i].text = previous_text[-1] + self.morphemes[i].text[1:]
+      i += 1
+
+  def assimilate_object_š(self):
+    i = 0
+    while i < len(self.morphemes):
+      j, previous_text = self.previous_overt_morpheme(i)
+      # H p. 170.
+      if (any('ACC' in f for f in self.morphemes[i].functions if isinstance(f, str)) and
+          self.morphemes[i].text.startswith('š') and
+          previous_text.endswith(('d', 't', 'ṭ', 's', 'ṣ', 'z', 'š'))):
+        self.morphemes[j].text = self.morphemes[j].text[:-1] + 's'
+        self.morphemes[i].text = 's' + self.morphemes[i].text[1:]
       i += 1
 
   def assimilate_ventive_m(self):
