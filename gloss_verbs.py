@@ -10,7 +10,7 @@ with open(sys.argv[1], "r", encoding="utf-8") as f:
   atf_lines = f.read().splitlines()
 
 word_counts = defaultdict(int)
-verbs_by_law: defaultdict[int, list[tuple[int, list[grammar.KamilDecomposition]]]] = defaultdict(list)
+verbs_by_law: defaultdict[int, list[tuple[int, str, list[grammar.KamilDecomposition]]]] = defaultdict(list)
 
 law = None
 line_number = None
@@ -49,16 +49,16 @@ for atf_line in atf_lines:
   words = re.split(r"(?:tr.ts|\W)+", atf_line)
   for word in words:
     if word:
-      word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
+      normalized_word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
       word_counts[word] += 1
       possible_glosses = []
-      if word in lexicon.forms_to_glosses:
-        possible_glosses = list(lexicon.forms_to_glosses[word].values())
-      elif grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
-        for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(word)]:
+      if normalized_word in lexicon.forms_to_glosses:
+        possible_glosses = list(lexicon.forms_to_glosses[normalized_word].values())
+      elif grammar.shorten_vowels(normalized_word) in lexicon.shortened_forms_to_forms:
+        for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(normalized_word)]:
           possible_glosses += list(lexicon.forms_to_glosses[form].values())
       if possible_glosses:
-        verbs_by_law[law].append((line_number, possible_glosses))
+        verbs_by_law[law].append((line_number, word, possible_glosses))
 
 glossed_verbs = 0
 ambiguous_verbs = 0
@@ -66,8 +66,10 @@ ambiguous_verbs = 0
 with open('glosses.txt', 'w', encoding='utf-8') as f:
   for law, verbs in verbs_by_law.items():
     print("Law", law, file=f)
-    for line_number, glosses in verbs:
-      print("l.", line_number, file=f)
+    for line_number, word, glosses in verbs:
+      print("l.", line_number,
+            ('~' if any(gloss.text() != word for gloss in glosses) else '') + word,
+            file=f)
       glossed_verbs += 1
       for gloss in glosses:
         print(gloss, file=f)
