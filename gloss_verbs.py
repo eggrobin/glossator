@@ -20,12 +20,25 @@ for atf_line in atf_lines:
     break
   match = re.match(r"@law (\d+)", atf_line)
   if match:
+    if law:
+      print("=== End of law %d; identified %d verbs" % (law, len(verbs_by_law[law])))
     law = int(match.group(1))
     continue
   if not law:
     continue
+  print(atf_line)
   if not atf_line.startswith("#tr.ts:"):
-    if not atf_line.startswith(("#", "$")):
+    if atf_line.startswith("#tr.en:"):
+      for gloss in possible_glosses:
+        characteristics = [
+          f for f in gloss.functions
+          if not any(f in g.functions for g in possible_glosses if g is not gloss)]
+        print('\n'.join('   ' + l for l in str(gloss).split('\n')))
+        if len(possible_glosses) > 1:
+          print('^-- %s' % ' '.join(str(c) for c in characteristics))
+      if possible_glosses:
+        sys.stdin.readline()
+    elif not atf_line.startswith(("#", "$")):
       line_number = atf_line.split('.', 1)[0]
     continue
   # Use U+02BE ʾ MODIFIER LETTER RIGHT HALF RING rather than U+2019 ’ RIGHT
@@ -38,34 +51,23 @@ for atf_line in atf_lines:
     if word:
       word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
       word_counts[word] += 1
+      possible_glosses = []
       if word in lexicon.forms_to_glosses:
-        verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[word].values())))
+        possible_glosses = list(lexicon.forms_to_glosses[word].values())
       elif grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
-        possible_glosses = []
         for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(word)]:
           possible_glosses += list(lexicon.forms_to_glosses[form].values())
+      if possible_glosses:
         verbs_by_law[law].append((line_number, possible_glosses))
 
 glossed_verbs = 0
 ambiguous_verbs = 0
 
 for law, verbs in verbs_by_law.items():
-  print("Law %d, identified %d verbs" % (law, len(verbs)))
   for line_number, glosses in verbs:
     glossed_verbs += 1
-    print("Line %s:" % line_number)
-    if len(glosses) == 1:
-        print(glosses[0])
-    else:
+    if len(glosses) > 1:
       ambiguous_verbs += 1
-      for gloss in glosses:
-        characteristics = [
-          f for f in gloss.functions
-          if not any(f in g.functions for g in glosses if g is not gloss)]
-        print(gloss)
-        print('^-- %s' % ' '.join(str(c) for c in characteristics))
-    print('===')
-  print()
 
 def akkadian_collation_key(s):
   return unicodedata.normalize(
@@ -77,15 +79,11 @@ def akkadian_collation_key(s):
     ).replace("\u0304", "").replace("\u0302", "") # Drop macron and circumflex.
 
 glossed_forms = 0
-ambiguous_forms = 0
 
 for word, count in sorted(word_counts.items(), key=lambda kv: (-kv[1], akkadian_collation_key(kv[0]))):
-  print(count, "\t", word)
-  if word in lexicon.forms_to_glosses:
+  if word in lexicon.forms_to_glosses or grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
     glossed_forms += 1
-    if len(lexicon.forms_to_glosses[word]) > 1:
-      ambiguous_forms += 1
-    print('\n---\n'.join(lexicon.forms_to_glosses[word]))
 
+print()
 print("Glossed %d verbs with %d ambiguities" % (glossed_verbs, ambiguous_verbs))
-print("Glossed %d unique forms with %d ambiguities" % (glossed_forms, ambiguous_forms))
+print("Glossed %d unique forms" % (glossed_forms))
