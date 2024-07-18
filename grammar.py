@@ -1,6 +1,7 @@
 from enum import Enum
 from typing import Literal
 import unicodedata
+import re
 
 CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
@@ -117,10 +118,11 @@ class KamilDecomposition:
     self.harmonize()
     self.contract_vowels()
     self.lengthen_before_suffixes()
-    self.assimilate_n()
     self.assimilate_t()
     self.assimilate_object_š()
+    self.assimilate_n()
     self.assimilate_ventive_m()
+    self.syncopate_vowels()
     self.merge_root_morphemes()
     self.functions = set(f for m in self.morphemes for f in m.functions)
 
@@ -285,6 +287,21 @@ class KamilDecomposition:
           next_text.startswith(CONSONANTS)):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
       i += 1
+
+  def syncopate_vowels(self):
+    regex = "[V][C]([V])[C][^C]".replace('V', ''.join(SHORT_VOWELS)).replace('C', ''.join(CONSONANTS))
+    match = re.search(regex, self.text())
+    if match:
+      syncopated_vowel_index = match.start(1)
+      i = 0
+      for m in self.morphemes:
+        for l in range(len(m.text)):
+          if i == syncopated_vowel_index:
+            if any('ACC' in f for f in m.functions if isinstance(f, str)):
+              return
+            m.text = m.text[:l] + m.text[l+1:]
+            return
+          i += 1
 
   def contract_vowels(self):
     i = 0

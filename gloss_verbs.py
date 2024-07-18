@@ -36,7 +36,7 @@ for atf_line in atf_lines:
   words = re.split(r"(?:tr.ts|\W)+", atf_line)
   for word in words:
     if word:
-      word = re.sub(r'nma$', r'mma', word)
+      word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
       word_counts[word] += 1
       if word in lexicon.forms_to_glosses:
         verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[word].values())))
@@ -44,7 +44,7 @@ for atf_line in atf_lines:
         loose_match = re.compile(
           grammar.nfc(re.sub(r'([aeui])', r'[\1\1' + grammar.MACRON + r']', word)))
         for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(word)]:
-          if loose_match.match(form):
+          if loose_match.fullmatch(form):
             verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[form].values())))
 
 glossed_verbs = 0
