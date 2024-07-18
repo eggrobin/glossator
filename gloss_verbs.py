@@ -36,23 +36,16 @@ for atf_line in atf_lines:
   words = re.split(r"(?:tr.ts|\W)+", atf_line)
   for word in words:
     if word:
-      word = re.sub(r'n([bdgḫyklmnpqrsṣštṭwz])', r'\1\1', word)
+      word = re.sub(r'nma$', r'mma', word)
       word_counts[word] += 1
-      for suffix, acc in grammar.ACC_PRONOMINAL_SUFFIXES.items():
-        if word.endswith(suffix):
-          lexicon.add_forms(acc)
-          if word not in lexicon.forms_to_glosses and word[:-len(suffix)].endswith(grammar.SHORT_VOWELS):
-            word = grammar.nfc(word[:-len(suffix)] + grammar.MACRON + suffix)
-      if word.endswith('ma'):
-        if word not in lexicon.forms_to_glosses and word[:-2].endswith(grammar.SHORT_VOWELS):
-          word = grammar.nfc(word[:-2] + grammar.MACRON + "ma")
-        for suffix, acc in grammar.ACC_PRONOMINAL_SUFFIXES.items():
-          if word[:-2].endswith(grammar.nfc(suffix + grammar.MACRON)):
-            lexicon.add_forms(acc)
-          if word not in lexicon.forms_to_glosses and word[:-(2 + len(suffix))].endswith(grammar.SHORT_VOWELS):
-            word = grammar.nfc(word[:-(2 + len(suffix))] + grammar.MACRON + suffix + grammar.MACRON + "ma")
       if word in lexicon.forms_to_glosses:
         verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[word].values())))
+      elif grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
+        loose_match = re.compile(
+          grammar.nfc(re.sub(r'([aeui])', r'[\1\1' + grammar.MACRON + r']', word)))
+        for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(word)]:
+          if loose_match.match(form):
+            verbs_by_law[law].append((line_number, list(lexicon.forms_to_glosses[form].values())))
 
 glossed_verbs = 0
 ambiguous_verbs = 0

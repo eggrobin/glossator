@@ -1,6 +1,7 @@
 from collections import defaultdict
+import sys
 
-from grammar import Gender, Number, Verb, KamilDecomposition, Stem
+from grammar import Gender, Number, Verb, KamilDecomposition, Stem, shorten_vowels
 
 verbs = (
   Verb("ʾgr", "a", "u"),
@@ -32,6 +33,7 @@ verbs = (
 )
 
 forms_to_glosses : defaultdict[str, dict[str, KamilDecomposition]] = defaultdict(dict)
+shortened_forms_to_forms : dict[str, set[str]] = defaultdict(set)
 
 loaded_accs = set()
 
@@ -40,7 +42,7 @@ def add_forms(acc):
     return
   loaded_accs.add(acc)
   if acc:
-    print("loading acc.%s" % '.'.join(str(f) for f in acc))
+    print("loading acc.%s" % '.'.join(str(f) for f in acc), file=sys.stderr)
   for stem in Stem:
     for conj in (False, True):
       for vent in (False, True):
@@ -63,3 +65,10 @@ def add_forms(acc):
                   forms_to_glosses[gloss.text()][str(gloss)] = gloss
 
 add_forms(acc=None)
+for n in Number:
+  for p in (1, 2, 3):
+    for g in Gender:
+      add_forms(acc=(p, g, n))
+
+for form in forms_to_glosses:
+  shortened_forms_to_forms[shorten_vowels(form)].add(form)
