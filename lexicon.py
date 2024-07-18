@@ -30,6 +30,7 @@ verbs = (
   Verb("šlʾ", "i", "i"),
   Verb("šlm", "i", "i"),
   Verb("šql", "a", "u"),
+  Verb("tbl", "a", "a"),
   Verb("wbl", "a", "u"),
 )
 
