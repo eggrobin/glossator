@@ -1964,12 +1964,12 @@ i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 278
 l. 3100' ~išāmma
-i-šâm-∅-ma  (išâmma < *išaʾʾamma)
-3-√šʾm.IMPFV-3.SG-CONJ
-i-šamm-ā  (išammā < *išaʾʾamā)
-3-√šʾm.IMPFV-3.F.PL
 i-šam-∅-ma  (išamma < *išʾamma)
 3-√šʾm.PFTV-3.SG-CONJ
+i-šamm-ā  (išammā < *išaʾʾamā)
+3-√šʾm.IMPFV-3.F.PL
+i-šâm-∅-ma  (išâmma < *išaʾʾamma)
+3-√šʾm.IMPFV-3.SG-CONJ
 l. 3104' ~utârma
 u-tār-∅-ma  (utārma < *utawwarma)
 1|3.SG-√twr.IMPFV.D-1|3.SG-CONJ
@@ -1981,12 +1981,12 @@ i-leqqe-∅  (ileqqe < *ilaqqaḥ)
 3-√lqḥ.IMPFV-3.SG
 Law 279
 l. 3109' ~išāmma
-i-šâm-∅-ma  (išâmma < *išaʾʾamma)
-3-√šʾm.IMPFV-3.SG-CONJ
-i-šamm-ā  (išammā < *išaʾʾamā)
-3-√šʾm.IMPFV-3.F.PL
 i-šam-∅-ma  (išamma < *išʾamma)
 3-√šʾm.PFTV-3.SG-CONJ
+i-šamm-ā  (išammā < *išaʾʾamā)
+3-√šʾm.IMPFV-3.F.PL
+i-šâm-∅-ma  (išâmma < *išaʾʾamma)
+3-√šʾm.IMPFV-3.SG-CONJ
 l. 3112' ippal
 i-ppal-∅  (ippal < *iʾappal)
 3-√ʾpl.IMPFV-3.SG

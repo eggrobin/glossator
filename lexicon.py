@@ -43,7 +43,7 @@ verbs = (
 )
 
 forms_to_glosses : defaultdict[str, dict[str, KamilDecomposition]] = defaultdict(dict)
-shortened_forms_to_forms : dict[str, set[str]] = defaultdict(set)
+shortened_forms_to_forms : dict[str, list[str]] = defaultdict(list)
 
 unloaded_prefixes : defaultdict[str, list] = defaultdict(list)
 
@@ -99,7 +99,10 @@ def load_suffixed_forms(verb, stem, p, g, n, *args):
                                   conj=conj, vent=vent, subj=subj, acc=acc)
           form = gloss.text()
           if form not in forms_to_glosses:
-            shortened_forms_to_forms[shorten_vowels(form)].add(form)
+            forms = shortened_forms_to_forms[shorten_vowels(form)]
+            if form not in forms:
+              forms.append(form)
+              forms.sort()
           forms_to_glosses[form][str(gloss)] = gloss
 
 def load_candidates(word):
@@ -116,4 +119,7 @@ if False:
     print(prefix, ','.join(v[0].root+'.'+'.'.join(str(x) for x in v[1:]) for v in verbs))
 
 for form in forms_to_glosses:
-  shortened_forms_to_forms[shorten_vowels(form)].add(form)
+  forms = shortened_forms_to_forms[shorten_vowels(form)]
+  if form not in forms:
+    forms.append(form)
+    forms.sort()
