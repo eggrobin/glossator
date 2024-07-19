@@ -180,6 +180,7 @@ class KamilDecomposition:
         if next_2 not in CONSONANTS:
           raise ValueError("%s should be a consonant %s" % (next_2, self))
         if next_3.startswith(VOWELS):
+          # V₁ʾʾV₂CV₃ > VCCV₃.
           if ('D' not in self.morphemes[i].functions and
               self.morphemes[j].text.endswith('a')):
             # awwV₂CV₃ becomes uCCV₃ and
@@ -193,17 +194,19 @@ class KamilDecomposition:
           self.morphemes[i].text = ''
           self.morphemes[j].text = self.morphemes[j].text[:-1]
           self.morphemes[l].text *= 2
+        # We are in a word-final V₁ʾʾV₂C₁ or V₁ʾʾV₂C₁C₂… case,
+        # so C₁ cannot be doubled.
         elif 'D' in self.morphemes[i].functions:
           # V₁ʾʾV₂C becomes V̄₂C if the gemination comes from the D-stem.
           self.morphemes[j].text = self.morphemes[j].text[:-1]
           self.morphemes[i].text = ''
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
         elif self.morphemes[i].text[0] == 'w' and  self.morphemes[j].text.endswith('a'):
-          # aww > ū.
+          # awwV₂C > ūV₂C (leading to contraction).
           self.morphemes[j].text = self.morphemes[j].text[:-1]
           self.morphemes[i].text = 'ū'
         elif self.morphemes[i].text[0] == 'y' and  self.morphemes[j].text.endswith('a'):
-          # ayy > ī.
+          # ayyV₂C > īV₂C.
           self.morphemes[j].text = self.morphemes[j].text[:-1]
           self.morphemes[i].text = 'ī'
         else:
