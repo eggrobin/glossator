@@ -238,6 +238,11 @@ i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 20
 Law 21
+l. 573 ~idukkūšuma
+i-dukk-∅-ū-šū-ma  (idukkūšūma < *idawwakušuma)
+3-√dwk.IMPFV-3.SG-SUBJ-ACC.3.M.SG-CONJ
+i-dukk-ū-šū-ma  (idukkūšūma < *idawwakūšuma)
+3-√dwk.IMPFV-3.M.PL-ACC.3.M.SG-CONJ
 Law 22
 l. 578 ittaṣbat
 i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
@@ -846,6 +851,9 @@ Law 116
 l. 1315' ~ukânma
 u-kām-∅-ma  (ukāmma < *ukawwanma)
 1|3.SG-√kwn.IMPFV.D-1|3.SG-CONJ
+l. 1317' idukkū
+i-dukk-ū  (idukkū < *idawwakū)
+3-√dwk.IMPFV-3.M.PL
 l. 1320' išaqqal
 i-šaqqal-∅  (išaqqal)
 3-√šql.IMPFV-3.SG
@@ -1623,6 +1631,9 @@ l. 2585' išaqqal
 i-šaqqal-∅  (išaqqal)
 3-√šql.IMPFV-3.SG
 Law 210
+l. 2589' idukkū
+i-dukk-ū  (idukkū < *idawwakū)
+3-√dwk.IMPFV-3.M.PL
 Law 211
 l. 2595' išaqqal
 i-šaqqal-∅  (išaqqal)
@@ -1706,6 +1717,11 @@ l. 2692' inakkisū
 i-nakkis-ū  (inakkisū)
 3-√nks.IMPFV-3.M.PL
 Law 227
+l. 2699' ~idukkūšuma
+i-dukk-∅-ū-šū-ma  (idukkūšūma < *idawwakušuma)
+3-√dwk.IMPFV-3.SG-SUBJ-ACC.3.M.SG-CONJ
+i-dukk-ū-šū-ma  (idukkūšūma < *idawwakūšuma)
+3-√dwk.IMPFV-3.M.PL-ACC.3.M.SG-CONJ
 Law 228
 l. 2708' īpušma
 ī-puš-∅-ma  (īpušma < *iḥpušma)
@@ -1724,6 +1740,9 @@ l. 2722' iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 230
+l. 2726' idukkū
+i-dukk-ū  (idukkū < *idawwakū)
+3-√dwk.IMPFV-3.M.PL
 Law 231
 l. 2731' inaddin
 i-naddin-∅  (inaddin)
