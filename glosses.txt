@@ -1717,6 +1717,9 @@ l. 2716' īpušma
 l. 2719' īpušu
 ī-puš-∅-u  (īpušu < *iḥpušu)
 3-√ḥpš.PFTV-3.SG-SUBJ
+l. 2720' imqutma
+i-mqut-∅-ma  (imqutma)
+3-√mqt.PFTV-3.SG-CONJ
 l. 2722' iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
@@ -1729,6 +1732,12 @@ Law 232
 l. 2737' īpušu
 ī-puš-∅-u  (īpušu < *iḥpušu)
 3-√ḥpš.PFTV-3.SG-SUBJ
+l. 2739' imqutu
+i-mqut-∅-u  (imqutu)
+3-√mqt.PFTV-3.SG-SUBJ
+l. 2742' imqutu
+i-mqut-∅-u  (imqutu)
+3-√mqt.PFTV-3.SG-SUBJ
 l. 2742' ippeš
 i-ppeš-∅  (ippeš < *iḥappaš)
 3-√ḥpš.IMPFV-3.SG
@@ -1994,6 +2003,9 @@ i-šamm-ā  (išammā < *išaʾʾamā)
 3-√šʾm.IMPFV-3.F.PL
 i-šâm-∅-ma  (išâmma < *išaʾʾamma)
 3-√šʾm.IMPFV-3.SG-CONJ
+l. 3103' imtaqut
+i-mtaqut-∅  (imtaqut)
+3-√mqt.t.PFTV-3.SG
 l. 3104' ~utârma
 u-tār-∅-ma  (utārma < *utawwarma)
 1|3.SG-√twr.IMPFV.D-1|3.SG-CONJ

@@ -23,6 +23,7 @@ verbs = (
   Verb("mdd", "a", "u"),
   Verb("mḫṣ", "a", "a"),
   Verb("mḫr", "a", "u"),
+  Verb("mqt", "u", "u"),
   Verb("ndn", "i", "i"),
   Verb("ndʾ", "i", "i"),
   Verb("nks", "i", "i"),
