@@ -186,12 +186,12 @@ niwattir niwtatir niwtir
 12b
 ikân    iktūn   ikūn  
 takân   taktūn  takūn 
-takannī taktūnī takūnī
+takunnī taktūnī takūnī
 akân    aktūn   akūn  
                       
-ikannū  iktūnū  ikūnū 
-ikannā  iktūnā  ikūnā 
-takannā taktūnā takūnā
+ikunnū  iktūnū  ikūnū 
+ikunnā  iktūnā  ikūnā 
+takunnā taktūnā takūnā
 nikân   niktūn  nikūn 
 ---
 iqīaš   iqtīš   iqīš  
