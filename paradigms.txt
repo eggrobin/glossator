@@ -1,0 +1,276 @@
+7b
+iparras   iptaras  iprus  
+taparras  taptaras taprus 
+taparrasī taptarsī taprusī
+aparras   aptaras  aprus  
+                          
+iparrasū  iptarsū  iprusū 
+iparrasā  iptarsā  iprusā 
+taparrasā taptarsā taprusā
+niparras  niptaras niprus 
+---
+iṣabbat   iṣṣabat  iṣbat  
+taṣabbat  taṣṣabat taṣbat 
+taṣabbatī taṣṣabtī taṣbatī
+aṣabbat   aṣṣabat  aṣbat  
+                          
+iṣabbatū  iṣṣabtū  iṣbatū 
+iṣabbatā  iṣṣabtā  iṣbatā 
+taṣabbatā taṣṣabtā taṣbatā
+niṣabbat  niṣṣabat niṣbat 
+---
+išarriq   ištariq  išriq  
+tašarriq  taštariq tašriq 
+tašarriqī taštarqī tašriqī
+ašarriq   aštariq  ašriq  
+                          
+išarriqū  ištarqū  išriqū 
+išarriqā  ištarqā  išriqā 
+tašarriqā taštarqā tašriqā
+nišarriq  ništariq nišriq 
+---
+imaqqut   imtaqut  imqut  
+tamaqqut  tamtaqut tamqut 
+tamaqqutī tamtaqtī tamqutī
+amaqqut   amtaqut  amqut  
+                          
+imaqqutū  imtaqtū  imqutū 
+imaqqutā  imtaqtā  imqutā 
+tamaqqutā tamtaqtā tamqutā
+nimaqqut  nimtaqut nimqut 
+---
+ipparras   ittapras   ipparis 
+tapparras  tattapras  tapparis
+tapparrasī tattaprasī tapparsī
+apparras   attapras   apparis 
+                              
+ipparrasū  ittaprasū  ipparsū 
+ipparrasā  ittaprasā  ipparsā 
+tapparrasā tattaprasā tapparsā
+nipparras  nittapras  nipparis
+---
+uparras   uptarris   uparris  
+tuparras  tuptarris  tuparris 
+tuparrasī tuptarrisī tuparrisī
+uparras   uptarris   uparris  
+                              
+uparrasū  uptarrisū  uparrisū 
+uparrasā  uptarrisā  uparrisā 
+tuparrasā tuptarrisā tuparrisā
+nuparras  nuptarris  nuparris 
+---
+8b
+immar   ītamar  īmur  
+tammar  tātamar tāmur 
+tammarī tātamrī tāmurī
+ammar   ātamar  āmur  
+                      
+immarū  ītamrū  īmurū 
+immarā  ītamrā  īmurā 
+tammarā tātamrā tāmurā
+nimmar  nītamar nīmur 
+---
+irrik   ītarik  īrik  
+tarrik  tātarik tārik 
+tarrikī tātarkī tārikī
+arrik   ātarik  ārik  
+                      
+irrikū  ītarkū  īrikū 
+irrikā  ītarkā  īrikā 
+tarrikā tātarkā tārikā
+nirrik  nītarik nīrik 
+---
+ikkuš   ītakuš  īkuš  
+takkuš  tātakuš tākuš 
+takkušī tātakšī tākušī
+akkuš   ātakuš  ākuš  
+                      
+ikkušū  ītakšū  īkušū 
+ikkušā  ītakšā  īkušā 
+takkušā tātakšā tākušā
+nikkuš  nītakuš nīkuš 
+---
+illak   ītalak  īlik  
+tallak  tātalak tālik 
+tallakī tātalkī tālikī
+allak   ātalak  ālik  
+                      
+illakū  ītalkū  īlikū 
+illakā  ītalkā  īlikā 
+tallakā tātalkā tālikā
+nillak  nītalak nīlik 
+---
+9b
+ippeš   ītepeš  īpuš  
+teppeš  tētepeš tēpuš 
+teppešī tētepšī tēpušī
+eppeš   ētepeš  ēpuš  
+                      
+ippešū  ītepšū  īpušū 
+ippešā  ītepšā  īpušā 
+teppešā tētepšā tēpušā
+nippeš  nītepeš nīpuš 
+---
+izzib   ītezib  īzib  
+tezzib  tētezib tēzib 
+tezzibī tētezbī tēzibī
+ezzib   ētezib  ēzib  
+                      
+izzibū  ītezbū  īzibū 
+izzibā  ītezbā  īzibā 
+tezzibā tētezbā tēzibā
+nizzib  nītezib nīzib 
+---
+irrub   īterub  īrub  
+terrub  tēterub tērub 
+terrubī tēterbī tērubī
+errub   ēterub  ērub  
+                      
+irrubū  īterbū  īrubū 
+irrubā  īterbā  īrubā 
+terrubā tēterbā tērubā
+nirrub  nīterub nīrub 
+---
+10b
+inaqqar   ittaqar  iqqur  
+tanaqqar  tattaqar taqqur 
+tanaqqarī tattaqrī taqqurī
+anaqqar   attaqar  aqqur  
+                          
+inaqqarū  ittaqrū  iqqurū 
+inaqqarā  ittaqrā  iqqurā 
+tanaqqarā tattaqrā taqqurā
+ninaqqar  nittaqar niqqur 
+---
+inakkis   ittakis  ikkis  
+tanakkis  tattakis takkis 
+tanakkisī tattaksī takkisī
+anakkis   attakis  akkis  
+                          
+inakkisū  ittaksū  ikkisū 
+inakkisā  ittaksā  ikkisā 
+tanakkisā tattaksā takkisā
+ninakkis  nittakis nikkis 
+---
+inassuk   ittasuk  issuk  
+tanassuk  tattasuk tassuk 
+tanassukī tattaskī tassukī
+anassuk   attasuk  assuk  
+                          
+inassukū  ittaskū  issukū 
+inassukā  ittaskā  issukā 
+tanassukā tattaskā tassukā
+ninassuk  nittasuk nissuk 
+---
+11b
+iwarrad  iwtarad  iwrid  
+tūrrad   tawtarad tawrid 
+tūrradī  tawtardī tawridī
+ūrrad    awtarad  awrid  
+                         
+iwarradū iwtardū  iwridū 
+iwarradā iwtardā  iwridā 
+tūrradā  tawtardā tawridā
+niwarrad niwtarad niwrid 
+---
+iwattir  iwtatir  iwtir  
+tūttir   tawtatir tawtir 
+tūttirī  tawtatrī tawtirī
+ūttir    awtatir  awtir  
+                         
+iwattirū iwtatrū  iwtirū 
+iwattirā iwtatrā  iwtirā 
+tūttirā  tawtatrā tawtirā
+niwattir niwtatir niwtir 
+---
+12b
+ikân    iktūn   ikūn  
+takân   taktūn  takūn 
+takannī taktūnī takūnī
+akân    aktūn   akūn  
+                      
+ikannū  iktūnū  ikūnū 
+ikannā  iktūnā  ikūnā 
+takannā taktūnā takūnā
+nikân   niktūn  nikūn 
+---
+iqīaš   iqtīš   iqīš  
+taqīaš  taqtīš  taqīš 
+taqaššī taqtīšī taqīšī
+aqīaš   aqtīš   aqīš  
+                      
+iqaššū  iqtīšū  iqīšū 
+iqaššā  iqtīšā  iqīšā 
+taqaššā taqtīšā taqīšā
+niqīaš  niqtīš  niqīš 
+---
+išâl    ištâl   išal 
+tašâl   taštâl  tašal
+tašallī taštâlī tašlī
+ašâl    aštâl   ašal 
+                     
+išallū  ištâlū  išlū 
+išallā  ištâlā  išlā 
+tašallā taštâlā tašlā
+nišâl   ništâl  nišal
+---
+inêr    ittêr   iner 
+tanêr   tattêr  taner
+tanerrī tattêrī tanrī
+anêr    attêr   aner 
+                     
+inerrū  ittêrū  inrū 
+inerrā  ittêrā  inrā 
+tanerrā tattêrā tanrā
+ninêr   nittêr  niner
+---
+ukān    uktīn    ukīn   
+tukān   tuktīn   tukīn  
+tukannī tuktinnī tukinnī
+ukān    uktīn    ukīn   
+                        
+ukannū  uktinnū  ukinnū 
+ukannā  uktinnā  ukinnā 
+tukannā tuktinnā tukinnā
+nukān   nuktīn   nukīn  
+13b
+ibanni   ibtani   ibni  
+tabanni  tabtani  tabni 
+tabannî  tabtanî  tabnî 
+abanni   abtani   abni  
+                        
+ibannû   ibtanû   ibnû  
+ibanniā  ibtaniā  ibniā 
+tabanniā tabtaniā tabniā
+nibanni  nibtani  nibni 
+---
+iḫaddu  iḫtadu  iḫdu 
+taḫaddu taḫtadu taḫdu
+taḫaddî taḫtadî taḫdî
+aḫaddu  aḫtadu  aḫdu 
+                     
+iḫaddû  iḫtadû  iḫdû 
+iḫaddâ  iḫtadâ  iḫdâ 
+taḫaddâ taḫtadâ taḫdâ
+niḫaddu niḫtadu niḫdu
+---
+imalla  imtala  imla 
+tamalla tamtala tamla
+tamallî tamtalî tamlî
+amalla  amtala  amla 
+                     
+imallû  imtalû  imlû 
+imallâ  imtalâ  imlâ 
+tamallâ tamtalâ tamlâ
+nimalla nimtala nimla
+---
+ileqqe   ilteqe   ilqe  
+teleqqe  telteqe  telqe 
+teleqqî  telteqî  telqî 
+eleqqe   elteqe   elqe  
+                        
+ileqqû   ilteqû   ilqû  
+ileqqeā  ilteqeā  ilqeā 
+teleqqeā telteqeā telqeā
+nileqqe  nilteqe  nilqe 
+---
