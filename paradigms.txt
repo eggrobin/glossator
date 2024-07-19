@@ -196,12 +196,12 @@ nikân   niktūn  nikūn
 ---
 iqīaš   iqtīš   iqīš  
 taqīaš  taqtīš  taqīš 
-taqaššī taqtīšī taqīšī
+taqiššī taqtīšī taqīšī
 aqīaš   aqtīš   aqīš  
                       
-iqaššū  iqtīšū  iqīšū 
-iqaššā  iqtīšā  iqīšā 
-taqaššā taqtīšā taqīšā
+iqiššū  iqtīšū  iqīšū 
+iqiššā  iqtīšā  iqīšā 
+taqiššā taqtīšā taqīšā
 niqīaš  niqtīš  niqīš 
 ---
 išâl    ištâl   išal 

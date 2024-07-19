@@ -180,11 +180,15 @@ class KamilDecomposition:
         if next_2 not in CONSONANTS:
           raise ValueError("%s should be a consonant %s" % (next_2, self))
         if next_3.startswith(VOWELS):
-          if (self.morphemes[i].text[0] == 'w' and
-              self.morphemes[j].text.endswith('a') and
-              'D' not in self.morphemes[i].functions):
-            # awwV₂CV₃ becomes uCCV₃ unless the gemination comes from the D-stem.
-            self.morphemes[k].text = 'u'
+          if ('D' not in self.morphemes[i].functions and
+              self.morphemes[j].text.endswith('a')):
+            # awwV₂CV₃ becomes uCCV₃ and
+            # ayyV₂CV₃ becomes iCCV₃,
+            # unless the gemination comes from the D-stem.
+            if self.morphemes[i].text[0] == 'w':
+              self.morphemes[k].text = 'u'
+            elif self.morphemes[i].text[0] == 'y':
+              self.morphemes[k].text = 'i'
           # Otherwise V₁ʾʾV₂CV₃ becomes V₂CCV₃.
           self.morphemes[i].text = ''
           self.morphemes[j].text = self.morphemes[j].text[:-1]
