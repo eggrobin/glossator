@@ -214,38 +214,38 @@ class KamilDecomposition:
           # contraction do its thing to get išâm.
           self.morphemes[i].text = ''
 
-      elif self.morphemes[i].text in ('y', 'w'):
-        if (previous_text.endswith(CONSONANTS) and
-            ((self.morphemes[i].text == 'w' and next_text == 'u') or
-             (self.morphemes[i].text == 'y' and next_text == 'i'))):
-          # Cwu > Cū, Cyi > Cī.
+      elif self.morphemes[i].text in WEAK_CONSONANTS:
+        if previous_text.endswith(CONSONANTS):
+          # CʾV > CʾV̄.
           self.morphemes[i].text = ''
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
-        elif previous_text.endswith('a') and next_text.startswith('a'):
-          # awa > ū, aya > ī.
-          self.morphemes[j].text = self.morphemes[j].text[:-1]
-          self.morphemes[i].text = 'ū' if self.morphemes[i].text == 'w' else 'ī'
-          self.morphemes[k].text = self.morphemes[k].text[1:]
 
-      elif self.morphemes[i].text in ('ʾ', 'ḥ'):
-        if not next_text or not previous_text:
-          self.morphemes[i].text = ''
-        elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
-              shorten_vowels(next_text).startswith(CONSONANTS)):
-          # VʾC > V̄C.
-          if previous_text.endswith(SHORT_VOWELS):
-            self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
-          self.morphemes[i].text = ''
-        elif (previous_text.endswith(VOWELS) and
-              next_text == 'a' and
-              next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
-          # VʾaCC > VCC for I-weak PCL.
-          while l > i:
-            l -= 1
-            self.morphemes[l].text = ''
-          continue
-        else:
-          self.morphemes[i].text = ''
+        if self.morphemes[i].text in ('y', 'w'):
+          if previous_text.endswith('a') and next_text.startswith('a'):
+            # awa > ū, aya > ī.
+            self.morphemes[j].text = self.morphemes[j].text[:-1]
+            self.morphemes[i].text = 'ū' if self.morphemes[i].text == 'w' else 'ī'
+            self.morphemes[k].text = self.morphemes[k].text[1:]
+
+        elif self.morphemes[i].text in ('ʾ', 'ḥ'):
+          if not next_text or not previous_text:
+            self.morphemes[i].text = ''
+          elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
+                shorten_vowels(next_text).startswith(CONSONANTS)):
+            # VʾC > V̄C.
+            if previous_text.endswith(SHORT_VOWELS):
+              self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
+            self.morphemes[i].text = ''
+          elif (previous_text.endswith(VOWELS) and
+                next_text == 'a' and
+                next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
+            # VʾaCC > VCC for I-weak PCL.
+            while l > i:
+              l -= 1
+              self.morphemes[l].text = ''
+            continue
+          else:
+            self.morphemes[i].text = ''
       i += 1
 
   def harmonize(self):

@@ -204,25 +204,25 @@ iqiššā  iqtīšā  iqīšā
 taqiššā taqtīšā taqīšā
 niqīaš  niqtīš  niqīš 
 ---
-išâl    ištâl   išal 
-tašâl   taštâl  tašal
-tašallī taštâlī tašlī
-ašâl    aštâl   ašal 
-                     
-išallū  ištâlū  išlū 
-išallā  ištâlā  išlā 
-tašallā taštâlā tašlā
-nišâl   ništâl  nišal
+išâl    ištâl   išāl  
+tašâl   taštâl  tašāl 
+tašallī taštâlī tašālī
+ašâl    aštâl   ašāl  
+                      
+išallū  ištâlū  išālū 
+išallā  ištâlā  išālā 
+tašallā taštâlā tašālā
+nišâl   ništâl  nišāl 
 ---
-inêr    ittêr   iner 
-tanêr   tattêr  taner
-tanerrī tattêrī tanrī
-anêr    attêr   aner 
-                     
-inerrū  ittêrū  inrū 
-inerrā  ittêrā  inrā 
-tanerrā tattêrā tanrā
-ninêr   nittêr  niner
+inêr    ittêr   inēr  
+tanêr   tattêr  tanēr 
+tanerrī tattêrī tanērī
+anêr    attêr   anēr  
+                      
+inerrū  ittêrū  inērū 
+inerrā  ittêrā  inērā 
+tanerrā tattêrā tanērā
+ninêr   nittêr  ninēr 
 ---
 ukān    uktīn    ukīn   
 tukān   tuktīn   tukīn  
