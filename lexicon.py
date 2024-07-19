@@ -9,9 +9,11 @@ verbs = (
   Verb("ʾḫz", "a", "u"),
   Verb("ʾlk", "a", "i"),  # TODO(egg): Needs special-casing.
   Verb("ʾmr", "a", "u"),
+  Verb("ʾpl", "a", "u"),
   Verb("bnʾ", "i", "i"),
   Verb("bšʾ", "i", "i"),
   Verb("dwk", "a", "u"),
+  Verb("dyn", "a", "i"),
   Verb("ḥpš", "a", "u"),
   Verb("ḥbb", "i", "i"),
   Verb("kwn", "a", "u"),
@@ -23,16 +25,21 @@ verbs = (
   Verb("mḫr", "a", "u"),
   Verb("ndn", "i", "i"),
   Verb("ndʾ", "i", "i"),
+  Verb("nks", "i", "i"),
   Verb("prs", "a", "u"),
+  Verb("pṭr", "a", "u"),
   Verb("qbʾ", "i", "i"),
   Verb("qyš", "a", "i"),
   Verb("ṣbt", "a", "a"),
+  Verb("škn", "a", "u"),
   Verb("šʾm", "a", "a"),
   Verb("šlʾ", "i", "i"),
   Verb("šlm", "i", "i"),
   Verb("šql", "a", "u"),
   Verb("tbl", "a", "a"),
+  Verb("twr", "a", "u"),
   Verb("wbl", "a", "u"),
+  Verb("wṣʾ", "i", "i"),
 )
 
 forms_to_glosses : defaultdict[str, dict[str, KamilDecomposition]] = defaultdict(dict)
