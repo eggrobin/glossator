@@ -27,6 +27,7 @@ verbs = (
   Verb("ndn", "i", "i"),
   Verb("ndʾ", "i", "i"),
   Verb("nks", "i", "i"),
+  Verb("nšʾ", "i", "i"),
   Verb("prs", "a", "u"),
   Verb("pṭr", "a", "u"),
   Verb("qbʾ", "i", "i"),

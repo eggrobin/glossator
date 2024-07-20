@@ -15,6 +15,10 @@ verbs_by_law: defaultdict[int, list[tuple[int, str, list[grammar.KamilDecomposit
 law = None
 line_number = None
 
+NONVERBS = frozenset(
+  ("īnšu",)
+)
+
 for atf_line in atf_lines:
   if atf_line == "@epilogue":
     break
@@ -50,16 +54,17 @@ for atf_line in atf_lines:
   for word in words:
     if word:
       normalized_word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
-      lexicon.load_candidates(normalized_word)
       word_counts[word] += 1
-      possible_glosses = []
-      if normalized_word in lexicon.forms_to_glosses:
-        possible_glosses = list(lexicon.forms_to_glosses[normalized_word].values())
-      elif grammar.shorten_vowels(normalized_word) in lexicon.shortened_forms_to_forms:
-        for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(normalized_word)]:
-          possible_glosses += list(lexicon.forms_to_glosses[form].values())
-      if possible_glosses:
-        verbs_by_law[law].append((line_number, word, possible_glosses))
+      if word not in NONVERBS:
+        lexicon.load_candidates(normalized_word)
+        possible_glosses = []
+        if normalized_word in lexicon.forms_to_glosses:
+          possible_glosses = list(lexicon.forms_to_glosses[normalized_word].values())
+        elif grammar.shorten_vowels(normalized_word) in lexicon.shortened_forms_to_forms:
+          for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(normalized_word)]:
+            possible_glosses += list(lexicon.forms_to_glosses[form].values())
+        if possible_glosses:
+          verbs_by_law[law].append((line_number, word, possible_glosses))
 
 glossed_verbs = 0
 ambiguous_verbs = 0
