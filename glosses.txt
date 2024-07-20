@@ -50,6 +50,9 @@ l. 334 itabbal
 i-tabbal-∅  (itabbal)
 3-√tbl.IMPFV-3.SG
 Law 3
+l. 339 ūṣiamma
+ū-ṣi-∅-am-ma  (ūṣiamma < *uwṣiʾamma)
+1|3.SG-√wṣʾ.PFTV-1|3.SG-VENT-CONJ
 l. 340 iqbû
 i-qbû  (iqbû < *iqbiʾū)
 3-√qbʾ.PFTV.3.M.PL
@@ -62,6 +65,9 @@ l. 345 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 4
+l. 348 ūṣiam
+ū-ṣi-∅-am  (ūṣiam < *uwṣiʾam)
+1|3.SG-√wṣʾ.PFTV-1|3.SG-VENT
 Law 5
 l. 353 idīn
 i-dīn-∅  (idīn < *idyin)
@@ -1328,7 +1334,7 @@ i-tbal-∅-am  (itbalam)
 3-√tbl.PFTV-3.SG-VENT
 l. 2031' ubbalū
 u-bbal-ū  (ubbalū < *uwabbalū)
-3.PL-√wbl.IMPFV.D-3.M.PL
+3.PL-√wbl.IMPFV-3.M.PL
 l. 2033' itbalam
 i-tbal-∅-am  (itbalam)
 3-√tbl.PFTV-3.SG-VENT
@@ -1363,7 +1369,7 @@ i-parras-∅-ū-ma  (iparrasūma < *iparrasuma)
 3-√prs.IMPFV-3.SG-SUBJ-CONJ
 l. 2113' uṣṣi
 u-ṣṣi-∅  (uṣṣi < *uwaṣṣiʾ)
-1|3.SG-√wṣʾ.PFTV.D-1|3.SG
+1|3.SG-√wṣʾ.IMPFV-1|3.SG
 l. 2117' ištakan
 i-štakan-∅  (ištakan)
 3-√škn.t.PFTV-3.SG

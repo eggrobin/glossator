@@ -116,6 +116,7 @@ class KamilDecomposition:
     self.root = root
     self.reconstructed = list(Morpheme(m.text, m.functions) for m in morphemes if m)
     self.morphemes = list(Morpheme(m.text, m.functions) for m in morphemes if m)
+    self.functions = set(f for m in self.morphemes for f in m.functions)
     self.apply_global_a_colouring()
     self.lose_consonants()
     self.contract_vowels()
@@ -239,8 +240,9 @@ class KamilDecomposition:
 
         if (previous_text.endswith(VOWELS) and
             next_text in ('a', 'e') and
-            next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
-          # VʾaCC > VCC for I-weak PCL, H p. 106.
+            next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0] and
+            (self.morphemes[i].text != 'w' or 'D' not in self.functions)):
+          # VʾaCC > VCC for I-weak G PCL, H p. 106.
           # The a might have turned into an e depending on the ʾ.
           while l > i:
             l -= 1
@@ -258,7 +260,7 @@ class KamilDecomposition:
           if previous_text.endswith(SHORT_VOWELS):
             self.morphemes[j].text = nfc(previous_text + MACRON)
           self.morphemes[i].text = ''
-        elif previous_text or self.morphemes[i].text != 'w':
+        elif self.morphemes[i].text != 'w':
           # H p. 38. (a).
           self.morphemes[i].text = ''
       i += 1
@@ -386,15 +388,16 @@ class Verb:
       vent = True
     if vent:
       subj = False
+    d_prefix = stem == Stem.D or (self.root.startswith('w') and
+                                  (self.durative_vowel == 'a' or
+                                   self.root.endswith(WEAK_CONSONANTS)))
     return KamilDecomposition(
       self.root,
-       (personal_prefix_d(*p)
-        if stem == Stem.D or (self.root.startswith('w') and
-                              self.durative_vowel == 'a') else
-        personal_prefix(*p),
+       (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
         Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-        Morpheme('y' if self.root[0] == 'w' and self.durative_vowel != 'a' else self.root[0], ['R₁']),
+        Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
+                 self.root[0], ['R₁']),
         (Morpheme('ta', ['t']) if t and stem != Stem.N else
         Morpheme('a', ['IMPFV'])),
         Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
@@ -403,7 +406,7 @@ class Verb:
                 self.durative_vowel,
                 ['IMPFV']),
         Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p, gloss_for_d=stem == Stem.D),
+        personal_suffix(*p, gloss_for_d=d_prefix),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
         acc_pronominal_suffix(*acc) if acc else None,
@@ -420,15 +423,16 @@ class Verb:
       vent = True
     if vent:
       subj = False
+    d_prefix = stem == Stem.D or (self.root.startswith('w') and
+                                  (self.durative_vowel == 'a' or
+                                   self.root.endswith(WEAK_CONSONANTS)))
     return KamilDecomposition(
       self.root,
-       (personal_prefix_d(*p)
-        if stem == Stem.D or (self.root.startswith('w') and
-                              self.durative_vowel == 'a') else
-        personal_prefix(*p),
+       (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
         Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-        Morpheme('y' if  self.root[0] == 'w' and self.durative_vowel != 'a' else self.root[0], ['R₁']),
+        Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
+                 self.root[0], ['R₁']),
         (Morpheme('ta', ['t']) if t and stem != Stem.N else
         Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None),
         Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
@@ -438,7 +442,7 @@ class Verb:
                 self.perfective_vowel,
                 ['PFTV']),
         Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p, gloss_for_d=stem == Stem.D),
+        personal_suffix(*p, gloss_for_d=d_prefix),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
         acc_pronominal_suffix(*acc) if acc else None,
