@@ -220,12 +220,20 @@ class KamilDecomposition:
           self.morphemes[i].text = ''
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
 
-        if self.morphemes[i].text in ('y', 'w'):
-          if previous_text.endswith('a') and next_text.startswith('a'):
-            # awa > ū, aya > ī.
-            self.morphemes[j].text = self.morphemes[j].text[:-1]
-            self.morphemes[i].text = 'ū' if self.morphemes[i].text == 'w' else 'ī'
-            self.morphemes[k].text = self.morphemes[k].text[1:]
+        if (previous_text.endswith(VOWELS) and
+            next_text == 'a' and
+            next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
+          # VʾaCC > VCC for I-weak PCL.
+          while l > i:
+            l -= 1
+            self.morphemes[l].text = ''
+        elif previous_text.endswith('a') and next_text.startswith('a'):
+          # awa > ū, aya > ī, aʾa > ā.
+          self.morphemes[j].text = self.morphemes[j].text[:-1]
+          self.morphemes[i].text = ('ū' if self.morphemes[i].text == 'w' else
+                                    'ī' if self.morphemes[i].text == 'y' else
+                                    'ā')
+          self.morphemes[k].text = self.morphemes[k].text[1:]
 
         elif self.morphemes[i].text in ('ʾ', 'ḥ'):
           if not next_text or not previous_text:
@@ -236,14 +244,6 @@ class KamilDecomposition:
             if previous_text.endswith(SHORT_VOWELS):
               self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
             self.morphemes[i].text = ''
-          elif (previous_text.endswith(VOWELS) and
-                next_text == 'a' and
-                next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
-            # VʾaCC > VCC for I-weak PCL.
-            while l > i:
-              l -= 1
-              self.morphemes[l].text = ''
-            continue
           else:
             self.morphemes[i].text = ''
       i += 1

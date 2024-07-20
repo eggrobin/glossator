@@ -163,25 +163,25 @@ tanassukā tattaskā tassukā
 ninassuk  nittasuk nissuk 
 ---
 11b
-iwarrad  iwtarad  iwrid  
-tūrrad   tawtarad tawrid 
-tūrradī  tawtardī tawridī
-ūrrad    awtarad  awrid  
-                         
-iwarradū iwtardū  iwridū 
-iwarradā iwtardā  iwridā 
-tūrradā  tawtardā tawridā
-niwarrad niwtarad niwrid 
+irrad   iwtarad  iwrid  
+tarrad  tawtarad tawrid 
+tarradī tawtardī tawridī
+arrad   awtarad  awrid  
+                        
+irradū  iwtardū  iwridū 
+irradā  iwtardā  iwridā 
+tarradā tawtardā tawridā
+nirrad  niwtarad niwrid 
 ---
-iwattir  iwtatir  iwtir  
-tūttir   tawtatir tawtir 
-tūttirī  tawtatrī tawtirī
-ūttir    awtatir  awtir  
-                         
-iwattirū iwtatrū  iwtirū 
-iwattirā iwtatrā  iwtirā 
-tūttirā  tawtatrā tawtirā
-niwattir niwtatir niwtir 
+ittir   iwtatir  iwtir  
+tattir  tawtatir tawtir 
+tattirī tawtatrī tawtirī
+attir   awtatir  awtir  
+                        
+ittirū  iwtatrū  iwtirū 
+ittirā  iwtatrā  iwtirā 
+tattirā tawtatrā tawtirā
+nittir  niwtatir niwtir 
 ---
 12b
 ikân    iktūn   ikūn  
@@ -204,15 +204,15 @@ iqiššā  iqtīšā  iqīšā
 taqiššā taqtīšā taqīšā
 niqīaš  niqtīš  niqīš 
 ---
-išâl    ištâl   išāl  
-tašâl   taštâl  tašāl 
-tašallī taštâlī tašālī
-ašâl    aštâl   ašāl  
+išâl    ištāl   išāl  
+tašâl   taštāl  tašāl 
+tašallī taštālī tašālī
+ašâl    aštāl   ašāl  
                       
-išallū  ištâlū  išālū 
-išallā  ištâlā  išālā 
-tašallā taštâlā tašālā
-nišâl   ništâl  nišāl 
+išallū  ištālū  išālū 
+išallā  ištālā  išālā 
+tašallā taštālā tašālā
+nišâl   ništāl  nišāl 
 ---
 inêr    ittêr   inēr  
 tanêr   tattêr  tanēr 
