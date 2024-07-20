@@ -234,18 +234,15 @@ class KamilDecomposition:
                                     'ī' if self.morphemes[i].text == 'y' else
                                     'ā')
           self.morphemes[k].text = self.morphemes[k].text[1:]
-
-        elif self.morphemes[i].text in ('ʾ', 'ḥ'):
-          if not next_text or not previous_text:
-            self.morphemes[i].text = ''
-          elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
-                shorten_vowels(next_text).startswith(CONSONANTS)):
-            # VʾC > V̄C.
-            if previous_text.endswith(SHORT_VOWELS):
-              self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
-            self.morphemes[i].text = ''
-          else:
-            self.morphemes[i].text = ''
+        elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
+              shorten_vowels(next_text).startswith(CONSONANTS)):
+          # H p. 38. (b) VʾC > V̄C.
+          if previous_text.endswith(SHORT_VOWELS):
+            self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
+          self.morphemes[i].text = ''
+        elif previous_text or self.morphemes[i].text != 'w':
+          # H p. 38. (a).
+          self.morphemes[i].text = ''
       i += 1
 
   def harmonize(self):

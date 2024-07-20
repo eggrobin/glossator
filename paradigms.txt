@@ -163,25 +163,25 @@ tanassukā tattaskā tassukā
 ninassuk  nittasuk nissuk 
 ---
 11b
-irrad   iwtarad  iwrid  
-tarrad  tawtarad tawrid 
-tarradī tawtardī tawridī
-arrad   awtarad  awrid  
-                        
-irradū  iwtardū  iwridū 
-irradā  iwtardā  iwridā 
-tarradā tawtardā tawridā
-nirrad  niwtarad niwrid 
+irrad   ītarad  īrid  
+tarrad  tātarad tārid 
+tarradī tātardī tāridī
+arrad   ātarad  ārid  
+                      
+irradū  ītardū  īridū 
+irradā  ītardā  īridā 
+tarradā tātardā tāridā
+nirrad  nītarad nīrid 
 ---
-ittir   iwtatir  iwtir  
-tattir  tawtatir tawtir 
-tattirī tawtatrī tawtirī
-attir   awtatir  awtir  
-                        
-ittirū  iwtatrū  iwtirū 
-ittirā  iwtatrā  iwtirā 
-tattirā tawtatrā tawtirā
-nittir  niwtatir niwtir 
+ittir   ītatir  ītir  
+tattir  tātatir tātir 
+tattirī tātatrī tātirī
+attir   ātatir  ātir  
+                      
+ittirū  ītatrū  ītirū 
+ittirā  ītatrā  ītirā 
+tattirā tātatrā tātirā
+nittir  nītatir nītir 
 ---
 12b
 ikân    iktūn   ikūn  
