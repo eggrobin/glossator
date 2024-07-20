@@ -246,7 +246,7 @@ class KamilDecomposition:
       i += 1
 
   def harmonize(self):
-    if 'ḥ' in self.root:
+    if 'ḥ' in self.root or self.root[0] == 'w':
       for m in self.morphemes:
         if ((m.text == 'ā' and m.functions in ([3, Gender.F, Number.PL],
                                                [2, Number.PL])) or
