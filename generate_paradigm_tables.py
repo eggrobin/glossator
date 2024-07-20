@@ -51,8 +51,8 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
   print("9b", file=f)
   table=[]
   for verb in (Verb("ḥpš", "a", "u"),
-               Verb("ḥzb", "i", "i"),  # TODO(egg): really ʿ
-               Verb("ḥrb", "u", "u")): # ʿ too
+               Verb("ʿzb", "i", "i"),
+               Verb("ʿrb", "u", "u")):
     print_table(complete_conjugation(verb, Stem.G), f)
     print('---', file=f)
 
@@ -76,7 +76,7 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
   for verb in (Verb("kwn", "a", "u"),
                Verb("qyš", "a", "i"),
                Verb("šʾl", "a", "a"),
-               Verb("nʾr", "e", "e")):
+               Verb("nḥr", "a", "a")):
     print_table(complete_conjugation(verb, Stem.G), f)
     print('---', file=f)
   print_table(complete_conjugation(Verb("kwn", "a", "u"), Stem.D), f)

@@ -7,7 +7,7 @@ CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
 
 CONSONANTS = tuple('bdgḫyklmnpqrsṣštṭwz')
-WEAK_CONSONANTS = tuple('ʾwyḥ')
+WEAK_CONSONANTS = tuple('ʾhḥʿwy')
 VOWELS = tuple('aeuiāēūīâêûî')
 SHORT_VOWELS = ('a', 'e', 'u', 'i')
 def nfd(s: str) -> str:
@@ -116,8 +116,8 @@ class KamilDecomposition:
     self.root = root
     self.reconstructed = list(Morpheme(m.text, m.functions) for m in morphemes if m)
     self.morphemes = list(Morpheme(m.text, m.functions) for m in morphemes if m)
+    self.apply_global_a_colouring()
     self.lose_consonants()
-    self.harmonize()
     self.contract_vowels()
     self.lengthen_before_suffixes()
     self.assimilate_t()
@@ -161,6 +161,23 @@ class KamilDecomposition:
         break
       j -= 1
     return (j, previous_text)
+
+  def apply_global_a_colouring(self):
+    i = 0
+    while i < len(self.morphemes):
+      if (any(c in self.morphemes[i].text for c in 'ʿḥ') or
+          # K p. 528 2.
+          (self.morphemes[i].text == 'y' and
+           'R₁' in self.morphemes[i].functions)):
+        for m in self.morphemes:
+          if m and not (
+              (m.text == 'ā' and m.functions in ([3, Gender.F, Number.PL],
+                                                [2, Number.PL])) or
+              m.functions == ['CONJ'] or
+              any('ACC' in f for f in m.functions if isinstance(f, str)) or
+              m.functions == ['VENT']):
+            m.text = nfc(nfd(m.text).replace('a', 'e'))
+      i += 1
 
   def lose_consonants(self):
     i = 0
@@ -221,9 +238,10 @@ class KamilDecomposition:
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
 
         if (previous_text.endswith(VOWELS) and
-            next_text == 'a' and
+            next_text in ('a', 'e') and
             next_2.startswith(CONSONANTS) and next_2 == 2 * next_2[0]):
-          # VʾaCC > VCC for I-weak PCL.
+          # VʾaCC > VCC for I-weak PCL, H p. 106.
+          # The a might have turned into an e depending on the ʾ.
           while l > i:
             l -= 1
             self.morphemes[l].text = ''
@@ -238,23 +256,12 @@ class KamilDecomposition:
               shorten_vowels(next_text).startswith(CONSONANTS)):
           # H p. 38. (b) VʾC > V̄C.
           if previous_text.endswith(SHORT_VOWELS):
-            self.morphemes[j].text = nfc(previous_text[:-1] + previous_text[-1] + MACRON)
+            self.morphemes[j].text = nfc(previous_text + MACRON)
           self.morphemes[i].text = ''
         elif previous_text or self.morphemes[i].text != 'w':
           # H p. 38. (a).
           self.morphemes[i].text = ''
       i += 1
-
-  def harmonize(self):
-    if 'ḥ' in self.root or self.root[0] == 'w':
-      for m in self.morphemes:
-        if ((m.text == 'ā' and m.functions in ([3, Gender.F, Number.PL],
-                                               [2, Number.PL])) or
-            m.functions == ['CONJ'] or
-            any('ACC' in f for f in m.functions if isinstance(f, str)) or
-            m.functions == ['VENT']):
-          continue
-        m.text = nfc(nfd(m.text).replace('a', 'e'))
 
   def assimilate_n(self):
     i = 0
@@ -381,10 +388,13 @@ class Verb:
       subj = False
     return KamilDecomposition(
       self.root,
-      (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
+       (personal_prefix_d(*p)
+        if stem == Stem.D or (self.root.startswith('w') and
+                              self.durative_vowel == 'a') else
+        personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
         Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-        Morpheme(self.root[0], ['R₁']),
+        Morpheme('y' if self.root[0] == 'w' and self.durative_vowel != 'a' else self.root[0], ['R₁']),
         (Morpheme('ta', ['t']) if t and stem != Stem.N else
         Morpheme('a', ['IMPFV'])),
         Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
@@ -412,10 +422,13 @@ class Verb:
       subj = False
     return KamilDecomposition(
       self.root,
-      (personal_prefix_d(*p) if stem == Stem.D else personal_prefix(*p),
+       (personal_prefix_d(*p)
+        if stem == Stem.D or (self.root.startswith('w') and
+                              self.durative_vowel == 'a') else
+        personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
         Morpheme('ta', ['t']) if t and stem == Stem.N else None,
-        Morpheme(self.root[0], ['R₁']),
+        Morpheme('y' if  self.root[0] == 'w' and self.durative_vowel != 'a' else self.root[0], ['R₁']),
         (Morpheme('ta', ['t']) if t and stem != Stem.N else
         Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None),
         Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
