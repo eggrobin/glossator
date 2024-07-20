@@ -378,7 +378,7 @@ class Verb:
     self.perfective_vowel = perfective_vowel
   def durative(self,
                p: Person,
-               t: bool=False,
+               t: bool=None|Literal['t']|Literal['tan'],
                subj: bool = False,
                conj: bool = False,
                vent: bool = False,
@@ -395,11 +395,15 @@ class Verb:
       self.root,
        (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('ta', ['t']) if t and stem == Stem.N else None,
+        Morpheme('ta', ['t']) if t == 't' and stem == Stem.N else
+        Morpheme('tan', ['t']) if t == 'tan' and stem == Stem.N else
+        None,
         Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
                  self.root[0], ['R₁']),
-        (Morpheme('ta', ['t']) if t and stem != Stem.N else
-        Morpheme('a', ['IMPFV'])),
+        Morpheme('ta', ['t']) if t == 't' and stem != Stem.N else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem != Stem.N else
+        Morpheme('a', ['IMPFV']),
+        Morpheme('a', ['IMPFV'])  if t == 'tan' and stem != Stem.N else None,
         Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
         Morpheme('a' if stem == Stem.D or
                         (stem == Stem.N and self.durative_vowel != 'i') else
@@ -430,11 +434,14 @@ class Verb:
       self.root,
        (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('ta', ['t']) if t and stem == Stem.N else None,
+        Morpheme('ta', ['t']) if t == 't' and stem == Stem.N else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem == Stem.N else
+        None,
         Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
                  self.root[0], ['R₁']),
-        (Morpheme('ta', ['t']) if t and stem != Stem.N else
-        Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None),
+        Morpheme('ta', ['t']) if t == 't' and stem != Stem.N else
+        Morpheme('tan', ['t']) if t == 'tan' and stem != Stem.N else
+        Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None,
         Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
                 ['R₂', 'D'] if stem == Stem.D else ['R₂']),
         Morpheme('i' if stem == Stem.D or (stem == Stem.N and not t) else

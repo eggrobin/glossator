@@ -11,7 +11,7 @@ def complete_conjugation(verb: Verb, stem: Stem):
                       (Gender.F,)):
         row = []
         row.append(verb.durative((person, gender, number), stem=stem).text())
-        row.append(verb.perfective((person, gender, number), stem=stem, t=True).text())
+        row.append(verb.perfective((person, gender, number), stem=stem, t='t').text())
         row.append(verb.perfective((person, gender, number), stem=stem).text())
         table.append(row)
     if number == Number.SG:

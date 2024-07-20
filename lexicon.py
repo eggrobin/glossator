@@ -54,30 +54,38 @@ def add_forms(verb : Verb):
     for n in Number:
       for p in (1, 2, 3):
         for g in Gender:
-          gloss = verb.durative((p, g, n), t=False, stem=stem)
+          gloss = verb.durative((p, g, n), stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
           for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
             prefix = commonprefix(
               (prefix,
-               verb.durative((p, g, n), t=False, stem=stem, acc=acc).text()))
+               verb.durative((p, g, n), stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'impfv'))
-          gloss = verb.perfective((p, g, n), t=False, stem=stem)
+          gloss = verb.perfective((p, g, n), stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
           for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
             prefix = commonprefix(
               (prefix,
-               verb.perfective((p, g, n), t=False, stem=stem, acc=acc).text()))
+               verb.perfective((p, g, n), stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'pftv'))
-          gloss = verb.perfective((p, g, n), t=True, stem=stem)
+          gloss = verb.perfective((p, g, n), t='t', stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
           for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
             prefix = commonprefix(
               (prefix,
-               verb.perfective((p, g, n), t=True, stem=stem, acc=acc).text()))
+               verb.perfective((p, g, n), t='t', stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'pftv'))
+          gloss = verb.durative((p, g, n), t='tan', stem=stem)
+          forms_to_glosses[gloss.text()][str(gloss)] = gloss
+          prefix = gloss.text()
+          for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
+            prefix = commonprefix(
+              (prefix,
+               verb.durative((p, g, n), t='tan', stem=stem, acc=acc).text()))
+            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'pftv'))
 
 for verb in verbs:
   add_forms(verb)
@@ -94,10 +102,10 @@ def load_suffixed_forms(verb, stem, p, g, n, *args):
       for vent in (False, True):
         for subj in (False,) if vent else (False, True):
           if 'pftv' in args:
-            gloss = verb.perfective((p, g, n), t='t' in args, stem=stem,
+            gloss = verb.perfective((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
                                     conj=conj, vent=vent, subj=subj, acc=acc)
           else:
-            gloss = verb.durative((p, g, n), t='t' in args, stem=stem,
+            gloss = verb.durative((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
                                   conj=conj, vent=vent, subj=subj, acc=acc)
           form = gloss.text()
           if form not in forms_to_glosses:

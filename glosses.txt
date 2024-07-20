@@ -877,6 +877,9 @@ i-ṣbas-∅-sū-ma  (iṣbassūma < *iṣbatšuma)
 l. 1328' iddin
 i-ddin-∅  (iddin < *indin)
 3-√ndn.PFTV-3.SG
+l. 1330' ~ittandin
+i-t-tad-dīn-∅  (ittaddīn < *intandayan)
+3-PASS-tan-√dyn.PFTV-3.SG
 l. 1334' ippešū
 i-ppeš-ū  (ippešū < *iḥappašū)
 3-√ḥpš.IMPFV-3.M.PL
@@ -884,6 +887,9 @@ l. 1337' iššakkan
 i-š-šakkan-∅  (iššakkan < *inšakkan)
 3-PASS-√škn.IMPFV-3.SG
 Law 118
+l. 1340' ~ittandin
+i-t-tad-dīn-∅  (ittaddīn < *intandayan)
+3-PASS-tan-√dyn.PFTV-3.SG
 l. 1342' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
