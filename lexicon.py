@@ -98,23 +98,24 @@ for n in Number:
       ALL_PERSONS.append((p, g, n))
 
 def load_suffixed_forms(verb, stem, p, g, n, *args):
-  for acc in ALL_PERSONS + [None]:
-    for conj in (False, True):
-      for vent in (False, True):
-        for subj in (False,) if vent else (False, True):
-          if 'pftv' in args:
-            gloss = verb.perfective((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
-                                    conj=conj, vent=vent, subj=subj, acc=acc)
-          else:
-            gloss = verb.durative((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
-                                  conj=conj, vent=vent, subj=subj, acc=acc)
-          form = gloss.text()
-          if form not in forms_to_glosses:
-            forms = shortened_forms_to_forms[shorten_vowels(form)]
-            if form not in forms:
-              forms.append(form)
-              forms.sort()
-          forms_to_glosses[form][str(gloss)] = gloss
+  for obj in ('acc', 'dat'):
+    for acc in ALL_PERSONS + [None]:
+      for conj in (False, True):
+        for vent in (False, True):
+          for subj in (False,) if vent else (False, True):
+            if 'pftv' in args:
+              gloss = verb.perfective((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
+                                      conj=conj, vent=vent, subj=subj, **{obj:acc})
+            else:
+              gloss = verb.durative((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
+                                    conj=conj, vent=vent, subj=subj, **{obj:acc})
+            form = gloss.text()
+            if form not in forms_to_glosses:
+              forms = shortened_forms_to_forms[shorten_vowels(form)]
+              if form not in forms:
+                forms.append(form)
+                forms.sort()
+            forms_to_glosses[form][str(gloss)] = gloss
 
 def load_candidates(word):
   word = shorten_vowels(word)

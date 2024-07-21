@@ -90,12 +90,18 @@ def acc_pronominal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number):
             (Morpheme('šināti', [f + [g, n]]) if g == Gender.F else
              Morpheme('šunūti', [f + [g, n]]))))
 
-ACC_PRONOMINAL_SUFFIXES: dict[str, Person] = {}
-
-for p in (1, 2, 3):
-  for g in Gender:
-    for n in Number:
-      ACC_PRONOMINAL_SUFFIXES[acc_pronominal_suffix(p, g, n).text] = (p, g, n)
+def dat_pronominal_suffix(p: Literal[1, 2, 3], g: Gender, n: Number):
+  f = ['DAT', p]
+  return ((None if p == 1 else
+           (Morpheme('kim', [f + [g, n]]) if g == Gender.F else
+            Morpheme('kum', [f + [g, n]])) if p == 2 else
+           (Morpheme('šim', [f + [g, n]]) if g == Gender.F else
+            Morpheme('šum', [f + [g, n]]))) if n == Number.SG else
+          (Morpheme('niāšim', [f + [n]]) if p == 1 else
+           (Morpheme('kināšim', [f + [g, n]]) if g == Gender.F else
+            Morpheme('kunūšim', [f + [g, n]])) if p == 2 else
+            (Morpheme('šināšim', [f + [g, n]]) if g == Gender.F else
+             Morpheme('šunūšim', [f + [g, n]]))))
 
 def contract_vowels(v1: str, v2: str) -> str:
   if nfd(v1)[0] in ('e', 'i') and nfd(v2)[0] == 'a':
@@ -175,7 +181,7 @@ class KamilDecomposition:
               (m.text == 'ā' and m.functions in ([3, Gender.F, Number.PL],
                                                 [2, Number.PL])) or
               m.functions == ['CONJ'] or
-              any('ACC' in f for f in m.functions if isinstance(f, str)) or
+              any('ACC' in f or 'DAT' in f for f in m.functions if isinstance(f, str)) or
               m.functions == ['VENT']):
             m.text = nfc(nfd(m.text).replace('a', 'e'))
       i += 1
@@ -290,7 +296,7 @@ class KamilDecomposition:
     while i < len(self.morphemes):
       j, previous_text = self.previous_overt_morpheme(i)
       # H p. 170.
-      if (any('ACC' in f for f in self.morphemes[i].functions if isinstance(f, str)) and
+      if (any('ACC' in f or 'DAT' in f for f in self.morphemes[i].functions if isinstance(f, str)) and
           self.morphemes[i].text.startswith('š') and
           previous_text.endswith(('d', 't', 'ṭ', 's', 'ṣ', 'z', 'š'))):
         self.morphemes[j].text = self.morphemes[j].text[:-1] + 's'
@@ -317,7 +323,7 @@ class KamilDecomposition:
       for m in self.morphemes:
         for l in range(len(m.text)):
           if i == syncopated_vowel_index:
-            if any('ACC' in f for f in m.functions if isinstance(f, str)):
+            if any('ACC' in f or 'DAT' in f for f in m.functions if isinstance(f, str)):
               return
             m.text = m.text[:l] + m.text[l+1:]
             return
@@ -344,7 +350,7 @@ class KamilDecomposition:
 
   def lengthen_before_suffixes(self):
     for i, m in enumerate(self.morphemes):
-      if 'CONJ' in m.functions or any('ACC' in f for f in m.functions if isinstance(f, str)):
+      if 'CONJ' in m.functions or any('ACC' in f or 'DAT' in f in f for f in m.functions if isinstance(f, str)):
         k, previous = self.previous_overt_morpheme(i)
         if previous.endswith(SHORT_VOWELS):
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
@@ -383,8 +389,10 @@ class Verb:
                conj: bool = False,
                vent: bool = False,
                stem: Stem = Stem.G,
-               acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
-    if acc and acc[0] == 1 and acc[-1] == Number.SG:
+               acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None,
+               dat: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
+    if ((acc and acc[0] == 1 and acc[-1] == Number.SG) or
+        (dat and dat[0] == 1 and dat[-1] == Number.SG)):
       vent = True
     if vent:
       subj = False
@@ -413,6 +421,7 @@ class Verb:
         personal_suffix(*p, gloss_for_d=d_prefix),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
+        dat_pronominal_suffix(*dat) if dat else None,
         acc_pronominal_suffix(*acc) if acc else None,
         Morpheme('ma', ['CONJ']) if conj else None))
   def perfective(self,
@@ -422,8 +431,10 @@ class Verb:
                  conj: bool = False,
                  vent: bool = False,
                  stem: Stem = Stem.G,
-                 acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
-    if acc and acc[0] == 1 and acc[-1] == Number.SG:
+                 acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None,
+                 dat: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
+    if ((acc and acc[0] == 1 and acc[-1] == Number.SG) or
+        (dat and dat[0] == 1 and dat[-1] == Number.SG)):
       vent = True
     if vent:
       subj = False
@@ -452,5 +463,6 @@ class Verb:
         personal_suffix(*p, gloss_for_d=d_prefix),
         Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
         ventive(*p) if vent else None,
+        dat_pronominal_suffix(*dat) if dat else None,
         acc_pronominal_suffix(*acc) if acc else None,
         Morpheme('ma', ['CONJ']) if conj else None))
