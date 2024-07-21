@@ -130,7 +130,7 @@ class KamilDecomposition:
     self.assimilate_t()
     self.assimilate_object_š()
     self.assimilate_n()
-    self.assimilate_ventive_m()
+    self.assimilate_ventive_dative_m()
     self.syncopate_vowels()
     self.merge_root_morphemes()
     self.functions = set(f for m in self.morphemes for f in m.functions)
@@ -303,12 +303,13 @@ class KamilDecomposition:
         self.morphemes[i].text = 's' + self.morphemes[i].text[1:]
       i += 1
 
-  def assimilate_ventive_m(self):
+  def assimilate_ventive_dative_m(self):
     i = 0
     while i < len(self.morphemes):
       _, next_text = self.next_overt_morpheme(i)
       # H p. 170.
-      if ('VENT' in self.morphemes[i].functions and
+      if (('VENT' in self.morphemes[i].functions or
+           any('DAT' in f for f in self.morphemes[i].functions if isinstance(f, str))) and
           self.morphemes[i].text.endswith('m') and
           next_text.startswith(CONSONANTS)):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
