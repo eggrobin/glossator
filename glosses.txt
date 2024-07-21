@@ -732,6 +732,9 @@ Law 58
 l. 1038 iddīma
 i-ddī-∅-ma  (iddīma < *indiʾma)
 3-√ndʾ.PFTV-3.SG-CONJ
+l. 1042 inaṣṣarma
+i-naṣṣar-∅-ma  (inaṣṣarma)
+3-√nṣr.IMPFV-3.SG-CONJ
 l. 1047 imaddad
 i-maddad-∅  (imaddad)
 3-√mdd.IMPFV-3.SG
@@ -1188,9 +1191,15 @@ Law 133
 l. 1520' ibašši
 i-bašši-∅  (ibašši < *ibaššiʾ)
 3-√bšʾ.IMPFV-3.SG
+l. 1524' inaṣṣar
+i-naṣṣar-∅  (inaṣṣar)
+3-√nṣr.IMPFV-3.SG
 l. 1526' irrub
 i-rrub-∅  (irrub < *iʿarrub)
 3-√ʿrb.IMPFV-3.SG
+l. 1529' iṣṣurma
+i-ṣṣur-∅-ma  (iṣṣurma < *inṣurma)
+3-√nṣr.PFTV-3.SG-CONJ
 l. 1531' īterub
 ī-terub-∅  (īterub < *iʿtarub)
 3-√ʿrb.t.PFTV-3.SG
@@ -1748,6 +1757,9 @@ i-parras-ū-ma  (iparrasūma)
 3-√prs.IMPFV-3.M.PL-CONJ
 i-parras-∅-ū-ma  (iparrasūma < *iparrasuma)
 3-√prs.IMPFV-3.SG-SUBJ-CONJ
+l. 2226' inaṣṣarū
+i-naṣṣar-ū  (inaṣṣarū)
+3-√nṣr.IMPFV-3.M.PL
 l. 2231' inaddinū
 i-naddin-ū  (inaddinū)
 3-√ndn.IMPFV-3.M.PL
