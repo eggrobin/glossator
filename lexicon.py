@@ -14,6 +14,7 @@ verbs = (
   Verb("bšʾ", "i", "i"),
   Verb("dwk", "a", "u"),
   Verb("dyn", "a", "i"),
+  Verb("ʿnh", "i", "i"),
   Verb("ḥpš", "a", "u"),
   Verb("ḥbb", "i", "i"),
   Verb("kwn", "a", "u"),

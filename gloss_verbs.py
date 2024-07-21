@@ -16,7 +16,8 @@ law = None
 line_number = None
 
 NONVERBS = frozenset(
-  ("īnšu",)
+  ("īnšu",
+   "inūma",)
 )
 
 for atf_line in atf_lines:

@@ -78,6 +78,9 @@ i-dīn-∅  (idīn < *idyin)
 l. 355 iprus
 i-prus-∅  (iprus)
 3-√prs.PFTV-3.SG
+l. 359 ~iteni
+ī-teni-∅  (īteni < *iʿtanih)
+3-√ʿnh.t.PFTV-3.SG
 l. 361 idīnu
 i-dīn-∅-u  (idīnu < *idyinu)
 3-√dyn.PFTV-3.SG-SUBJ
@@ -673,6 +676,9 @@ l. 966 inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 52
+l. 972 inni
+i-nni-∅  (inni < *iʿannih)
+3-√ʿnh.IMPFV-3.SG
 Law 53
 l. 976 iddīma
 i-ddī-∅-ma  (iddīma < *indiʾma)
