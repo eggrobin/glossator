@@ -933,6 +933,9 @@ l. 1229' iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 110
+l. 1236' īterub
+ī-terub-∅  (īterub < *iʿtarub)
+3-√ʿrb.t.PFTV-3.SG
 Law 111
 l. 1241' iddin
 i-ddin-∅  (iddin < *indin)
@@ -1185,6 +1188,12 @@ Law 133
 l. 1520' ibašši
 i-bašši-∅  (ibašši < *ibaššiʾ)
 3-√bšʾ.IMPFV-3.SG
+l. 1526' irrub
+i-rrub-∅  (irrub < *iʿarrub)
+3-√ʿrb.IMPFV-3.SG
+l. 1531' īterub
+ī-terub-∅  (īterub < *iʿtarub)
+3-√ʿrb.t.PFTV-3.SG
 l. 1533' ~ukannūšima
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
 1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
@@ -1199,6 +1208,9 @@ Law 134
 l. 1540' ibašši
 i-bašši-∅  (ibašši < *ibaššiʾ)
 3-√bšʾ.IMPFV-3.SG
+l. 1543' irrub
+i-rrub-∅  (irrub < *iʿarrub)
+3-√ʿrb.IMPFV-3.SG
 Law 135
 l. 1550' ibašši
 i-bašši-∅  (ibašši < *ibaššiʾ)
@@ -1219,6 +1231,9 @@ Law 136
 l. 1567' iddīma
 i-ddī-∅-ma  (iddīma < *indiʾma)
 3-√ndʾ.PFTV-3.SG-CONJ
+l. 1572' īterub
+ī-terub-∅  (īterub < *iʿtarub)
+3-√ʿrb.t.PFTV-3.SG
 l. 1574' ittūramma
 i-ttūr-∅-am-ma  (ittūramma < *ittawaramma)
 3-√twr.t.PFTV-3.SG-VENT-CONJ
@@ -1340,6 +1355,9 @@ i-štakan-∅  (ištakan)
 l. 1704' iḫḫaz
 i-ḫḫaz-∅  (iḫḫaz < *iʾaḫḫaz)
 3-√ʾḫz.IMPFV-3.SG
+l. 1706' ušerrebši
+u-še-rreb-∅-ši  (ušerrebši < *ušaʿarrabši)
+1|3.SG-CAUS-√ʿrb.IMPFV-1|3.SG-ACC.3.F.SG
 Law 146
 l. 1711' īḫuzma
 ī-ḫuz-∅-ma  (īḫuzma < *iʾḫuzma)
@@ -1397,6 +1415,9 @@ i-bašši-∅  (ibašši < *ibaššiʾ)
 l. 1791' iṣabbatū
 i-ṣabbat-ū  (iṣabbatū)
 3-√ṣbt.IMPFV-3.M.PL
+l. 1794' irrubu
+i-rrub-∅-u  (irrubu < *iʿarrubu)
+3-√ʿrb.IMPFV-3.SG-SUBJ
 l. 1797' ibašši
 i-bašši-∅  (ibašši < *ibaššiʾ)
 3-√bšʾ.IMPFV-3.SG
@@ -1404,6 +1425,9 @@ l. 1799' iṣabbatū
 i-ṣabbat-ū  (iṣabbatū)
 3-√ṣbt.IMPFV-3.M.PL
 Law 152
+l. 1803' īrubu
+ī-rub-∅-u  (īrubu < *iʿrubu)
+3-√ʿrb.PFTV-3.SG-SUBJ
 l. 1806' ittabši
 i-t-ta-bši-∅  (ittabši < *intabašiʾ)
 3-PASS-t-√bšʾ.PFTV-3.SG
@@ -1666,6 +1690,9 @@ l. 2127' iḫḫassi
 i-ḫḫas-∅-si  (iḫḫassi < *iʾaḫḫazši)
 3-√ʾḫz.IMPFV-3.SG-ACC.3.F.SG
 Law 173
+l. 2129' īrubu
+ī-rub-∅-u  (īrubu < *iʿrubu)
+3-√ʿrb.PFTV-3.SG-SUBJ
 Law 174
 l. 2143' ileqqû
 i-leqqû  (ileqqû < *ilaqqaḥū)
@@ -1710,6 +1737,12 @@ Law 177
 l. 2207' ištakan
 i-štakan-∅  (ištakan)
 3-√škn.t.PFTV-3.SG
+l. 2209' irrub
+i-rrub-∅  (irrub < *iʿarrub)
+3-√ʿrb.IMPFV-3.SG
+l. 2212' irrubu
+i-rrub-∅-u  (irrubu < *iʿarrubu)
+3-√ʿrb.IMPFV-3.SG-SUBJ
 l. 2217' iparrasūma
 i-parras-ū-ma  (iparrasūma)
 3-√prs.IMPFV-3.M.PL-CONJ
