@@ -100,6 +100,9 @@ i-naddin-∅  (inaddin)
 l. 373 itârma
 i-târ-∅-ma  (itârma < *itawwarma)
 3-√twr.IMPFV-3.SG-CONJ
+l. 376 uššab
+u-ššab-∅  (uššab < *uwaššab)
+1|3.SG-√wšb.IMPFV-1|3.SG
 Law 6
 l. 380 išriq
 i-šriq-∅  (išriq)
@@ -1289,6 +1292,9 @@ i-qtabi-∅  (iqtabi < *iqtabiʾ)
 l. 1649' iḫḫaz
 i-ḫḫaz-∅  (iḫḫaz < *iʾaḫḫaz)
 3-√ʾḫz.IMPFV-3.SG
+l. 1653' uššab
+u-ššab-∅  (uššab < *uwaššab)
+1|3.SG-√wšb.IMPFV-1|3.SG
 Law 142
 l. 1655' taḫḫazanni
 ta-ḫḫaz-∅-an-ni  (taḫḫazanni < *taʾaḫḫazamni)
@@ -1615,6 +1621,9 @@ i-ddīn-ū-šim  (iddīnūšim < *idtayanūšim)
 l. 2085' ileqqēma
 i-leqqē-∅-ma  (ileqqēma < *ilaqqaḥma)
 3-√lqḥ.IMPFV-3.SG-CONJ
+l. 2087' uššab
+u-ššab-∅  (uššab < *uwaššab)
+1|3.SG-√wšb.IMPFV-1|3.SG
 l. 2090' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG

@@ -42,8 +42,9 @@ verbs = (
   Verb("šrq", "i", "i"),
   Verb("tbl", "a", "a"),
   Verb("twr", "a", "u"),
-  Verb("wbl", "a", "u"),
+  Verb("wbl", "a", "i"),
   Verb("wṣʾ", "i", "i"),
+  Verb("wšb", "a", "i"),
 )
 
 forms_to_glosses : defaultdict[str, dict[str, KamilDecomposition]] = defaultdict(dict)
