@@ -37,7 +37,7 @@ class Gender(Enum):
 class Stem(Enum):
   G = 0
   D = 1
-  #Š = 2
+  Š = 2
   N = 3
   def __str__(self) -> str:
     return super().__str__().rsplit('.', 1)[-1]
@@ -397,24 +397,25 @@ class Verb:
       vent = True
     if vent:
       subj = False
-    d_prefix = stem == Stem.D or (self.root.startswith('w') and
-                                  (self.durative_vowel == 'a' or
-                                   self.root.endswith(WEAK_CONSONANTS)))
+    d_prefix = stem in (Stem.D, Stem.Š) or (
+      self.root.startswith('w') and
+      (self.durative_vowel == 'a' or self.root.endswith(WEAK_CONSONANTS)))
     return KamilDecomposition(
       self.root,
        (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('ta', ['t']) if t == 't' and stem == Stem.N else
-        Morpheme('tan', ['t']) if t == 'tan' and stem == Stem.N else
+        Morpheme('š' if t else 'ša', ['CAUS']) if stem == Stem.Š else None,
+        Morpheme('ta', ['t']) if t == 't' and stem in (Stem.N, Stem.Š) else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem in (Stem.N, Stem.Š) else
         None,
         Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
                  self.root[0], ['R₁']),
-        Morpheme('ta', ['t']) if t == 't' and stem != Stem.N else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem != Stem.N else
+        Morpheme('ta', ['t']) if t == 't' and stem not in (Stem.N, Stem.Š) else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem not in (Stem.N, Stem.Š) else
         Morpheme('a', ['IMPFV']),
-        Morpheme('a', ['IMPFV'])  if t == 'tan' and stem != Stem.N else None,
+        Morpheme('a', ['IMPFV'])  if t == 'tan' and stem not in (Stem.N, Stem.Š) else None,
         Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
-        Morpheme('a' if stem == Stem.D or
+        Morpheme('a' if stem in (Stem.D, Stem.Š) or
                         (stem == Stem.N and self.durative_vowel != 'i') else
                 self.durative_vowel,
                 ['IMPFV']),
@@ -439,24 +440,25 @@ class Verb:
       vent = True
     if vent:
       subj = False
-    d_prefix = stem == Stem.D or (self.root.startswith('w') and
-                                  (self.durative_vowel == 'a' or
-                                   self.root.endswith(WEAK_CONSONANTS)))
+    d_prefix = stem in (Stem.D, Stem.Š) or (
+      self.root.startswith('w') and
+      (self.durative_vowel == 'a' or self.root.endswith(WEAK_CONSONANTS)))
     return KamilDecomposition(
       self.root,
        (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
         Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('ta', ['t']) if t == 't' and stem == Stem.N else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem == Stem.N else
+        Morpheme('š' if t else 'ša', ['CAUS']) if stem == Stem.Š else None,
+        Morpheme('ta', ['t']) if t == 't' and stem in (Stem.N, Stem.Š) else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem in (Stem.N, Stem.Š) else
         None,
         Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
                  self.root[0], ['R₁']),
-        Morpheme('ta', ['t']) if t == 't' and stem != Stem.N else
-        Morpheme('tan', ['t']) if t == 'tan' and stem != Stem.N else
+        Morpheme('ta', ['t']) if t == 't' and stem not in (Stem.N, Stem.Š) else
+        Morpheme('tan', ['tan']) if t == 'tan' and stem not in (Stem.N, Stem.Š) else
         Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None,
         Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
                 ['R₂', 'D'] if stem == Stem.D else ['R₂']),
-        Morpheme('i' if stem == Stem.D or (stem == Stem.N and not t) else
+        Morpheme('i' if stem in (Stem.D, Stem.Š) or (stem == Stem.N and not t) else
                 self.durative_vowel if t else
                 self.perfective_vowel,
                 ['PFTV']),
