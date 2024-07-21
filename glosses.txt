@@ -277,6 +277,9 @@ l. 539 inaddiššum
 i-naddiš-∅-šum  (inaddiššum < *inaddinšum)
 3-√ndn.IMPFV-3.SG-DAT.3.M.SG
 Law 18
+l. 544 ~ireddešu
+i-reddē-∅-šu  (ireddēšu < *iraddaḥšu)
+3-√rdḥ.IMPFV-3.SG-ACC.3.M.SG
 l. 546 ipparrasma
 i-p-parras-∅-ma  (ipparrasma < *inparrasma)
 3-PASS-√prs.IMPFV-3.SG-CONJ
@@ -293,6 +296,9 @@ l. 557 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 20
+l. 561 iḫtaliq
+i-ḫtaliq-∅  (iḫtaliq)
+3-√ḫlq.t.PFTV-3.SG
 Law 21
 l. 573 ~idukkūšuma
 i-dukk-∅-ū-šū-ma  (idukkūšūma < *idawwakušuma)
@@ -461,6 +467,9 @@ Law 33
 l. 736 imḫurma
 i-mḫur-∅-ma  (imḫurma)
 3-√mḫr.PFTV-3.SG-CONJ
+l. 737 irtede
+i-rtede-∅  (irtede < *irtadaḥ)
+3-√rdḥ.t.PFTV-3.SG
 l. 740 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
@@ -701,6 +710,9 @@ i-ddī-∅-ma  (iddīma < *indiʾma)
 l. 981 uštābil
 u-š-tā-bil-∅  (uštābil < *uštawbil)
 1|3.SG-CAUS-t-√wbl.PFTV-1|3.SG
+l. 985 uḫalliqu
+u-ḫalliq-∅-u  (uḫalliqu)
+1|3.SG-√ḫlq.PFTV.D-1|3.SG-SUBJ
 Law 54
 l. 992 inaddinūma
 i-naddin-∅-ū-ma  (inaddinūma < *inaddinuma)
@@ -872,6 +884,9 @@ l. 1189' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 107
+l. 1191' iqīpma
+i-qīp-∅-ma  (iqīpma < *iqyipma)
+3-√qyp.PFTV-3.SG-CONJ
 l. 1193' ~iddinušum
 i-ddin-∅-ū-šum  (iddinūšum < *indinušum)
 3-√ndn.PFTV-3.SG-SUBJ-DAT.3.M.SG
@@ -927,11 +942,19 @@ i-naddû-ši  (inaddûši < *inaddiʾuši)
 i-naddû-ši  (inaddûši < *inaddiʾūši)
 3-√ndʾ.IMPFV.3.M.PL-ACC.3.F.SG
 Law 109
+l. 1223' ittarkasūma
+i-t-ta-rkas-ū-ma  (ittarkasūma < *intarakasūma)
+3-PASS-t-√rks.PFTV-3.M.PL-CONJ
+i-t-ta-rkas-∅-ū-ma  (ittarkasūma < *intarakasuma)
+3-PASS-t-√rks.PFTV-3.SG-SUBJ-CONJ
 l. 1225' iṣṣabtamma
 i-ṣṣabt-∅-am-ma  (iṣṣabtamma < *iṣtabatamma)
 3-√ṣbt.t.PFTV-3.SG-VENT-CONJ
 i-ṣ-ṣabt-∅-am-ma  (iṣṣabtamma < *inṣabitamma)
 3-PASS-√ṣbt.PFTV-3.SG-VENT-CONJ
+l. 1227' irdeam
+i-rde-∅-am  (irdeam < *irdaḥam)
+3-√rdḥ.PFTV-3.SG-VENT
 l. 1229' iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
@@ -939,6 +962,11 @@ Law 110
 l. 1236' īterub
 ī-terub-∅  (īterub < *iʿtarub)
 3-√ʿrb.t.PFTV-3.SG
+l. 1238' iqallûši
+i-qallû-ši  (iqallûši < *iqalluʾūši)
+3-√qlʾ.IMPFV.3.M.PL-ACC.3.F.SG
+i-qallû-ši  (iqallûši < *iqalluʾuši)
+3-√qlʾ.IMPFV.3.SG.SUBJ-ACC.3.F.SG
 Law 111
 l. 1241' iddin
 i-ddin-∅  (iddin < *indin)
@@ -1114,6 +1142,9 @@ i-ddim-∅-ma  (iddimma < *indinma)
 l. 1417' iddinu
 i-ddin-∅-u  (iddinu < *indinu)
 3-√ndn.PFTV-3.SG-SUBJ
+l. 1422' iḫtaliq
+i-ḫtaliq-∅  (iḫtaliq)
+3-√ḫlq.t.PFTV-3.SG
 l. 1424' ~iddinušumma
 i-ddin-∅-ū-šum-ma  (iddinūšumma < *indinušumma)
 3-√ndn.PFTV-3.SG-SUBJ-DAT.3.M.SG-CONJ
@@ -1127,6 +1158,9 @@ i-ddīn-∅-ū-šum-ma  (iddīnūšumma < *idtayanušumma)
 3-√dyn.t.PFTV-3.SG-SUBJ-DAT.3.M.SG-CONJ
 i-ddīn-ū-šum-ma  (iddīnūšumma < *idtayanūšumma)
 3-√dyn.t.PFTV-3.M.PL-DAT.3.M.SG-CONJ
+l. 1425' uḫalliqu
+u-ḫalliq-∅-u  (uḫalliqu)
+1|3.SG-√ḫlq.PFTV.D-1|3.SG-SUBJ
 l. 1426' ušallamma
 u-šallam-∅-ma  (ušallamma)
 1|3.SG-√šlm.IMPFV.D-1|3.SG-CONJ
@@ -1415,6 +1449,9 @@ l. 1773' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 151
+l. 1780' urtakkis
+u-rtakkis-∅  (urtakkis)
+1|3.SG-√rks.t.D.PFTV-1|3.SG
 l. 1785' iḫḫazu
 i-ḫḫaz-∅-u  (iḫḫazu < *iʾaḫḫazu)
 3-√ʾḫz.IMPFV-3.SG-SUBJ
@@ -1453,7 +1490,13 @@ i-šakkan-ū-ši  (išakkanūši)
 i-šakkan-∅-ū-ši  (išakkanūši < *išakkanuši)
 3-√škn.IMPFV-3.SG-SUBJ-ACC.3.F.SG
 Law 154
+l. 1817' iltamad
+i-ltamad-∅  (iltamad)
+3-√lmd.t.PFTV-3.SG
 Law 155
+l. 1823' ilmassi
+i-lmas-∅-si  (ilmassi < *ilmadši)
+3-√lmd.PFTV-3.SG-ACC.3.F.SG
 l. 1827' iṣṣabtūšu
 i-ṣṣabt-∅-ū-šu  (iṣṣabtūšu < *iṣtabatušu)
 3-√ṣbt.t.PFTV-3.SG-SUBJ-ACC.3.M.SG
@@ -1469,6 +1512,9 @@ i-naddû-šu  (inaddûšu < *inaddiʾušu)
 i-naddû-šu  (inaddûšu < *inaddiʾūšu)
 3-√ndʾ.IMPFV.3.M.PL-ACC.3.M.SG
 Law 156
+l. 1836' ~ilmassima
+i-lmas-∅-sī-ma  (ilmassīma < *ilmadšima)
+3-√lmd.PFTV-3.SG-ACC.3.F.SG-CONJ
 l. 1840' išaqqalšimma
 i-šaqqal-∅-šim-ma  (išaqqalšimma)
 3-√šql.IMPFV-3.SG-DAT.3.F.SG-CONJ
@@ -1479,6 +1525,11 @@ l. 1847' iḫḫassi
 i-ḫḫas-∅-si  (iḫḫassi < *iʾaḫḫazši)
 3-√ʾḫz.IMPFV-3.SG-ACC.3.F.SG
 Law 157
+l. 1853' iqallûšunūti
+i-qallû-šunūti  (iqallûšunūti < *iqalluʾūšunūti)
+3-√qlʾ.IMPFV.3.M.PL-ACC.3.M.PL
+i-qallû-šunūti  (iqallûšunūti < *iqalluʾušunūti)
+3-√qlʾ.IMPFV.3.SG.SUBJ-ACC.3.M.PL
 Law 158
 l. 1859' ittaṣbat
 i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
@@ -1909,11 +1960,17 @@ Law 194
 l. 2487' ~iddinma
 i-ddim-∅-ma  (iddimma < *indinma)
 3-√ndn.PFTV-3.SG-CONJ
+l. 2495' irtakas
+i-rtakas-∅  (irtakas)
+3-√rks.t.PFTV-3.SG
 l. 2496' ~ukannūšima
 u-kann-∅-ū-šī-ma  (ukannūšīma < *ukawwanušima)
 1|3.SG-√kwn.IMPFV.D-1|3.SG-SUBJ-ACC.3.F.SG-CONJ
 u-kann-ū-šī-ma  (ukannūšīma < *ukawwanūšima)
 3.PL-√kwn.IMPFV.D-3.M.PL-ACC.3.F.SG-CONJ
+l. 2500' irkusu
+i-rkus-∅-u  (irkusu)
+3-√rks.PFTV-3.SG-SUBJ
 l. 2502' inakkisū
 i-nakkis-ū  (inakkisū)
 3-√nks.IMPFV-3.M.PL
@@ -2136,6 +2193,12 @@ l. 2731' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
 Law 232
+l. 2733' uḫtalliq
+u-ḫtalliq-∅  (uḫtalliq)
+1|3.SG-√ḫlq.t.D.PFTV-1|3.SG
+l. 2735' uḫalliqu
+u-ḫalliq-∅-u  (uḫalliqu)
+1|3.SG-√ḫlq.PFTV.D-1|3.SG-SUBJ
 l. 2737' īpušu
 ī-puš-∅-u  (īpušu < *iḥpušu)
 3-√ḥpš.PFTV-3.SG-SUBJ
@@ -2167,10 +2230,19 @@ Law 236
 l. 2779' ~iddinma
 i-ddim-∅-ma  (iddimma < *indinma)
 3-√ndn.PFTV-3.SG-CONJ
+l. 2782' uḫtalliq
+u-ḫtalliq-∅  (uḫtalliq)
+1|3.SG-√ḫlq.t.D.PFTV-1|3.SG
 Law 237
 l. 2788' īgurma
 ī-gur-∅-ma  (īgurma < *iʾgurma)
 3-√ʾgr.PFTV-3.SG-CONJ
+l. 2797' uḫtalliq
+u-ḫtalliq-∅  (uḫtalliq)
+1|3.SG-√ḫlq.t.D.PFTV-1|3.SG
+l. 2802' uḫalliqu
+u-ḫalliq-∅-u  (uḫalliqu)
+1|3.SG-√ḫlq.PFTV.D-1|3.SG-SUBJ
 Law 238
 l. 2809' inaddin
 i-naddin-∅  (inaddin)
@@ -2254,6 +2326,12 @@ Law 253
 l. 2911' īgurma
 ī-gur-∅-ma  (īgurma < *iʾgurma)
 3-√ʾgr.PFTV-3.SG-CONJ
+l. 2913' iqīpšu
+i-qīp-∅-šu  (iqīpšu < *iqyipšu)
+3-√qyp.PFTV-3.SG-ACC.3.M.SG
+l. 2915' urakkissu
+u-rakkis-∅-su  (urakkissu < *urakkisšu)
+1|3.SG-√rks.PFTV.D-1|3.SG-ACC.3.M.SG
 l. 2918' išriqma
 i-šriq-∅-ma  (išriqma)
 3-√šrq.PFTV-3.SG-CONJ
@@ -2331,6 +2409,9 @@ i-n-nadn-∅-ū-šum  (innadnūšum < *innadinušum)
 3-PASS-√ndn.PFTV-3.SG-SUBJ-DAT.3.M.SG
 i-n-nadn-ū-šum  (innadnūšum < *innadinūšum)
 3-PASS-√ndn.PFTV-3.M.PL-DAT.3.M.SG
+l. 2979' uḫtalliq
+u-ḫtalliq-∅  (uḫtalliq)
+1|3.SG-√ḫlq.t.D.PFTV-1|3.SG
 Law 264
 l. 2988' ~innadnušum
 i-n-nadn-∅-ū-šum  (innadnūšum < *innadinušum)
@@ -2500,5 +2581,5 @@ l. 3143' inakkis
 i-nakkis-∅  (inakkis)
 3-√nks.IMPFV-3.SG
 
-Glossed 666 verbs with 87 ambiguities
-Glossed 222 unique forms
+Glossed 691 verbs with 90 ambiguities
+Glossed 240 unique forms
