@@ -1373,13 +1373,9 @@ i-ṣbat-∅-u  (iṣbatu)
 l. 1746' īpušu
 ī-puš-∅-u  (īpušu < *iḥpušu)
 3-√ḥpš.PFTV-3.SG-SUBJ
-l. 1747' ~uššamma
-u-š-šamm-ā  (uššammā < *uššaʾʾamā)
-3.PL-CAUS-√šʾm.IMPFV-3.F.PL
-u-š-šamm-ā  (uššammā < *ušašaʾʾamā)
-3.PL-CAUS-√šʾm.IMPFV-3.F.PL
-u-š-šâm-∅-ma  (uššâmma < *ušašaʾʾamma)
-1|3.SG-CAUS-√šʾm.IMPFV-1|3.SG-CONJ
+l. 1747' uššamma
+u-ššam-∅-ma  (uššamma < *uwaššabma)
+1|3.SG-√wšb.IMPFV-1|3.SG-CONJ
 Law 149
 l. 1756' ušallamšimma
 u-šallam-∅-šim-ma  (ušallamšimma)

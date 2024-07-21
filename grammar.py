@@ -130,6 +130,7 @@ class KamilDecomposition:
     self.assimilate_t()
     self.assimilate_object_š()
     self.assimilate_n()
+    self.assimilate_b()
     self.assimilate_ventive_dative_m()
     self.syncopate_vowels()
     self.merge_root_morphemes()
@@ -277,6 +278,16 @@ class KamilDecomposition:
       k, next_text = self.next_overt_morpheme(i)
       if (self.morphemes[i].text.endswith('n') and
           next_text.startswith(CONSONANTS)):
+        self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
+      i += 1
+
+  def assimilate_b(self):
+    # H p. 49.
+    i = 0
+    while i < len(self.morphemes):
+      k, next_text = self.next_overt_morpheme(i)
+      if (self.morphemes[i].text.endswith('b') and
+          next_text.startswith('m')):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
       i += 1
 
