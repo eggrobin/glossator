@@ -70,19 +70,6 @@ for atf_line in atf_lines:
 glossed_verbs = 0
 ambiguous_verbs = 0
 
-with open('glosses.txt', 'w', encoding='utf-8') as f:
-  for law, verbs in verbs_by_law.items():
-    print("Law", law, file=f)
-    for line_number, word, glosses in verbs:
-      print("l.", line_number,
-            ('~' if any(gloss.text() != word for gloss in glosses) else '') + word,
-            file=f)
-      glossed_verbs += 1
-      for gloss in glosses:
-        print(gloss, file=f)
-      if len(glosses) > 1:
-        ambiguous_verbs += 1
-
 def akkadian_collation_key(s):
   return unicodedata.normalize(
     "NFD",
@@ -98,6 +85,21 @@ for word, count in sorted(word_counts.items(), key=lambda kv: (-kv[1], akkadian_
   if word in lexicon.forms_to_glosses or grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
     glossed_forms += 1
 
-print()
-print("Glossed %d verbs with %d ambiguities" % (glossed_verbs, ambiguous_verbs))
-print("Glossed %d unique forms" % (glossed_forms))
+with open('glosses.txt', 'w', encoding='utf-8') as f:
+  for law, verbs in verbs_by_law.items():
+    print("Law", law, file=f)
+    for line_number, word, glosses in verbs:
+      print("l.", line_number,
+            ('~' if any(gloss.text() != word for gloss in glosses) else '') + word,
+            file=f)
+      glossed_verbs += 1
+      for gloss in glosses:
+        print(gloss, file=f)
+      if len(glosses) > 1:
+        ambiguous_verbs += 1
+  for file in (f, sys.stdout):
+    print(file=file)
+    print("Glossed %d verbs with %d ambiguities" % (glossed_verbs, ambiguous_verbs),
+          file=file)
+    print("Glossed %d unique forms" % (glossed_forms),
+          file=file)
