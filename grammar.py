@@ -394,15 +394,17 @@ class Verb:
     self.root = root
     self.durative_vowel = durative_vowel
     self.perfective_vowel = perfective_vowel
-  def durative(self,
-               p: Person,
-               t: bool=None|Literal['t']|Literal['tan'],
-               subj: bool = False,
-               conj: bool = False,
-               vent: bool = False,
-               stem: Stem = Stem.G,
-               acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None,
-               dat: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
+  def finite_form(
+      self,
+      p: Person,
+      pftv: bool,
+      t: None|Literal['t']|Literal['tan']=None,
+      subj: bool = False,
+      conj: bool = False,
+      vent: bool = False,
+      stem: Stem = Stem.G,
+      acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None,
+      dat: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
     if ((acc and acc[0] == 1 and acc[-1] == Number.SG) or
         (dat and dat[0] == 1 and dat[-1] == Number.SG)):
       vent = True
@@ -411,72 +413,69 @@ class Verb:
     d_prefix = stem in (Stem.D, Stem.Š) or (
       self.root.startswith('w') and
       (self.durative_vowel == 'a' or self.root.endswith(WEAK_CONSONANTS)))
-    return KamilDecomposition(
-      self.root,
-       (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
-        Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('š' if t else 'ša', ['CAUS']) if stem == Stem.Š else None,
-        Morpheme('ta', ['t']) if t == 't' and stem in (Stem.N, Stem.Š) else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem in (Stem.N, Stem.Š) else
-        None,
-        Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
-                 self.root[0], ['R₁']),
-        Morpheme('ta', ['t']) if t == 't' and stem not in (Stem.N, Stem.Š) else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem not in (Stem.N, Stem.Š) else
-        Morpheme('a', ['IMPFV']),
-        Morpheme('a', ['IMPFV'])  if t == 'tan' and stem not in (Stem.N, Stem.Š) else None,
-        Morpheme(2 * self.root[1], ['R₂', 'D' if stem == Stem.D else 'IMPFV']),
+    morphemes = []
+    morphemes.append(personal_prefix_d(*p) if d_prefix else
+                     personal_prefix(*p))
+    if stem == Stem.N:
+      morphemes.append(Morpheme('n', ['PASS']))
+    if stem == Stem.Š:
+      morphemes.append(Morpheme('š' if t else 'ša', ['CAUS']))
+    if t and stem in (Stem.N, Stem.Š):
+      morphemes.append(Morpheme('ta' if t == 't' else 'tan', [t]))
+    if (self.root.startswith('w') and
+        self.durative_vowel != 'a' and
+        not self.root.endswith(WEAK_CONSONANTS)):
+      # Ugly hack, we should do this with the other transformations.
+      morphemes.append(Morpheme('y', ['R₁']))
+    else:
+      morphemes.append(Morpheme(self.root[0], ['R₁']))
+
+    if t and stem not in (Stem.N, Stem.Š):
+      morphemes.append(Morpheme('ta' if t == 't' else 'tan', [t]))
+
+    if pftv:
+      if stem in (Stem.D, Stem.N) and not t:
+        morphemes.append(Morpheme('a', ['PFTV']))
+    elif t != 't':
+      morphemes.append(Morpheme('a', ['IMPFV']))
+
+    if stem == stem.D:
+      morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'D']))
+    elif not pftv:
+      morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'IMPFV']))
+    else:
+      morphemes.append(Morpheme(self.root[1], ['R₂']))
+
+    if pftv:
+      morphemes.append(
+        Morpheme(
+          'i' if stem in (Stem.D, Stem.Š) or (stem == Stem.N and not t) else
+          self.durative_vowel if t else
+          self.perfective_vowel,
+          ['PFTV']))
+    else:
+      morphemes.append(
         Morpheme('a' if stem in (Stem.D, Stem.Š) or
                         (stem == Stem.N and self.durative_vowel != 'i') else
-                self.durative_vowel,
-                ['IMPFV']),
-        Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p, gloss_for_d=d_prefix),
-        Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
-        ventive(*p) if vent else None,
-        dat_pronominal_suffix(*dat) if dat else None,
-        acc_pronominal_suffix(*acc) if acc else None,
-        Morpheme('ma', ['CONJ']) if conj else None))
-  def perfective(self,
-                 p: Person,
-                 t: bool=False,
-                 subj: bool = False,
-                 conj: bool = False,
-                 vent: bool = False,
-                 stem: Stem = Stem.G,
-                 acc: tuple[Literal[1, 2, 3], Gender, Number]|None = None,
-                 dat: tuple[Literal[1, 2, 3], Gender, Number]|None = None) -> KamilDecomposition:
-    if ((acc and acc[0] == 1 and acc[-1] == Number.SG) or
-        (dat and dat[0] == 1 and dat[-1] == Number.SG)):
-      vent = True
+                 self.durative_vowel,
+                 ['IMPFV']))
+
+    morphemes.append(Morpheme(self.root[-1], ['R₃']))
+    p_suffix = personal_suffix(*p, gloss_for_d=d_prefix)
+    morphemes.append(p_suffix)
+    if subj and not p_suffix.text:
+      morphemes.append(Morpheme('u', ['SUBJ']))
     if vent:
-      subj = False
-    d_prefix = stem in (Stem.D, Stem.Š) or (
-      self.root.startswith('w') and
-      (self.durative_vowel == 'a' or self.root.endswith(WEAK_CONSONANTS)))
-    return KamilDecomposition(
-      self.root,
-       (personal_prefix_d(*p) if d_prefix else personal_prefix(*p),
-        Morpheme('n', ['PASS']) if stem == Stem.N else None,
-        Morpheme('š' if t else 'ša', ['CAUS']) if stem == Stem.Š else None,
-        Morpheme('ta', ['t']) if t == 't' and stem in (Stem.N, Stem.Š) else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem in (Stem.N, Stem.Š) else
-        None,
-        Morpheme('y' if self.root.startswith('w') and self.durative_vowel != 'a' and not self.root.endswith(WEAK_CONSONANTS) else
-                 self.root[0], ['R₁']),
-        Morpheme('ta', ['t']) if t == 't' and stem not in (Stem.N, Stem.Š) else
-        Morpheme('tan', ['tan']) if t == 'tan' and stem not in (Stem.N, Stem.Š) else
-        Morpheme('a', ['PFTV']) if stem in (Stem.D, Stem.N) else None,
-        Morpheme(self.root[1]  * (2 if stem == Stem.D else 1),
-                ['R₂', 'D'] if stem == Stem.D else ['R₂']),
-        Morpheme('i' if stem in (Stem.D, Stem.Š) or (stem == Stem.N and not t) else
-                self.durative_vowel if t else
-                self.perfective_vowel,
-                ['PFTV']),
-        Morpheme(self.root[-1], ['R₃']),
-        personal_suffix(*p, gloss_for_d=d_prefix),
-        Morpheme('u', ['SUBJ']) if subj and not personal_suffix(*p).text else None,
-        ventive(*p) if vent else None,
-        dat_pronominal_suffix(*dat) if dat else None,
-        acc_pronominal_suffix(*acc) if acc else None,
-        Morpheme('ma', ['CONJ']) if conj else None))
+      morphemes.append(ventive(*p))
+    if dat:
+      morphemes.append(dat_pronominal_suffix(*dat))
+    if acc:
+      morphemes.append(acc_pronominal_suffix(*acc))
+    if conj:
+      morphemes.append(Morpheme('ma', ['CONJ']))
+    return KamilDecomposition(self.root, morphemes)
+
+  def durative(self, p: Person, **kwargs):
+    return self.finite_form(p, pftv=False, **kwargs)
+  def perfective(self, p: Person, **kwargs):
+    return self.finite_form(p, pftv=True, **kwargs)

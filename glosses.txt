@@ -240,7 +240,7 @@ i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 12
 l. 487 ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 l. 494 ileqqe
 i-leqqe-∅  (ileqqe < *ilaqqaḥ)
@@ -290,7 +290,7 @@ u-tarr-ū-šu  (utarrūšu < *utawwarūšu)
 3.PL-√twr.IMPFV.D-3.M.PL-ACC.3.M.SG
 Law 19
 l. 555 ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 l. 557 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
@@ -307,14 +307,14 @@ i-dukk-ū-šū-ma  (idukkūšūma < *idawwakūšuma)
 3-√dwk.IMPFV-3.M.PL-ACC.3.M.SG-CONJ
 Law 22
 l. 578 ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 l. 580 iddâk
 i-d-dâk-∅  (iddâk < *indawwak)
 3-PASS-√dwk.IMPFV-3.SG
 Law 23
 l. 582 ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 Law 24
 l. 603 išaqqalū
@@ -352,7 +352,7 @@ l. 644 ~ilikšu
 ī-lik-∅-šu  (īlikšu < *iʾlikšu)
 3-√ʾlk.PFTV-3.SG-ACC.3.M.SG
 l. 645 ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 l. 646 ittūramma
 i-ttūr-∅-am-ma  (ittūramma < *ittawaramma)
@@ -399,7 +399,7 @@ l. 685 ~ilikšu
 ī-lik-∅-šu  (īlikšu < *iʾlikšu)
 3-√ʾlk.PFTV-3.SG-ACC.3.M.SG
 l. 686 ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 l. 687 ittūramma
 i-ttūr-∅-am-ma  (ittūramma < *ittawaramma)
@@ -630,7 +630,7 @@ l. 906 itbal
 i-tbal-∅  (itbal)
 3-√tbl.PFTV-3.SG
 l. 909 ittabši
-i-t-ta-bši-∅  (ittabši < *intabašiʾ)
+i-t-ta-bši-∅  (ittabši < *intabšiʾ)
 3-PASS-t-√bšʾ.PFTV-3.SG
 l. 912 ~utâr
 u-tār-∅  (utār < *utawwar)
@@ -943,9 +943,9 @@ i-naddû-ši  (inaddûši < *inaddiʾūši)
 3-√ndʾ.IMPFV.3.M.PL-ACC.3.F.SG
 Law 109
 l. 1223' ittarkasūma
-i-t-ta-rkas-ū-ma  (ittarkasūma < *intarakasūma)
+i-t-ta-rkas-ū-ma  (ittarkasūma < *intarkasūma)
 3-PASS-t-√rks.PFTV-3.M.PL-CONJ
-i-t-ta-rkas-∅-ū-ma  (ittarkasūma < *intarakasuma)
+i-t-ta-rkas-∅-ū-ma  (ittarkasūma < *intarkasuma)
 3-PASS-t-√rks.PFTV-3.SG-SUBJ-CONJ
 l. 1225' iṣṣabtamma
 i-ṣṣabt-∅-am-ma  (iṣṣabtamma < *iṣtabatamma)
@@ -1053,8 +1053,8 @@ l. 1328' iddin
 i-ddin-∅  (iddin < *indin)
 3-√ndn.PFTV-3.SG
 l. 1330' ~ittandin
-i-t-tad-dīn-∅  (ittaddīn < *intandayan)
-3-PASS-tan-√dyn.PFTV-3.SG
+i-t-ta-ddin-∅  (ittaddin < *intandin)
+3-PASS-t-√ndn.PFTV-3.SG
 l. 1334' ippešū
 i-ppeš-ū  (ippešū < *iḥappašū)
 3-√ḥpš.IMPFV-3.M.PL
@@ -1063,8 +1063,8 @@ i-š-šakkan-∅  (iššakkan < *inšakkan)
 3-PASS-√škn.IMPFV-3.SG
 Law 118
 l. 1340' ~ittandin
-i-t-tad-dīn-∅  (ittaddīn < *intandayan)
-3-PASS-tan-√dyn.PFTV-3.SG
+i-t-ta-ddin-∅  (ittaddin < *intandin)
+3-PASS-t-√ndn.PFTV-3.SG
 l. 1342' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -1086,7 +1086,7 @@ i-paṭṭar-∅  (ipaṭṭar)
 3-√pṭr.IMPFV-3.SG
 Law 120
 l. 1357' ittabši
-i-t-ta-bši-∅  (ittabši < *intabašiʾ)
+i-t-ta-bši-∅  (ittabši < *intabšiʾ)
 3-PASS-t-√bšʾ.PFTV-3.SG
 l. 1360' ilqe
 i-lqe-∅  (ilqe < *ilqaḥ)
@@ -1187,7 +1187,7 @@ i-škun-∅  (iškun)
 3-√škn.PFTV-3.SG
 Law 129
 l. 1472' ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 l. 1475' inaddûšunūti
 i-naddû-šunūti  (inaddûšunūti < *inaddiʾušunūti)
@@ -1216,7 +1216,7 @@ i-târ-∅  (itâr < *itawwar)
 3-√twr.IMPFV-3.SG
 Law 132
 l. 1512' ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 l. 1515' išalli
 i-šalli-∅  (išalli < *išalliʾ)
@@ -1475,7 +1475,7 @@ l. 1803' īrubu
 ī-rub-∅-u  (īrubu < *iʿrubu)
 3-√ʿrb.PFTV-3.SG-SUBJ
 l. 1806' ittabši
-i-t-ta-bši-∅  (ittabši < *intabašiʾ)
+i-t-ta-bši-∅  (ittabši < *intabšiʾ)
 3-PASS-t-√bšʾ.PFTV-3.SG
 l. 1808' ippalū
 i-ppal-ū  (ippalū < *iʾappalū)
@@ -1532,7 +1532,7 @@ i-qallû-šunūti  (iqallûšunūti < *iqalluʾušunūti)
 3-√qlʾ.IMPFV.3.SG.SUBJ-ACC.3.M.PL
 Law 158
 l. 1859' ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 Law 159
 l. 1866' ušābilu
@@ -1590,14 +1590,14 @@ l. 1910' īḫuz
 ī-ḫuz-∅  (īḫuz < *iʾḫuz)
 3-√ʾḫz.PFTV-3.SG
 l. 1914' ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 Law 163
 l. 1922' īḫuzma
 ī-ḫuz-∅-ma  (īḫuzma < *iʾḫuzma)
 3-√ʾḫz.PFTV-3.SG-CONJ
 l. 1926' ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 Law 164
 l. 1945' ~utâr
@@ -1642,7 +1642,7 @@ l. 1989' īḫuzma
 ī-ḫuz-∅-ma  (īḫuzma < *iʾḫuzma)
 3-√ʾḫz.PFTV-3.SG-CONJ
 l. 1993' ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 l. 2005' ileqqûma
 i-leqqû-ma  (ileqqûma < *ilaqqaḥuma)
@@ -1776,7 +1776,7 @@ l. 2168' īpušū
 ī-puš-ū  (īpušū < *iḥpušū)
 3-√ḥpš.PFTV-3.M.PL
 l. 2174' ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 l. 2177' ileqqe
 i-leqqe-∅  (ileqqe < *ilaqqaḥ)
@@ -1954,7 +1954,7 @@ i-nakkis-ū  (inakkisū)
 3-√nks.IMPFV-3.M.PL
 Law 193
 l. 2482' ~ittalak
-i-t-t-ālak-∅  (ittālak < *intaʾalak)
+i-t-tā-lak-∅  (ittālak < *intaʾlak)
 3-PASS-t-√ʾlk.PFTV-3.SG
 Law 194
 l. 2487' ~iddinma
@@ -2336,7 +2336,7 @@ l. 2918' išriqma
 i-šriq-∅-ma  (išriqma)
 3-√šrq.PFTV-3.SG-CONJ
 l. 2920' ittaṣbat
-i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣabat)
+i-t-ta-ṣbat-∅  (ittaṣbat < *intaṣbat)
 3-PASS-t-√ṣbt.PFTV-3.SG
 l. 2921' inakkisū
 i-nakkis-ū  (inakkisū)
@@ -2440,7 +2440,7 @@ i-šriq-∅-u  (išriqu)
 3-√šrq.PFTV-3.SG-SUBJ
 Law 266
 l. 3017' ittabši
-i-t-ta-bši-∅  (ittabši < *intabašiʾ)
+i-t-ta-bši-∅  (ittabši < *intabšiʾ)
 3-PASS-t-√bšʾ.PFTV-3.SG
 l. 3018' iddūk
 i-ddūk-∅  (iddūk < *idtawak)
@@ -2582,4 +2582,4 @@ i-nakkis-∅  (inakkis)
 3-√nks.IMPFV-3.SG
 
 Glossed 691 verbs with 90 ambiguities
-Glossed 240 unique forms
+Glossed 239 unique forms
