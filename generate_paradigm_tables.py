@@ -90,3 +90,18 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
                Verb("lqḥ", "a", "a")):
     print_table(complete_conjugation(verb, Stem.G), f)
     print('---', file=f)
+
+  print("13d", file=f)
+  table=[]
+  for verb in (Verb("bnʾ", "i", "i"),
+               Verb("mnʾ", "u", "u"),
+               Verb("klʾ", "a", "a"),
+               Verb("lqḥ", "a", "a")):
+    print_table(complete_conjugation(verb, Stem.N), f)
+    print('---', file=f)
+
+  print("13f", file=f)
+  table=[]
+  for stem in (Stem.D, Stem.Š):
+    print_table(complete_conjugation(Verb("bnʾ", "i", "i"), stem), f)
+    print('---', file=f)

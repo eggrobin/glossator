@@ -466,7 +466,8 @@ class Verb:
     else:
       morphemes.append(
         Morpheme('a' if stem in (Stem.D, Stem.Š) or
-                        (stem == Stem.N and self.durative_vowel != 'i') else
+                        (stem == Stem.N and self.durative_vowel != 'i' and
+                         not self.root.endswith(WEAK_CONSONANTS)) else
                  self.durative_vowel,
                  ['IMPFV']))
 
