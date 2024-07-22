@@ -39,6 +39,8 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
   print('---', file=f)
   print_table(complete_conjugation(verb, Stem.D), f)
   print('---', file=f)
+  print_table(complete_conjugation(verb, Stem.Š), f)
+  print('---', file=f)
 
   print("8b", file=f)
   for verb in (Verb("ʾmr", "a", "u"),

@@ -436,12 +436,12 @@ class Verb:
     if pftv:
       if stem in (Stem.D, Stem.N) and not t:
         morphemes.append(Morpheme('a', ['PFTV']))
-    elif t != 't':
+    elif t != 't' and not (stem == stem.Š and self.root[0] not in WEAK_CONSONANTS):
       morphemes.append(Morpheme('a', ['IMPFV']))
 
     if stem == stem.D:
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'D']))
-    elif not pftv:
+    elif not pftv and not (stem == stem.Š and self.root[0] not in WEAK_CONSONANTS):
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'IMPFV']))
     else:
       morphemes.append(Morpheme(self.root[1], ['R₂']))
