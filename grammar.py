@@ -261,7 +261,7 @@ class KamilDecomposition:
                                     'ī' if self.morphemes[i].text == 'y' else
                                     'ā')
           self.morphemes[k].text = self.morphemes[k].text[1:]
-        elif (self.root == 'ʾlk' and
+        elif (self.root == 'hlk' and
               any(p in self.morphemes[j].functions for p in (1, 2, 3))
               and next_2 == 'i'):
           # Special-case alākum PCS:

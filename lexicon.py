@@ -7,7 +7,7 @@ from grammar import Gender, Number, Verb, KamilDecomposition, Stem, shorten_vowe
 verbs = (
   Verb("ʾgr", "a", "u"),
   Verb("ʾḫz", "a", "u"),
-  Verb("ʾlk", "a", "i"),  # TODO(egg): Needs special-casing.
+  Verb("hlk", "a", "i"),  # TODO(egg): Needs special-casing.
   Verb("ʾmr", "a", "u"),
   Verb("ʾpl", "a", "u"),
   Verb("bnʾ", "i", "i"),
