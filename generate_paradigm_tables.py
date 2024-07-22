@@ -1,5 +1,4 @@
 from grammar import Verb, Gender, Number, Stem
-import lexicon
 
 def complete_conjugation(verb: Verb, stem: Stem):
   table = []

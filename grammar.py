@@ -261,6 +261,12 @@ class KamilDecomposition:
                                     'ī' if self.morphemes[i].text == 'y' else
                                     'ā')
           self.morphemes[k].text = self.morphemes[k].text[1:]
+        elif (self.root == 'ʾlk' and
+              any(p in self.morphemes[j].functions for p in (1, 2, 3))
+              and next_2 == 'i'):
+          # Special-case alākum PCS:
+          self.morphemes[i].text = ''
+          self.morphemes[k].text *= 2
         elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
               shorten_vowels(next_text).startswith(CONSONANTS)):
           # H p. 38. (b) VʾC > V̄C.
