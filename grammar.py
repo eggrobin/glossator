@@ -433,15 +433,19 @@ class Verb:
     if t and stem not in (Stem.N, Stem.Š):
       morphemes.append(Morpheme('ta' if t == 't' else 'tan', [t]))
 
+    # H p. 309.
+    # TODO(egg): Can we do that with transformation rules instead?
+    š_unlike_g = stem == stem.Š and self.root[0] not in WEAK_CONSONANTS
+
     if pftv:
       if stem in (Stem.D, Stem.N) and not t:
         morphemes.append(Morpheme('a', ['PFTV']))
-    elif t != 't' and not (stem == stem.Š and self.root[0] not in WEAK_CONSONANTS):
+    elif t != 't' and not š_unlike_g:
       morphemes.append(Morpheme('a', ['IMPFV']))
 
     if stem == stem.D:
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'D']))
-    elif not pftv and not (stem == stem.Š and self.root[0] not in WEAK_CONSONANTS):
+    elif not pftv and not š_unlike_g:
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'IMPFV']))
     else:
       morphemes.append(Morpheme(self.root[1], ['R₂']))
