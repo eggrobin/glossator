@@ -1,3 +1,33 @@
+7a
+iparras iptaras iprus
+iṣabbat iṣṣabat iṣbat
+išarriq ištariq išriq
+imaqqut imtaqut imqut
+---
+iptarras NYI iptaras
+iṣṣabbat NYI iṣṣabat
+ištarriq NYI ištariq
+imtaqqut NYI imtaqut
+---
+iptanarras NYI iptarras
+iṣṣanabbat NYI iṣṣabbat
+ištanarriq NYI ištarriq
+imtanaqqut NYI imtaqqut
+---
+ipparras ittapras ipparis
+iššarriq ittašriq iššariq
+---
+ittapparras NYI ittappras
+ittaššarriq NYI ittaššriq
+---
+uparras    uptarris uparris  
+uptarras   NYI      uptarris 
+uptanarras NYI      uptarrris
+---
+ušapras   uštapris ušapris  
+uštapras  NYI      uštapris 
+uštappras NYI      uštappris
+---
 7b
 iparras   iptaras  iprus  
 taparras  taptaras taprus 

@@ -302,7 +302,8 @@ class KamilDecomposition:
     while i < len(self.morphemes):
       _, previous_text = self.previous_overt_morpheme(i)
       # H p. 155.
-      if ('t' in self.morphemes[i].functions and
+      if (('t' in self.morphemes[i].functions or
+           'tan' in self.morphemes[i].functions) and
           self.morphemes[i].text.startswith('t') and
           previous_text.endswith(('d', 'ṭ', 's', 'ṣ'))):
         self.morphemes[i].text = previous_text[-1] + self.morphemes[i].text[1:]
