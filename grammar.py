@@ -442,10 +442,13 @@ class Verb:
     if stem == Stem.Š:
       morphemes.append(Morpheme('š' if t else 'ša', ['CAUS']))
     if t and stem in (Stem.N, Stem.Š):
-      morphemes.append(Morpheme('ta' if t == 't' else 'tan', [t]))
-
-    if t == 'tan' and stem in (Stem.N, Stem.Š) and not pftv:
-      morphemes.append(Morpheme('a', ['V']))
+      if t == 'tan':
+        if not pftv:
+          morphemes.append(Morpheme('tana', [t]))
+        else:
+          morphemes.append(Morpheme('tan', [t]))
+      else:
+        morphemes.append(Morpheme('ta', [t]))
 
     if (self.root.startswith('w') and
         self.durative_vowel != 'a' and
