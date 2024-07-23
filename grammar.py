@@ -6,8 +6,9 @@ import re
 CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
 
-CONSONANTS = tuple('bdgḫyklmnpqrsṣštṭwz')
+STRONG_CONSONANTS = tuple('bdgḫyklmnpqrsṣštṭwz')
 WEAK_CONSONANTS = tuple('ʾhḥʿwy')
+CONSONANTS = tuple(list(STRONG_CONSONANTS) + list(WEAK_CONSONANTS))
 VOWELS = tuple('aeuiāēūīâêûî')
 SHORT_VOWELS = ('a', 'e', 'u', 'i')
 def nfd(s: str) -> str:
@@ -123,6 +124,7 @@ class KamilDecomposition:
     self.reconstructed = list(Morpheme(m.text, m.functions) for m in morphemes if m)
     self.morphemes = list(Morpheme(m.text, m.functions) for m in morphemes if m)
     self.functions = set(f for m in self.morphemes for f in m.functions)
+    self.avoid_overlong_consonant_clusters()
     self.apply_global_a_colouring()
     self.lose_consonants()
     self.contract_vowels()
@@ -159,7 +161,7 @@ class KamilDecomposition:
         break
       k += 1
     return (k, next_text)
-  
+
   def previous_overt_morpheme(self, i: int) -> tuple[int, str]:
     previous_text = ''
     j = i - 1
@@ -169,6 +171,18 @@ class KamilDecomposition:
         break
       j -= 1
     return (j, previous_text)
+
+  def avoid_overlong_consonant_clusters(self):
+    i = 0
+    while i < len(self.morphemes):
+      if self.morphemes[i].text == 'tan':
+        k, next_text = self.next_overt_morpheme(i)
+        l, next_2 = self.next_overt_morpheme(k)
+        lookahead = (next_text + next_2)
+        if (lookahead.startswith(CONSONANTS) and
+            lookahead[1:].startswith(CONSONANTS)):
+          self.morphemes[i].text = 'ta'
+      i += 1
 
   def apply_global_a_colouring(self):
     i = 0
@@ -334,7 +348,7 @@ class KamilDecomposition:
       i += 1
 
   def syncopate_vowels(self):
-    regex = "[V][C]([V])[C][^C]".replace('V', ''.join(SHORT_VOWELS)).replace('C', ''.join(CONSONANTS))
+    regex = "(?:[V][C])+([V])[C][^C]".replace('V', ''.join(SHORT_VOWELS)).replace('C', ''.join(CONSONANTS))
     match = re.search(regex, self.text())
     if match:
       syncopated_vowel_index = match.start(1)
@@ -429,6 +443,10 @@ class Verb:
       morphemes.append(Morpheme('š' if t else 'ša', ['CAUS']))
     if t and stem in (Stem.N, Stem.Š):
       morphemes.append(Morpheme('ta' if t == 't' else 'tan', [t]))
+
+    if t == 'tan' and stem in (Stem.N, Stem.Š) and not pftv:
+      morphemes.append(Morpheme('a', ['V']))
+
     if (self.root.startswith('w') and
         self.durative_vowel != 'a' and
         not self.root.endswith(WEAK_CONSONANTS)):
@@ -452,7 +470,7 @@ class Verb:
 
     if stem == stem.D:
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'D']))
-    elif not pftv and not š_unlike_g:
+    elif not pftv and not š_unlike_g and not (stem == Stem.N and t == 'tan'):
       morphemes.append(Morpheme(2 * self.root[1], ['R₂', 'IMPFV']))
     else:
       morphemes.append(Morpheme(self.root[1], ['R₂']))

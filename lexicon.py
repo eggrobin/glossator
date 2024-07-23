@@ -74,6 +74,7 @@ def add_forms(verb : Verb):
               (prefix,
                verb.durative((p, g, n), stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'impfv'))
+
           gloss = verb.perfective((p, g, n), stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
@@ -82,6 +83,7 @@ def add_forms(verb : Verb):
               (prefix,
                verb.perfective((p, g, n), stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'pftv'))
+
           gloss = verb.perfective((p, g, n), t='t', stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
@@ -90,6 +92,7 @@ def add_forms(verb : Verb):
               (prefix,
                verb.perfective((p, g, n), t='t', stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'pftv'))
+
           gloss = verb.durative((p, g, n), t='tan', stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
@@ -97,7 +100,7 @@ def add_forms(verb : Verb):
             prefix = commonprefix(
               (prefix,
                verb.durative((p, g, n), t='tan', stem=stem, acc=acc).text()))
-            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'pftv'))
+            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'impfv'))
 
 for verb in verbs:
   add_forms(verb)

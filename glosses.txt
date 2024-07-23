@@ -1425,6 +1425,9 @@ l. 1746' īpušu
 l. 1747' uššamma
 u-ššam-∅-ma  (uššamma < *uwaššabma)
 1|3.SG-√wšb.IMPFV-1|3.SG-CONJ
+l. 1748' ittanaššīši
+i-ttanaššī-∅-ši  (ittanaššīši < *intanaššiʾši)
+3-√nšʾ.tan.IMPFV-3.SG-ACC.3.F.SG
 Law 149
 l. 1756' ušallamšimma
 u-šallam-∅-šim-ma  (ušallamšimma)
@@ -1827,6 +1830,9 @@ i-ttadn-ū-šim-ma  (ittadnūšimma < *intadinūšimma)
 l. 2277' ~inaddinma
 i-naddim-∅-ma  (inaddimma < *inaddinma)
 3-√ndn.IMPFV-3.SG-CONJ
+l. 2279' ittanaššīši
+i-ttanaššī-∅-ši  (ittanaššīši < *intanaššiʾši)
+3-√nšʾ.tan.IMPFV-3.SG-ACC.3.F.SG
 l. 2283' ~iddinušim
 i-ddin-∅-ū-šim  (iddinūšim < *indinušim)
 3-√ndn.PFTV-3.SG-SUBJ-DAT.3.F.SG
@@ -2573,5 +2579,5 @@ l. 3143' inakkis
 i-nakkis-∅  (inakkis)
 3-√nks.IMPFV-3.SG
 
-Glossed 687 verbs with 90 ambiguities
-Glossed 238 unique forms
+Glossed 689 verbs with 90 ambiguities
+Glossed 240 unique forms

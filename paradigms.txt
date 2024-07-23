@@ -17,16 +17,16 @@ imtanaqqut NYI imtaqqut
 ipparras ittapras ipparis
 iššarriq ittašriq iššariq
 ---
-ittapparras NYI ittappras
-ittaššarriq NYI ittaššriq
+ittanapras NYI ittapras
+ittanašriq NYI ittašriq
 ---
-uparras    uptarris uparris  
-uptarras   NYI      uptarris 
-uptanarras NYI      uptarrris
+uparras    uptarris uparris 
+uptarras   NYI      uptarris
+uptanarras NYI      uptarris
 ---
-ušapras   uštapris ušapris  
-uštapras  NYI      uštapris 
-uštappras NYI      uštappris
+ušapras    uštapris ušapris 
+uštapras   NYI      uštapris
+uštanapras NYI      uštapris
 ---
 7b
 iparras   iptaras  iprus  
