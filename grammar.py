@@ -276,6 +276,12 @@ class KamilDecomposition:
                                     'ā')
           self.morphemes[k].text = self.morphemes[k].text[1:]
         elif (self.root == 'hlk' and
+              any(p in self.morphemes[j].functions for p in (1, 2, 3)) and
+              next_text in ('ta', 'tan')):
+          # Special-case alākum -t- and -tan- morphemes:
+          self.morphemes[i].text = ''
+          self.morphemes[k].text = 't' + self.morphemes[k].text
+        elif (self.root == 'hlk' and
               any(p in self.morphemes[j].functions for p in (1, 2, 3))
               and next_2 == 'i'):
           # Special-case alākum PCS:

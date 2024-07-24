@@ -99,6 +99,32 @@ ušaprasā  uštaprisā  ušaprisā
 tušaprasā tuštaprisā tušaprisā
 nušapras  nuštapris  nušapris 
 ---
+8a
+iḫḫaz ītaḫaz  īḫuz 
+irrik ītarik  īrik 
+ikkuš ītakuš  īkuš 
+illak ittalak illik
+---
+ītaḫḫaz  NYI ītaḫaz 
+ittallak NYI ittalak
+---
+ītanaḫḫaz  NYI ītaḫḫaz 
+ītanarrik  NYI ītarrik 
+ītanakkuš  NYI ītakkuš 
+ittanallak NYI ittallak
+---
+ināḫḫaz ittāḫaz ināḫiz
+---
+ittanāḫaz NYI ittāḫaz
+---
+uḫḫaz     ūtaḫḫiz uḫḫiz  
+ūtaḫḫaz   NYI     ūtaḫḫiz
+ūtanaḫḫaz NYI     ūtaḫḫiz
+---
+ušaḫḫaz    uštāḫiz ušāḫiz 
+uštāḫḫaz   NYI     uštāḫiz
+uštanaḫḫaz NYI     uštāḫiz
+---
 8b
 immar   ītamar  īmur  
 tammar  tātamar tāmur 

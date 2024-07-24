@@ -94,6 +94,7 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
     append_3cs_conjugation(table, verb, stem=Stem.G, t='t')
   print_table(table, f)
   table=[]
+  print('---', file=f)
   for verb in (Verb("ʾḫz", "a", "u"),
                 Verb("ʾrk", "i", "i"),
                 Verb("ʾkš", "u", "u"),
@@ -101,6 +102,7 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
     append_3cs_conjugation(table, verb, stem=Stem.G, t='tan')
   print_table(table, f)
   table=[]
+  print('---', file=f)
   for args in ({}, {'t':'tan'}):
     append_3cs_conjugation(table, Verb("ʾḫz", "a", "u"), stem=Stem.N, **args)
     print_table(table, f)
