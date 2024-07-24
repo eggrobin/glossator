@@ -279,14 +279,12 @@ class KamilDecomposition:
               any(p in self.morphemes[j].functions for p in (1, 2, 3)) and
               next_text in ('ta', 'tan')):
           # Special-case alākum -t- and -tan- morphemes:
-          self.morphemes[i].text = ''
-          self.morphemes[k].text = 't' + self.morphemes[k].text
+          self.morphemes[i].text = 't'
         elif (self.root == 'hlk' and
               any(p in self.morphemes[j].functions for p in (1, 2, 3))
               and next_2 == 'i'):
           # Special-case alākum PCS:
-          self.morphemes[i].text = ''
-          self.morphemes[k].text *= 2
+          self.morphemes[i].text = self.morphemes[k].text
         elif (shorten_vowels(previous_text).endswith(SHORT_VOWELS) and
               shorten_vowels(next_text).startswith(CONSONANTS)):
           # H p. 38. (b) VʾC > V̄C.
