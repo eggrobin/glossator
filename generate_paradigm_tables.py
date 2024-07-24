@@ -79,6 +79,44 @@ with open('paradigms.txt', 'w', encoding='utf-8') as f:
   print_table(complete_conjugation(verb, Stem.Š), f)
   print('---', file=f)
 
+  print("8a", file=f)
+  table=[]
+  for verb in (Verb("ʾḫz", "a", "u"),
+                Verb("ʾrk", "i", "i"),
+                Verb("ʾkš", "u", "u"),
+                Verb("hlk", "a", "i")):
+    append_3cs_conjugation(table, verb, stem=Stem.G)
+  print_table(table, f)
+  table=[]
+  print('---', file=f)
+  for verb in (Verb("ʾḫz", "a", "u"),
+                Verb("hlk", "a", "i")):
+    append_3cs_conjugation(table, verb, stem=Stem.G, t='t')
+  print_table(table, f)
+  table=[]
+  for verb in (Verb("ʾḫz", "a", "u"),
+                Verb("ʾrk", "i", "i"),
+                Verb("ʾkš", "u", "u"),
+                Verb("hlk", "a", "i")):
+    append_3cs_conjugation(table, verb, stem=Stem.G, t='tan')
+  print_table(table, f)
+  table=[]
+  for args in ({}, {'t':'tan'}):
+    append_3cs_conjugation(table, Verb("ʾḫz", "a", "u"), stem=Stem.N, **args)
+    print_table(table, f)
+    table=[]
+    print('---', file=f)
+  for args in ({}, {'t':'t'}, {'t':'tan'}):
+    append_3cs_conjugation(table, Verb("ʾḫz", "a", "u"), stem=Stem.D, **args)
+  print_table(table, f)
+  table=[]
+  print('---', file=f)
+  for args in ({}, {'t':'t'}, {'t':'tan'}):
+    append_3cs_conjugation(table, Verb("ʾḫz", "a", "u"), stem=Stem.Š, **args)
+  print_table(table, f)
+  table=[]
+  print('---', file=f)
+
   print("8b", file=f)
   for verb in (Verb("ʾmr", "a", "u"),
                Verb("ʾrk", "i", "i"),
