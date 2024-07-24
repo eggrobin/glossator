@@ -2,6 +2,7 @@ from enum import Enum
 from typing import Literal
 import unicodedata
 import re
+import sys
 
 CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
@@ -21,13 +22,31 @@ def shorten_vowels(s: str) -> str:
 class Morpheme:
   text: str
   functions: list
+  infixes: list[tuple[int, "Morpheme"]]
 
-  def gloss_text(self):
-    return self.text if self.text else '∅'
+  def plain_text(self):
+    t = self.text
+    for i, infix in self.infixes:
+      t = t[:i] + infix.object_language() + t[i:]
+    return t
 
-  def __init__(self, text, function):
+  def object_language(self):
+    t = self.text if self.text else '∅'
+    for i, infix in self.infixes:
+      t = '%s⟨%s⟩%s' % (t[:i], infix.object_language(), t[i:])
+    return t
+
+  def gloss(self):
+    # TODO(egg): Allow for custom infix gloss placement.
+    return (str(self.functions[0]) +
+            ''.join('⟨%s⟩' % infix.gloss() for _, infix in self.infixes) +
+            '.'.join(str(f) for f in self.functions[1:])
+            if self.infixes else '.'.join(str(f) for f in self.functions))
+
+  def __init__(self, text, functions, infixes=[]):
     self.text = text
-    self.functions = ['.'.join(str(g) for g in f) if isinstance(f, list) else f for f in function]
+    self.functions = ['.'.join(str(g) for g in f) if isinstance(f, list) else f for f in functions]
+    self.infixes = infixes
 
 class Gender(Enum):
   M = 0
@@ -141,16 +160,15 @@ class KamilDecomposition:
   def __str__(self):
     reconstruction = ''.join(m.text for m in self.reconstructed)
     actual_text = self.text()
-    return ('-'.join(m.gloss_text() for m in self.morphemes) +
+    return ('-'.join(m.object_language() for m in self.morphemes) +
             '  (' +
             actual_text +
             ('' if reconstruction == actual_text else ' < *' + reconstruction) +
             ')\n' +
-            '-'.join('.'.join(str(f) for f in m.functions)
-                     for m in self.morphemes))
+            '-'.join(m.gloss() for m in self.morphemes))
 
   def text(self):
-    return ''.join(m.text for m in self.morphemes)
+    return ''.join(m.plain_text() for m in self.morphemes)
   
   def next_overt_morpheme(self, i: int) -> tuple[int, str]:
     next_text = ''
@@ -393,12 +411,19 @@ class KamilDecomposition:
           self.morphemes[k].text = nfc(self.morphemes[k].text + MACRON)
 
   def merge_root_morphemes(self):
-    # TODO(egg): Keep the t-morpheme separate as an infix.
     root_morpheme = ''
     root_functions = ['√' + self.root]
     root_start = None
     root_end = None
+    infixes = []
     for i, m in enumerate(self.morphemes):
+      if root_start is not None and ('t' in m.functions or 'tan' in m.functions):
+        # TODO(egg): Do the fancy thing of sticking the infix inside the root gloss.
+        infixes.append(
+          (len(root_morpheme),
+           Morpheme(m.text, [f for f in m.functions if f not in ('R₁', 'R₂', 'R₃')])))
+        root_functions += [f for f in m.functions if f in ('R₁', 'R₂', 'R₃')]
+        continue
       if 'R₁' in m.functions:
         root_start = i
       if root_start is not None and root_end is None:
@@ -409,7 +434,7 @@ class KamilDecomposition:
     root_functions.remove('R₁')
     root_functions.remove('R₂')
     root_functions.remove('R₃')
-    self.morphemes = self.morphemes[:root_start] + [Morpheme(root_morpheme, root_functions)] + self.morphemes[root_end + 1:]
+    self.morphemes = self.morphemes[:root_start] + [Morpheme(root_morpheme, root_functions, infixes)] + self.morphemes[root_end + 1:]
 class Verb:
   root: str
   durative_vowel: str
