@@ -20,6 +20,9 @@ NONVERBS = frozenset(
    "inūma",)
 )
 
+def normalize_n_assimilation(s):
+  return re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', s)
+
 for atf_line in atf_lines:
   if atf_line == "@epilogue":
     break
@@ -54,7 +57,7 @@ for atf_line in atf_lines:
   words = re.split(r"(?:tr.ts|\W)+", atf_line)
   for word in words:
     if word:
-      normalized_word = re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', word)
+      normalized_word = normalize_n_assimilation(word)
       word_counts[word] += 1
       if word not in NONVERBS:
         lexicon.load_candidates(normalized_word)
@@ -82,7 +85,8 @@ def akkadian_collation_key(s):
 glossed_forms = 0
 
 for word, count in sorted(word_counts.items(), key=lambda kv: (-kv[1], akkadian_collation_key(kv[0]))):
-  if word in lexicon.forms_to_glosses or grammar.shorten_vowels(word) in lexicon.shortened_forms_to_forms:
+  normalized_word = normalize_n_assimilation(word)
+  if normalized_word in lexicon.forms_to_glosses or grammar.shorten_vowels(normalized_word) in lexicon.shortened_forms_to_forms:
     glossed_forms += 1
 
 with open('glosses.txt', 'w', encoding='utf-8') as f:
