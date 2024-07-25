@@ -93,6 +93,16 @@ def add_forms(verb : Verb):
                verb.perfective((p, g, n), t='t', stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'pftv'))
 
+          if stem != Stem.N:
+            gloss = verb.durative((p, g, n), t='t', stem=stem)
+            forms_to_glosses[gloss.text()][str(gloss)] = gloss
+            prefix = gloss.text()
+            for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
+              prefix = commonprefix(
+                (prefix,
+                verb.durative((p, g, n), t='t', stem=stem, acc=acc).text()))
+              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'impfv'))
+
           gloss = verb.durative((p, g, n), t='tan', stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
