@@ -9,7 +9,7 @@ import lexicon
 with open(sys.argv[1], "r", encoding="utf-8") as f:
   atf_lines = f.read().splitlines()
 
-word_counts = defaultdict(int)
+word_counts : dict[str, int] = defaultdict(int)
 verbs_by_law: defaultdict[int, list[tuple[str, str, list[grammar.KamilDecomposition]]]] = defaultdict(list)
 
 law = None
@@ -77,7 +77,7 @@ for atf_line in atf_lines:
 glossed_verbs = 0
 ambiguous_verbs = 0
 
-def akkadian_collation_key(s):
+def akkadian_collation_key(s: str):
   return unicodedata.normalize(
     "NFD",
     s.replace("š", "sz")  # ASCII hacks to sort these letters primary-after

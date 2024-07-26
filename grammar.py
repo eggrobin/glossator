@@ -1,8 +1,7 @@
 from enum import Enum
-from typing import Literal, Optional
+from typing import Any, Literal, Optional
 import unicodedata
 import re
-import sys
 
 CIRCUMFLEX = unicodedata.lookup('COMBINING CIRCUMFLEX ACCENT')
 MACRON = unicodedata.lookup('COMBINING MACRON')
@@ -37,7 +36,7 @@ class Person(MetalanguageElement):
     return '%s%r' % (type(self).__name__, self._p)
   def __str__(self) -> str:
     return '|'.join(str(p) for p in self._p)
-  def __eq__(self, other) -> bool:
+  def __eq__(self, other: Any) -> bool:
     return isinstance(other, Person) and other._p == self._p
   def __hash__(self) -> int:
     return hash(self._p)
@@ -64,8 +63,8 @@ class VerbObject(MetalanguageElement):
     return '%s%r' % (type(self).__name__, (self._p, self._g, self._n))
   def __str__(self):
     return '.'.join(str(l) for l in (self._label, self._p, self._g, self._n) if l)
-  def __eq__(self, other) -> bool:
-    return isinstance(other, Person) and other._p == self._p
+  def __eq__(self, other: Any) -> bool:
+    return isinstance(other, VerbObject) and other._p == self._p and other._g == self._g and other._n == self._n
   def __hash__(self) -> int:
     return hash(self._p)
 
@@ -98,7 +97,7 @@ class Radical(MetalanguageElement):
     return '%s(%r)' % (type(self).__name__, self._n)
   def __str__(self) -> str:
     return 'R' + chr(ord('₁') + self._n - 1)
-  def __eq__(self, other) -> bool:
+  def __eq__(self, other: Any) -> bool:
     return isinstance(other, Radical) and other._n == self._n
   def __hash__(self) -> int:
     return hash(self._n)  
@@ -110,7 +109,7 @@ class Root(MetalanguageElement):
     return '%s(%r)' % (type(self).__name__, (self._root))
   def __str__(self):
     return '√' + self._root
-  def __eq__(self, other) -> bool:
+  def __eq__(self, other: Any) -> bool:
     return isinstance(other, Root) and other._root == self._root
   def __hash__(self) -> int:
     return hash(self._root)
@@ -156,7 +155,7 @@ def personal_prefix_d(p: Person, g: Gender, n: Number):
           Morpheme('u', [p, n]) if n == Number.PL else
           Morpheme('u', [Person(1, 3), n]))
 
-def personal_suffix(p: Person, g: Gender, n: Number, gloss_for_d=False):
+def personal_suffix(p: Person, g: Gender, n: Number, gloss_for_d : bool = False):
   return (Morpheme('ī', [p, g, n]) if p == Person(2) and g == Gender.F and n == Number.SG else
           Morpheme('ā', [p, n])    if p == Person(2) and                   n == Number.PL else
           Morpheme('ā', [p, g, n]) if p == Person(3) and g == Gender.F and n == Number.PL else
@@ -209,9 +208,9 @@ class KamilDecomposition:
   root: str
   reconstructed: list[Morpheme]
   morphemes: list[Morpheme]
-  functions: set
+  functions: set[MetalanguageElement]
 
-  def __init__(self, root, morphemes) -> None:
+  def __init__(self, root: str, morphemes: list[Morpheme]) -> None:
     self.root = root
     self.reconstructed = list(Morpheme(m.text, m.functions) for m in morphemes if m)
     self.morphemes = list(Morpheme(m.text, m.functions) for m in morphemes if m)
@@ -285,7 +284,7 @@ class KamilDecomposition:
         for m in self.morphemes:
           if m and not (
               (m.text == 'ā' and m.functions in ([Person(3), Gender.F, Number.PL],
-                                                [Person(2), Number.PL])) or
+                                                 [Person(2), Number.PL])) or
               m.functions == [Label.CONJ] or
               any(isinstance(f, VerbObject) for f in m.functions) or
               m.functions == [Label.VENT]):
@@ -400,7 +399,7 @@ class KamilDecomposition:
   def assimilate_b(self):
     # H p. 49.
     for i in range(len(self.morphemes)):
-      k, next_text = self.next_overt_morpheme(i)
+      _, next_text = self.next_overt_morpheme(i)
       if (self.morphemes[i].text.endswith('b') and
           next_text.startswith('m')):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
@@ -481,7 +480,7 @@ class KamilDecomposition:
     root_functions : list[MetalanguageElement] = [Root(self.root)]
     root_start = None
     root_end = None
-    infixes = []
+    infixes : list[tuple[int, Morpheme]] = []
     for i, m in enumerate(self.morphemes):
       if root_start is not None and (Label.t in m.functions or Label.tan in m.functions):
         # TODO(egg): Do the fancy thing of sticking the infix inside the root gloss.
@@ -531,7 +530,7 @@ class Verb:
     d_prefix = stem in (Stem.D, Stem.Š) or (
       self.root.startswith('w') and
       (self.durative_vowel == 'a' or self.root.endswith(WEAK_CONSONANTS)))
-    morphemes = []
+    morphemes : list[Morpheme] = []
     morphemes.append(personal_prefix_d(*p) if d_prefix else
                      personal_prefix(*p))
     if stem == Stem.N:
@@ -600,7 +599,9 @@ class Verb:
     if vent:
       morphemes.append(ventive(*p))
     if dat:
-      morphemes.append(dat_pronominal_suffix(*dat))
+      suffix = dat_pronominal_suffix(*dat)
+      if suffix:
+        morphemes.append(suffix)
     if acc:
       morphemes.append(acc_pronominal_suffix(*acc))
     if conj:
