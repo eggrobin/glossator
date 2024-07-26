@@ -2,7 +2,7 @@ from collections import defaultdict
 import sys
 from os.path import commonprefix
 
-from grammar import Gender, Number, Verb, KamilDecomposition, Stem, shorten_vowels
+from grammar import Gender, Number, Verb, KamilDecomposition, Stem, shorten_vowels, WEAK_CONSONANTS
 
 verbs = (
   Verb("ʾgr", "a", "u"),
@@ -103,14 +103,17 @@ def add_forms(verb : Verb):
                 verb.durative((p, g, n), t='t', stem=stem, acc=acc).text()))
               unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'impfv'))
 
-          gloss = verb.durative((p, g, n), t='tan', stem=stem)
-          forms_to_glosses[gloss.text()][str(gloss)] = gloss
-          prefix = gloss.text()
-          for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
-            prefix = commonprefix(
-              (prefix,
-               verb.durative((p, g, n), t='tan', stem=stem, acc=acc).text()))
-            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'impfv'))
+          # H p. 450, no Ntn attested for II-weak and I-w.
+          if not (stem == Stem.N and
+                  (verb.root[1] in WEAK_CONSONANTS or verb.root[0] == 'w')):
+            gloss = verb.durative((p, g, n), t='tan', stem=stem)
+            forms_to_glosses[gloss.text()][str(gloss)] = gloss
+            prefix = gloss.text()
+            for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
+              prefix = commonprefix(
+                (prefix,
+                verb.durative((p, g, n), t='tan', stem=stem, acc=acc).text()))
+              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'impfv'))
 
 for verb in verbs:
   add_forms(verb)

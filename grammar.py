@@ -150,10 +150,10 @@ class KamilDecomposition:
     self.lengthen_before_suffixes()
     self.assimilate_t()
     self.assimilate_object_š()
-    self.assimilate_n()
     self.assimilate_b()
     self.assimilate_ventive_dative_m()
     self.syncopate_vowels()
+    self.assimilate_n()
     self.merge_root_morphemes()
     self.functions = set(f for m in self.morphemes for f in m.functions)
 
@@ -319,7 +319,13 @@ class KamilDecomposition:
     while i < len(self.morphemes):
       k, next_text = self.next_overt_morpheme(i)
       if (self.morphemes[i].text.endswith('n') and
-          next_text.startswith(CONSONANTS)):
+          next_text.startswith(CONSONANTS) and
+          # H pp. 359 & 450, no assimilation of I-n in the Ntn stem & N perfect.
+          not ("R₁" in self.morphemes[i].functions and
+               "R₂" in self.morphemes[k].functions and
+               'PASS' in self.functions and
+               ('tan' in self.functions or
+                't' in self.functions))):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
       i += 1
 
@@ -484,6 +490,8 @@ class Verb:
         not self.root.endswith(WEAK_CONSONANTS)):
       # Ugly hack, we should do this with the other transformations.
       morphemes.append(Morpheme('y', ['R₁']))
+    elif stem == Stem.N and self.root.startswith(WEAK_CONSONANTS):
+      morphemes.append(Morpheme('n', ['R₁', 'PASS']))
     else:
       morphemes.append(Morpheme(self.root[0], ['R₁']))
 

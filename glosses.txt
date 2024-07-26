@@ -1084,8 +1084,6 @@ i-ddin-∅  (iddin < *indin)
 l. 1330' ~ittandin
 i-t⟨ta⟩ddin-∅  (ittaddin < *intaddin)
 3-√ndn⟨t⟩IMPFV-3.SG
-i-t-ta-ddin-∅  (ittaddin < *intandin)
-3-PASS-t-√ndn.PFTV-3.SG
 l. 1334' ippešū
 i-ppeš-ū  (ippešū < *iḥappašū)
 3-√ḥpš.IMPFV-3.M.PL
@@ -1096,8 +1094,6 @@ Law 118
 l. 1340' ~ittandin
 i-t⟨ta⟩ddin-∅  (ittaddin < *intaddin)
 3-√ndn⟨t⟩IMPFV-3.SG
-i-t-ta-ddin-∅  (ittaddin < *intandin)
-3-PASS-t-√ndn.PFTV-3.SG
 l. 1342' inaddin
 i-naddin-∅  (inaddin)
 3-√ndn.IMPFV-3.SG
@@ -2682,5 +2678,5 @@ l. 3143' inakkis
 i-nakkis-∅  (inakkis)
 3-√nks.IMPFV-3.SG
 
-Glossed 708 verbs with 113 ambiguities
+Glossed 708 verbs with 111 ambiguities
 Glossed 257 unique forms
