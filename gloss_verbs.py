@@ -10,7 +10,7 @@ with open(sys.argv[1], "r", encoding="utf-8") as f:
   atf_lines = f.read().splitlines()
 
 word_counts = defaultdict(int)
-verbs_by_law: defaultdict[int, list[tuple[int, str, list[grammar.KamilDecomposition]]]] = defaultdict(list)
+verbs_by_law: defaultdict[int, list[tuple[str, str, list[grammar.KamilDecomposition]]]] = defaultdict(list)
 
 law = None
 line_number = None
@@ -22,6 +22,8 @@ NONVERBS = frozenset(
 
 def normalize_n_assimilation(s):
   return re.sub(r'n([C])'.replace('C', ''.join(grammar.CONSONANTS)), r'\1\1', s)
+
+possible_glosses = []
 
 for atf_line in atf_lines:
   if atf_line == "@epilogue":
@@ -49,6 +51,8 @@ for atf_line in atf_lines:
     elif not atf_line.startswith(("#", "$")):
       line_number = atf_line.split('.', 1)[0]
     continue
+  if not line_number:
+    raise ValueError("No line number for %s" % atf_line)
   # Use U+02BE ʾ MODIFIER LETTER RIGHT HALF RING rather than U+2019 ’ RIGHT
   # SINGLE QUOTATION MARK for the aleph so that the words comprise only letters.
   atf_line = atf_line.replace("’", "ʾ", )

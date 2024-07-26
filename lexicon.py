@@ -2,7 +2,7 @@ from collections import defaultdict
 import sys
 from os.path import commonprefix
 
-from grammar import Gender, Number, Verb, KamilDecomposition, Stem, shorten_vowels, WEAK_CONSONANTS
+from grammar import Person, Gender, Number, Label, Verb, KamilDecomposition, Stem, shorten_vowels, WEAK_CONSONANTS
 
 verbs = (
   Verb("ʾgr", "a", "u"),
@@ -64,7 +64,7 @@ unloaded_prefixes : defaultdict[str, list] = defaultdict(list)
 def add_forms(verb : Verb):
   for stem in Stem:
     for n in Number:
-      for p in (1, 2, 3):
+      for p in (Person(1), Person(2), Person(3)):
         for g in Gender:
           gloss = verb.durative((p, g, n), stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
@@ -84,57 +84,57 @@ def add_forms(verb : Verb):
                verb.perfective((p, g, n), stem=stem, acc=acc).text()))
             unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'pftv'))
 
-          gloss = verb.perfective((p, g, n), t='t', stem=stem)
+          gloss = verb.perfective((p, g, n), t=Label.t, stem=stem)
           forms_to_glosses[gloss.text()][str(gloss)] = gloss
           prefix = gloss.text()
           for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
             prefix = commonprefix(
               (prefix,
-               verb.perfective((p, g, n), t='t', stem=stem, acc=acc).text()))
-            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'pftv'))
+               verb.perfective((p, g, n), t=Label.t, stem=stem, acc=acc).text()))
+            unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, Label.t, 'pftv'))
 
           if stem != Stem.N:
-            gloss = verb.durative((p, g, n), t='t', stem=stem)
+            gloss = verb.durative((p, g, n), t=Label.t, stem=stem)
             forms_to_glosses[gloss.text()][str(gloss)] = gloss
             prefix = gloss.text()
             for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
               prefix = commonprefix(
                 (prefix,
-                verb.durative((p, g, n), t='t', stem=stem, acc=acc).text()))
-              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 't', 'impfv'))
+                verb.durative((p, g, n), t=Label.t, stem=stem, acc=acc).text()))
+              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, Label.t, 'impfv'))
 
           # H p. 450, no Ntn attested for II-weak and I-w.
           if not (stem == Stem.N and
                   (verb.root[1] in WEAK_CONSONANTS or verb.root[0] == 'w')):
-            gloss = verb.durative((p, g, n), t='tan', stem=stem)
+            gloss = verb.durative((p, g, n), t=Label.tan, stem=stem)
             forms_to_glosses[gloss.text()][str(gloss)] = gloss
             prefix = gloss.text()
             for acc in ((1, Gender.F, Number.SG), (2, Gender.F, Number.SG), (3, Gender.F, Number.SG)):
               prefix = commonprefix(
                 (prefix,
-                verb.durative((p, g, n), t='tan', stem=stem, acc=acc).text()))
-              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, 'tan', 'impfv'))
+                verb.durative((p, g, n), t=Label.tan, stem=stem, acc=acc).text()))
+              unloaded_prefixes[shorten_vowels(prefix)].append((verb, stem, p, g, n, Label.tan, 'impfv'))
 
 for verb in verbs:
   add_forms(verb)
 
-ALL_PERSONS = []
+ALL_PERSONS : list[tuple[Person, Gender, Number]] = []
 for n in Number:
-  for p in (1, 2, 3):
+  for p in (Person(1), Person(2), Person(3)):
     for g in Gender:
       ALL_PERSONS.append((p, g, n))
 
-def load_suffixed_forms(verb, stem, p, g, n, *args):
+def load_suffixed_forms(verb : Verb, stem, p, g, n, *args):
   for obj in ('acc', 'dat'):
     for acc in ALL_PERSONS + [None]:
       for conj in (False, True):
         for vent in (False, True):
           for subj in (False,) if vent else (False, True):
             if 'pftv' in args:
-              gloss = verb.perfective((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
+              gloss = verb.perfective((p, g, n), t=Label.t if Label.t in args else Label.tan if Label.tan in args else None, stem=stem,
                                       conj=conj, vent=vent, subj=subj, **{obj:acc})
             else:
-              gloss = verb.durative((p, g, n), t='t' if 't' in args else 'tan' if 'tan' in args else None, stem=stem,
+              gloss = verb.durative((p, g, n), t=Label.t if Label.t in args else Label.tan if Label.tan in args else None, stem=stem,
                                     conj=conj, vent=vent, subj=subj, **{obj:acc})
             form = gloss.text()
             if form not in forms_to_glosses:
