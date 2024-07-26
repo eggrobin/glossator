@@ -121,9 +121,9 @@ uḫḫaz     ūtaḫḫiz uḫḫiz
 ūtaḫḫaz   NYI     ūtaḫḫiz
 ūtanaḫḫaz NYI     ūtaḫḫiz
 ---
-ušaḫḫaz    uštāḫiz ušāḫiz 
-uštāḫḫaz   NYI     uštāḫiz
-uštanaḫḫaz NYI     uštāḫiz
+ušaḫḫaz    uštāḫiz ušāḫiz  
+uštāḫḫaz   NYI     uštāḫiz 
+uštanaḫḫaz NYI     uštaḫḫiz
 ---
 8b
 immar   ītamar  īmur  

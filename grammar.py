@@ -197,9 +197,12 @@ class KamilDecomposition:
         k, next_text = self.next_overt_morpheme(i)
         l, next_2 = self.next_overt_morpheme(k)
         lookahead = (next_text + next_2)
-        if (lookahead.startswith(CONSONANTS) and
+        if (lookahead.startswith(STRONG_CONSONANTS) and
             lookahead[1:].startswith(CONSONANTS)):
           self.morphemes[i].text = 'ta'
+        elif (lookahead.startswith(WEAK_CONSONANTS) and
+              lookahead[1:].startswith(CONSONANTS)):
+          self.morphemes[k].text = ''
       i += 1
 
   def apply_global_a_colouring(self):
