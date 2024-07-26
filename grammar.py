@@ -191,8 +191,7 @@ class KamilDecomposition:
     return (j, previous_text)
 
   def avoid_overlong_consonant_clusters(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       if self.morphemes[i].text == 'tan':
         k, next_text = self.next_overt_morpheme(i)
         l, next_2 = self.next_overt_morpheme(k)
@@ -203,11 +202,9 @@ class KamilDecomposition:
         elif (lookahead.startswith(WEAK_CONSONANTS) and
               lookahead[1:].startswith(CONSONANTS)):
           self.morphemes[k].text = ''
-      i += 1
 
   def apply_global_a_colouring(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       if (any(c in self.morphemes[i].text for c in 'ʿḥ') or
           # K p. 528 2.
           (self.morphemes[i].text == 'y' and
@@ -220,11 +217,9 @@ class KamilDecomposition:
               any('ACC' in f or 'DAT' in f for f in m.functions if isinstance(f, str)) or
               m.functions == ['VENT']):
             m.text = nfc(nfd(m.text).replace('a', 'e'))
-      i += 1
 
   def lose_consonants(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       j, previous_text = self.previous_overt_morpheme(i)
       k, next_text = self.next_overt_morpheme(i)
       l, next_2 = self.next_overt_morpheme(k)
@@ -315,11 +310,9 @@ class KamilDecomposition:
         elif self.morphemes[i].text != 'w':
           # H p. 38. (a).
           self.morphemes[i].text = ''
-      i += 1
 
   def assimilate_n(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       k, next_text = self.next_overt_morpheme(i)
       if (self.morphemes[i].text.endswith('n') and
           next_text.startswith(CONSONANTS) and
@@ -330,21 +323,17 @@ class KamilDecomposition:
                ('tan' in self.functions or
                 't' in self.functions))):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
-      i += 1
 
   def assimilate_b(self):
     # H p. 49.
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       k, next_text = self.next_overt_morpheme(i)
       if (self.morphemes[i].text.endswith('b') and
           next_text.startswith('m')):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
-      i += 1
 
   def assimilate_t(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       _, previous_text = self.previous_overt_morpheme(i)
       # H p. 155.
       if (('t' in self.morphemes[i].functions or
@@ -352,11 +341,9 @@ class KamilDecomposition:
           self.morphemes[i].text.startswith('t') and
           previous_text.endswith(('d', 'ṭ', 's', 'ṣ'))):
         self.morphemes[i].text = previous_text[-1] + self.morphemes[i].text[1:]
-      i += 1
 
   def assimilate_object_š(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       j, previous_text = self.previous_overt_morpheme(i)
       # H p. 170.
       if (any('ACC' in f or 'DAT' in f for f in self.morphemes[i].functions if isinstance(f, str)) and
@@ -364,11 +351,9 @@ class KamilDecomposition:
           previous_text.endswith(('d', 't', 'ṭ', 's', 'ṣ', 'z', 'š'))):
         self.morphemes[j].text = self.morphemes[j].text[:-1] + 's'
         self.morphemes[i].text = 's' + self.morphemes[i].text[1:]
-      i += 1
 
   def assimilate_ventive_dative_m(self):
-    i = 0
-    while i < len(self.morphemes):
+    for i in range(len(self.morphemes)):
       _, next_text = self.next_overt_morpheme(i)
       # H p. 170.
       if (('VENT' in self.morphemes[i].functions or
@@ -376,7 +361,6 @@ class KamilDecomposition:
           self.morphemes[i].text.endswith('m') and
           next_text.startswith(CONSONANTS)):
         self.morphemes[i].text = self.morphemes[i].text[:-1] + next_text[0]
-      i += 1
 
   def syncopate_vowels(self):
     regex = "(?:[V][C])+([V])[C][^C]".replace('V', ''.join(SHORT_VOWELS)).replace('C', ''.join(CONSONANTS))
