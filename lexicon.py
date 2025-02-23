@@ -2,9 +2,10 @@ from collections import defaultdict
 import sys
 from os.path import commonprefix
 
-from grammar import Person, Gender, Number, Label, Verb, KamilDecomposition, Stem, shorten_vowels, WEAK_CONSONANTS
+from grammar import Person, Gender, Number, Label, Verb, KamilDecomposition, Stem, shorten_vowels, ungeminate_consonants, WEAK_CONSONANTS
 
 verbs = (
+  Verb("ʾbr", "i", "i"),  # TODO(egg): which ʾ?
   Verb("ʾgr", "a", "u"),
   Verb("ʾḫz", "a", "u"),
   Verb("hlk", "a", "i"),  # TODO(egg): Needs special-casing.
@@ -58,8 +59,9 @@ verbs = (
 
 forms_to_glosses : defaultdict[str, dict[str, KamilDecomposition]] = defaultdict(dict)
 shortened_forms_to_forms : dict[str, list[str]] = defaultdict(list)
+ungeminated_forms_to_forms : dict[str, list[str]] = defaultdict(list)
 
-unloaded_prefixes : defaultdict[str, list] = defaultdict(list)
+unloaded_prefixes : defaultdict[str, list[tuple]] = defaultdict(list)
 
 def add_forms(verb : Verb):
   for stem in Stem:
@@ -142,6 +144,10 @@ def load_suffixed_forms(verb : Verb, stem, p, g, n, *args):
               if form not in forms:
                 forms.append(form)
                 forms.sort()
+              forms = ungeminated_forms_to_forms[ungeminate_consonants(shorten_vowels(form))]
+              if form not in forms:
+                forms.append(form)
+                forms.sort()
             forms_to_glosses[form][str(gloss)] = gloss
 
 def load_candidates(word):
@@ -159,6 +165,10 @@ if False:
 
 for form in forms_to_glosses:
   forms = shortened_forms_to_forms[shorten_vowels(form)]
+  if form not in forms:
+    forms.append(form)
+    forms.sort()
+  forms = ungeminated_forms_to_forms[ungeminate_consonants(shorten_vowels(form))]
   if form not in forms:
     forms.append(form)
     forms.sort()

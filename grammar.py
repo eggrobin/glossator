@@ -17,6 +17,10 @@ def nfc(s: str) -> str:
   return unicodedata.normalize('NFC', s)
 def shorten_vowels(s: str) -> str:
   return nfc(nfd(s).replace(CIRCUMFLEX, '').replace(MACRON, ''))
+def ungeminate_consonants(s: str) -> str:
+  for c in CONSONANTS:
+    s = s.replace(2 * c, c)
+  return s
 
 class Stem(Enum):
   G = 0
@@ -117,6 +121,7 @@ class Root(MetalanguageElement):
 
 class Morpheme:
   text: str
+  morphographemic_spellings: list[str]
   functions: list[MetalanguageElement]
   infixes: list[tuple[int, "Morpheme"]]
 
@@ -239,6 +244,20 @@ class KamilDecomposition:
             ')\n' +
             '-'.join(m.gloss() for m in self.morphemes))
 
+  def matches_spelling(self, transliteration: str) -> bool:
+    pattern = re.sub(r"[₀₁₂₃₄₅₆₇₈₉-]", "", transliteration)
+    any_consonant = "[%s]" % ''.join(CONSONANTS)
+    any_vowel = "[%s]" % ''.join(VOWELS)
+    pattern = re.sub(
+      r"(?<!%s)" % any_consonant + "(" + any_consonant + ")" + r"(?!%s)" % any_consonant,
+      r"\1+",
+      pattern)
+    pattern = re.sub(
+      r"(%s)\1\1" % any_vowel,
+      r"\1[%s]" % (MACRON + CIRCUMFLEX),
+      pattern)
+    
+
   def text(self):
     return ''.join(m.plain_text() for m in self.morphemes)
   
@@ -266,7 +285,7 @@ class KamilDecomposition:
     for i in range(len(self.morphemes)):
       if self.morphemes[i].text == 'tan':
         k, next_text = self.next_overt_morpheme(i)
-        l, next_2 = self.next_overt_morpheme(k)
+        _, next_2 = self.next_overt_morpheme(k)
         lookahead = (next_text + next_2)
         if (lookahead.startswith(STRONG_CONSONANTS) and
             lookahead[1:].startswith(CONSONANTS)):
@@ -295,7 +314,7 @@ class KamilDecomposition:
       j, previous_text = self.previous_overt_morpheme(i)
       k, next_text = self.next_overt_morpheme(i)
       l, next_2 = self.next_overt_morpheme(k)
-      m, next_3 = self.next_overt_morpheme(l)
+      _, next_3 = self.next_overt_morpheme(l)
       if (self.morphemes[i].text and
           self.morphemes[i].text[0] in WEAK_CONSONANTS and
           self.morphemes[i].text == 2 * self.morphemes[i].text[0]):

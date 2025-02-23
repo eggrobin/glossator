@@ -65,11 +65,11 @@ for atf_line in atf_lines:
       word_counts[word] += 1
       if word not in NONVERBS:
         lexicon.load_candidates(normalized_word)
-        possible_glosses = []
-        if normalized_word in lexicon.forms_to_glosses:
+        possible_glosses: list[grammar.KamilDecomposition] = []
+        if False and normalized_word in lexicon.forms_to_glosses:
           possible_glosses = list(lexicon.forms_to_glosses[normalized_word].values())
         elif grammar.shorten_vowels(normalized_word) in lexicon.shortened_forms_to_forms:
-          for form in lexicon.shortened_forms_to_forms[grammar.shorten_vowels(normalized_word)]:
+          for form in lexicon.ungeminated_forms_to_forms[grammar.ungeminate_consonants(grammar.shorten_vowels(normalized_word))]:
             possible_glosses += list(lexicon.forms_to_glosses[form].values())
         if possible_glosses:
           verbs_by_law[law].append((line_number, word, possible_glosses))
